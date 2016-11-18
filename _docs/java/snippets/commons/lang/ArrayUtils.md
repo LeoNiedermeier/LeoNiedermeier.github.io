@@ -22,6 +22,7 @@ for (String string : names) {
 ~~~
 
 We can check the array with an if statement:
+
 ~~~java
 if (names != null) {
   for (String string : names) {
@@ -29,19 +30,13 @@ if (names != null) {
   }
 }
 ~~~
+
 Or we can use the `ArrayUtils.nullToEmpty(...)` method inside the for statement:
+
 ~~~java
 for (String string : ArrayUtils.nullToEmpty(names)) {
 }
 ~~~
-
-```ruby
-require 'redcarpet'
-markdown = Redcarpet.new("Hello World!")
-puts markdown.to_html
-```
-
-
 
 {: .wpanel-info title="Reduced complexity"}
 With the use of `ArrayUtils.nullToEmpty(...)` instead of the `if` check, the complexity of the method is reduced (no extra execution branch) and you have to write less tests.
