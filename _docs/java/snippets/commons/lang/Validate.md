@@ -34,7 +34,7 @@ Some(final Object argument) {
 java.lang.NullPointerException: Argument must not be null!
 	at org.apache.commons.lang3.Validate.notNull(Validate.java:222)
     ...
-~~~		
+~~~
 
 ### java.util.Objects alternative
 
@@ -48,11 +48,12 @@ Some(final Object argument) {
 java.lang.NullPointerException: Argument must not be null!
 	at java.util.Objects.requireNonNull(Objects.java:228)
     ...
-~~~		
+~~~
 
 ## Validate not empty
 
 With the various `notEmpty` methods one can check
+
 * array
 * `java.util.Collection`
 * `java.util.Map`
