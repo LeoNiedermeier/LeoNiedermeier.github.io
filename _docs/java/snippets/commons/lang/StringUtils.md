@@ -10,6 +10,7 @@ summary: "Some example usages of the org.apache.commons.lang3.StringUtils class.
 The methods of `org.apache.commons.lang3.StringUtils` handle null arguments in a proper way. There is no need for extra null checks.
 
 # Some Methods
+
 ## Test for empty
 
 **blank**: CharSequence is whitespace, empty ("") or null.  
