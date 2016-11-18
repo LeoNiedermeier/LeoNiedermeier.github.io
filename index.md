@@ -2,6 +2,7 @@
 title: Page Overview
 keywords: homepage
 permalink: index.html
+layout: "page"
 ---
 
 <nav class="sidebar-nav">
@@ -26,3 +27,5 @@ permalink: index.html
       {% endfor %}
     {% endfor %}
 </nav>
+
+Generatd: {{ site.time | date_to_rfc822 }}
