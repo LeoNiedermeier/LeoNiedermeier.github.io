@@ -23,32 +23,35 @@ much more validation methods and the ability to construct (validation error) mes
 
 ## Validate not null
 
-```java
+~~~java
 Some(final Object argument) {
   Validate.notNull(argument, "Argument must not be null!");
   this.prop = argument;
   ...
-```
-```java
+~~~
+
+~~~java
 java.lang.NullPointerException: Argument must not be null!
 	at org.apache.commons.lang3.Validate.notNull(Validate.java:222)
     ...
-```		
+~~~		
 
 ### java.util.Objects alternative
-```java
+
+~~~java
 Some(final Object argument) {
   this.prop = Objects.requireNonNull(argument,"Argument must not be null!");
   ...
-```
+~~~
 
-```java
+~~~java
 java.lang.NullPointerException: Argument must not be null!
 	at java.util.Objects.requireNonNull(Objects.java:228)
     ...
-```		
+~~~		
 
 ## Validate not empty
+
 With the various `notEmpty` methods one can check
 * array
 * `java.util.Collection`
