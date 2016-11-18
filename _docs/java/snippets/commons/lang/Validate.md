@@ -10,7 +10,8 @@ summary: Some example usages of the org.apache.commons.lang3.Validate class.
 
 >**From org.apache.commons.lang3.Validate javadoc:**
 >
-> This class assists in validating arguments. The validation methods are based along the following principles:    
+> This class assists in validating arguments. The validation methods are based along the following principles:
+>    
 > * An invalid null argument causes a `java.lang.NullPointerException`.
 > * A non-null argument causes an `java.lang.IllegalArgumentException`.
 > * An invalid index into an array/collection/map/string causes an `java.lang.IndexOutOfBoundsException`.
