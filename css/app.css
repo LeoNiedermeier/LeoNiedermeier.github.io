@@ -1,0 +1,115 @@
+/* app css stylesheet */
+
+@import url(http://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600,700);
+@import url(http://fonts.googleapis.com/css?family=Pacifico);
+@media screen and (min-width: 768px) {
+    .modal-dialog {
+        left: 0%;
+        right: auto; //
+        width: 624px;
+    }
+}
+
+.navbar-inverse .navbar-nav>li>a {
+    font-size: 1.1em;
+    line-height: normal;
+    margin: 0px;
+    padding: 24px 15px !important;
+    border-radius: 0px;
+}
+
+.navbar-brand b {
+    color: #fff;
+    font-family: 'Pacifico', cursive;
+    font-weight: 100;
+}
+
+.logo {
+    font-size: 2em;
+    text-shadow: none;
+    margin: 4px 10px 4px 10px;
+}
+
+html {
+    position: relative;
+    min-height: 100%;
+}
+
+body {
+    padding-top: 70px;
+    /* Margin bottom by footer height */
+    margin-bottom: 60px;
+}
+
+.footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    /* Set the fixed height of the footer here */
+    height: 18px;
+    background-color: #f5f5f5;
+    font-size: smaller;
+}
+
+.wpanel, .wpanel-info, .wpanel-success {
+    margin: 20px 0;
+    padding: 10px;
+    border: none;
+    border-radius: 4px;
+}
+
+.wpanel p:last-child {
+    margin-bottom: 0;
+}
+
+.wpanel-success {
+    background-color: #F4FDF0;
+}
+
+.wpanel-danger {
+    background-color: #fdf7f7;
+}
+
+.wpanel-warning {
+    background-color: #fcf8f2;
+}
+
+.wpanel-info {
+    background-color: #f4f8fa;
+}
+
+.wpanel-default {
+    background-color: #EEE;
+}
+
+.wpanel-notice {
+    background-color: #FCFCDD;
+}
+
+.wpanel-code {
+    background-color: #f5f5f5;
+}
+
+.wpanel-content hr {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.wpanel-content pre {
+    background-color: #f5f5f5;
+    border: none;
+    padding: 10px;
+}
+
+pre {
+    border: none;
+}
+
+.wpanel-info::before, .wpanel-success::before {
+    content: attr(title);
+    display: block;
+    font-weight: bold;
+}
+a.active {
+  font-weight: bold;
+}

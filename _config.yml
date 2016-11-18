@@ -1,0 +1,64 @@
+# Setup
+title:               Leo Niedermeier
+tagline:             'Software Development'
+description:         ''
+#url:                 https://leoniedermeier.github.io/
+baseurl:             ''
+#paginate:            5
+
+exclude:
+  - .gitignore
+# these are the files and directories that jekyll will exclude from the build
+
+highlighter: rouge
+# library used for syntax highlighting
+
+markdown: kramdown
+kramdown:
+ input: GFM
+ auto_ids: true
+ hard_wrap: false
+ syntax_highlighter: rouge
+# filter used to process markdown. note that kramdown differs from github-flavored markdown in some subtle ways
+
+collections:
+  docs:
+    output: true
+# collections are declared here. this renders the content in _tooltips and processes it, but doesn't output it as actual files in the output unless you change output to true
+
+defaults:
+  -
+    scope:
+      path: ""
+      type: "pages"
+    values:
+      layout: "page"
+      comments: true
+      search: true
+      sidebar: home_sidebar
+  -
+    scope:
+      type: "docs"
+    values:
+      layout: "page"
+      comments: true
+      search: true
+      sidebar: home_sidebar
+
+  -
+    scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "post"
+      comments: true
+      search: true
+      sidebar: home_sidebar
+
+# these are defaults used for the frontmatter for these file types
+
+
+
+gems:
+  - jekyll-sitemap
+  - jekyll-seo-tag
