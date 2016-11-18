@@ -89,5 +89,6 @@ try {
 * <http://commons.apache.org/proper/commons-lang/apidocs/org/apache/commons/lang3/exception/DefaultExceptionContext.html>
 
 Some links from <http://jenkov.com/>
+
 * [Exception Enrichment in Java](http://tutorials.jenkov.com/java-exception-handling/exception-enrichment.html "Exception Enrichment in Java")
 * [Java Exception Handling](http://jenkov.com/books/java-exception-handling/index.html, "Java Exception Handling")
