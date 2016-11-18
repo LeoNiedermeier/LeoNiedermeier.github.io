@@ -6,7 +6,8 @@ summary: "Simple collection of best practices etc."
 ---
 
 # Naming
-From <http://maven.apache.org/guides/mini/guide-naming-conventions.html>:
+
+>**From <http://maven.apache.org/guides/mini/guide-naming-conventions.html>:**
 >
 **groupid** will identify your project uniquely across all projects, so we need to enforce a naming schema. It has to follow the package name rules, what means that has to be at least as a domain name you control, and you can create as many subgroups as you want  
 >
@@ -38,7 +39,7 @@ If m.a.z consists of more modules:
 
 
 
-{: .wpanel-success title="Null arguments"}
+{: .wpanel-success}
 >In order to have unique jar names, the the jar name should be the jar's base package name (or the bundle symbolic name).  
 * The maven artifactId is the base package name.  
 * The maven groupId is part of the artifactId.  

@@ -11,16 +11,18 @@ summary: Some example usages of the org.apache.commons.lang3.Validate class.
 >**From org.apache.commons.lang3.Validate javadoc:**
 >
 > This class assists in validating arguments. The validation methods are based along the following principles:    
-* An invalid null argument causes a `java.lang.NullPointerException`.
-* A non-null argument causes an `java.lang.IllegalArgumentException`.
-* An invalid index into an array/collection/map/string causes an `java.lang.IndexOutOfBoundsException`.
+> * An invalid null argument causes a `java.lang.NullPointerException`.
+> * A non-null argument causes an `java.lang.IllegalArgumentException`.
+> * An invalid index into an array/collection/map/string causes an `java.lang.IndexOutOfBoundsException`.
 
 
 Since Java 7 the `java.util.Objects` provides some validation methods which checks for null. The `org.apache.commons.lang3.Validate` provides
 much more validation methods and the ability to construct (validation error) messages with parameters.  
 
 # Some Methods
+
 ## Validate not null
+
 ```java
 Some(final Object argument) {
   Validate.notNull(argument, "Argument must not be null!");

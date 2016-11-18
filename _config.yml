@@ -29,15 +29,6 @@ collections:
 defaults:
   -
     scope:
-      path: ""
-      type: "pages"
-    values:
-      layout: "page"
-      comments: true
-      search: true
-      sidebar: home_sidebar
-  -
-    scope:
       type: "docs"
     values:
       layout: "page"
