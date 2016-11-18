@@ -11,10 +11,12 @@ summary: Some example usages of the org.apache.commons.lang3.builder.ToStringBui
 
 {: .wpanel-info title="Consistent string representation"}
 >In Order to get a consistent string representation of the classes used in a project, we can
+>
 - use a toString generator, e.g eclipse 'Generate toString()...'
 - use a builder mechanism in the `toString()` implementation.
 
 >**From ToStringBuilder javadoc**
+>
 > - allowing field names
 > - handling all types consistently
 > - handling nulls consistently

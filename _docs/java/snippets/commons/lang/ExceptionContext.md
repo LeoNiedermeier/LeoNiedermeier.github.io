@@ -15,6 +15,7 @@ Whenever it is necessary to catch an exception in order to add some additional i
 Catch a exception and throw a new exception with additional information and the original exception. This results usually in a long and 'stacked' stack trace, but most of the time, only the stack trace of the original exception is interesting. The other stacktraces are just noise.
 
 An easy way to implement exception enhancement is to use the commons lang `ExceptionContext` classes:
+
 * `org.apache.commons.lang3.exception.ContextedRuntimeException` for unchecked exceptions and
 * `org.apache.commons.lang3.exception.ContextedException` for checked exceptions.
 

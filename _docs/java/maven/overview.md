@@ -26,6 +26,7 @@ Consider a project with layer and slice architecture. The base packages can grou
 
 **Examples**  
 a=common, b = shopping, c = catalog, x = ui, y = core, z = data  
+
 * m.a.x = m.common.ui
 * m.b.y = m.shopping.core
 * m.c.z = m.catalog.data
@@ -34,6 +35,7 @@ a=common, b = shopping, c = catalog, x = ui, y = core, z = data
 -> maven groupId:artifactId : m:a.x or m:m.a.x  
 
 If m.a.z consists of more modules:
+
 * m.a.z is the parent of the modules (has no source? -> no basepackage m.a.z?)
 * m.a.z.s1, m.a.z.s2 etc. are modules
 
@@ -41,6 +43,7 @@ If m.a.z consists of more modules:
 
 {: .wpanel-success}
 >In order to have unique jar names, the the jar name should be the jar's base package name (or the bundle symbolic name).  
+>
 * The maven artifactId is the base package name.  
 * The maven groupId is part of the artifactId.  
 * Split packages are not allowed and should not be neccesary.

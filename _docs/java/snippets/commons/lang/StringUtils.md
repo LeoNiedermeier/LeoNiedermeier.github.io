@@ -64,6 +64,7 @@ Joining elements to a single string with the `join(...)` method.
 ## Escaping and unescaping strings with StringEscapeUtils
 
 The class `org.apache.commons.lang3.StringEscapeUtils` provides methods to escape and unescape strings:
+
 * CSV
 * EcmaScript (JavaScript)
 * HTML
