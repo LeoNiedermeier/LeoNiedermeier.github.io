@@ -1,5 +1,14 @@
+---
+title: Target Platfporm
+tags: [maven]
+category: maven
+summary: "Define a target platform for dependencies."
+---
+
 # Motivation
+
 In larger environments, like corporate environments, we have at least three dependency layers
+
 * external dependencies
 * the corporate framework (depends on external)
 * the particular application (depends on external and corporate framework)
@@ -7,6 +16,7 @@ In larger environments, like corporate environments, we have at least three depe
 Most of the modules in the dependency tree have a different versioning scheme and a different release cycle. If we want to build a new version of our particular application, we are faced with dependencies on the same module with different version.
 
 Our application is deployed in an known and well defined environment like as a web application in application server. In such a case we have
+
 * dependencies / libraries provided by the environment
 * dependencies / libraries collected in a shared lib folder
 * dependencies / libraries bundled with the application
@@ -14,7 +24,7 @@ Our application is deployed in an known and well defined environment like as a w
 These constraints should be taken into account when defining the maven poms.
 
 # Implementation
-## The example
+## The Example
 Our application is a spring based web application. The application consists of two maven projects with submodules:
 
 **Project structure**
@@ -35,20 +45,20 @@ Therefore we have the following dependencies
 
 ## Define a target platform
 
-== info|title=What is a Target Platform? ==
+{: .info title="What is a Target Platform?"}
 'Target Platform' is a term in eclipse plug-in development:  
 *The Target Platform refers to the plug-ins which your workspace will be built and run against. It describes the platform that you are developing for.*
 <http://help.eclipse.org/luna/index.jsp?topic=%2Forg.eclipse.pde.doc.user%2Fconcepts%2Ftarget.htm>
 
-With a [bom](/java/maven/bill_of_material.md) (alias target platform) we can define a set of dependencies for our project. The target platform contains all dependencies for your project and the necessary artifacts for the deployment.
+With a [bom](./bill_of_material.html) (alias target platform) we can define a set of dependencies for our project. The target platform contains all dependencies for your project and the necessary artifacts for the deployment.
 
-== info|title=Define versions ==
+{: .info title"Define versions"}
  The bom is the central point for defining versions.
 
 
-** Example**
+**Example**
 
-== default|collapsible |title= pom.xml of target platform ==
+pom.xml of target platform
 
 ``` xml
 <?xml version="1.0" encoding="UTF-8"?>
@@ -116,9 +126,8 @@ With a [bom](/java/maven/bill_of_material.md) (alias target platform) we can def
 	
 ``` 
 
-== == 
 
-== default|collapsible |title= pom.xml of module ==
+pom.xml of module
 
 ``` xml
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
@@ -156,10 +165,10 @@ With a [bom](/java/maven/bill_of_material.md) (alias target platform) we can def
 	</dependencyManagement>
 </project>
 ```
-== ==
 
 
-== info ==
+
+{: .info}
 In the module pom we define the dependency management of the submodules. This overrides the dependency management of the target platform.
 
 ## Handling version changes of dependencies
@@ -168,7 +177,8 @@ If the example.base and example.ui projects have different release cycles, it is
 example.base depends on spring 3.2.1, example.ui depends on spring 3.2.4
 
 ### Change compatible versions
-If we have to deal only with compatible versions, we can use the maven dependency resolution together with the exclusions of all transitive dependencies (see [transitive_and_direct_dependencies](/java/maven/transitive_and_direct_dependencies.md))
+If we have to deal only with compatible versions, we can use the maven dependency resolution together with the exclusions of all transitive dependencies (see [Transitive and Direct Dependencies](./transitive_and_direct_dependencies.html))
+
 
 ### Change incompatible versions
 In this case we have to check, whether we have to change elements (code, configuration file, etc.) of the module. If not, we have nothing to do, else we have to build a new version.

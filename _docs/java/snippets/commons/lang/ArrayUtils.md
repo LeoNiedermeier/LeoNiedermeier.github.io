@@ -38,7 +38,7 @@ for (String string : ArrayUtils.nullToEmpty(names)) {
 }
 ~~~
 
-{: .wpanel-info title="Reduced complexity"}
+{: .info title="Reduced complexity"}
 With the use of `ArrayUtils.nullToEmpty(...)` instead of the `if` check, the complexity of the method is reduced (no extra execution branch) and you have to write less tests.
 
 ## Test for empty

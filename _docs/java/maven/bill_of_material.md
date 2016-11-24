@@ -1,17 +1,29 @@
+---
+title: Bill of Material
+tags: [maven]
+category: maven
+summary: ""
+---
+
 # Motivation
+
 In larger environments, like corporate environments, we have a lot of modules with for instance
+
 * some common dependencies
 * gathered in the same deployment unit like a web application
 
 In order to keep the dependencies and particularly the version numbers consistent, we can use the so called "Bill of Materials" mechanism.
 
 # Implementation
+
 Steps:
+
 * Define a bill of materials
 * Include it in the pom
 * Define dependencies 
 
 ## Define a bill of materials
+
 You define the dependencies of the bom in the dependencyManagement. There you can also define exclusions (for instance exclude commons logging from spring dependencies)
 
 ``` xml
@@ -44,12 +56,13 @@ You define the dependencies of the bom in the dependencyManagement. There you ca
 </project>
 ```
 
-== success ==
-** (/) Version numbers**  
+{: .success title="Version numbers"}  
 The version numbers in the dependency definition are the version numbers used in the importing poms.
 
 ## Include it in the pom
+
 The bom is referenced in a dependencyManagement dependency with
+
 * `<type>pom</type>`
 * `<scope>import</scope>`
 
@@ -91,9 +104,9 @@ The dependencies can be defined as usual, but without version:
 ...
 ```
 
-== success ==
-** (/) No version numbers**  
+{: .success title="No version numbers"}  
 Do **NOT** use version numbers in the dependency definition.
 
 # References
+
 * <http://maven.apache.org/guides/introduction/introduction-to-dependency-mechanism.html#Importing_Dependencies>

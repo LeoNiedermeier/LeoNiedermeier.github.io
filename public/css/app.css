@@ -1,63 +1,22 @@
 /* app css stylesheet */
-.wpanel, .wpanel-info, .wpanel-success {
-    margin: 20px 0;
-    padding: 10px;
-    border: none;
-    border-radius: 4px;
-}
-
-.wpanel p:last-child {
-    margin-bottom: 0;
-}
-
-.wpanel-success {
-    background-color: #dff0d8;
-}
-
-.wpanel-danger {
-    background-color: #fdf7f7;
-}
-
-.wpanel-warning {
-    background-color: #fcf8f2;
-}
-
-.wpanel-info {
-    background-color: #f4f8fa;
-}
-
-.wpanel-default {
-    background-color: #EEE;
-}
-
-.wpanel-notice {
-    background-color: #FCFCDD;
-}
-
-.wpanel-code {
-    background-color: #f5f5f5;
-}
-
-.wpanel-content hr {
-    margin-top: 10px;
-    margin-bottom: 10px;
-}
-
-.wpanel-content pre {
-    background-color: #f5f5f5;
-    border: none;
-    padding: 10px;
-}
-
 pre {
-    border: none;
+	border: none;
 }
 
-.wpanel-info::before, .wpanel-success::before {
-    content: attr(title);
-    display: block;
-    font-weight: bold;
-}
 a.active {
-  font-weight: bold;
+	font-weight: bold;
+}
+
+body {
+	padding-top: 70px;
+}
+
+blockquote {
+	font-size: 14px;
+}
+
+.success::before, .info::before {
+	content: attr(title);
+	display: block;
+	font-weight: bold;
 }

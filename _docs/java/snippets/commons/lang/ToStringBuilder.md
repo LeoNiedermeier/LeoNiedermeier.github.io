@@ -9,7 +9,7 @@ summary: Some example usages of the org.apache.commons.lang3.builder.ToStringBui
 
 # Overview
 
-{: .wpanel-info title="Consistent string representation"}
+{: .info title="Consistent string representation"}
 >In Order to get a consistent string representation of the classes used in a project, we can
 >
 - use a toString generator, e.g eclipse 'Generate toString()...'

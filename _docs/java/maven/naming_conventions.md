@@ -1,8 +1,8 @@
 ---
-title: Maven Overview
+title: Naming Conventions
 tags: [maven]
 category: maven
-summary: "Simple collection of best practices etc."
+summary: "Naming conventions for aritfact and group id."
 ---
 
 # Naming
@@ -17,6 +17,7 @@ summary: "Simple collection of best practices etc."
 If artifactId is the name of the jar, it has to be more or less unique. For  instance you can not deploy two jars with different groupId but the same artifactId in a web-inf/lib directory of a web application. Therefore one should avoid generic artifactIds like 'common' etc..
 
 Consider a project with layer and slice architecture. The base packages can grouped like:
+
 
 |        |Slice 1 | Slice 2 | Slice 3|
 |--------|--------|--------|--------|
@@ -41,7 +42,7 @@ If m.a.z consists of more modules:
 
 
 
-{: .wpanel-success}
+{: .success}
 >In order to have unique jar names, the the jar name should be the jar's base package name (or the bundle symbolic name).  
 >
 * The maven artifactId is the base package name.  

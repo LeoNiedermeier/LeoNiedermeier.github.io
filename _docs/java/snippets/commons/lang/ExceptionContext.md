@@ -67,7 +67,7 @@ public void outer() {
 }
 ```
 
-{: .wpanel-info title="Method chaining"}
+{: .info title="Method chaining"}
 >The `addContextValue`method of the `ContextedException` and `ContextedRuntimeException` returns the current instance. Therefore it is easy to add additional context values, especially when catching and re-throwing a exception.
 >
 ```java
@@ -90,5 +90,4 @@ try {
 
 Some links from <http://jenkov.com/>
 
-* [Exception Enrichment in Java](http://tutorials.jenkov.com/java-exception-handling/exception-enrichment.html "Exception Enrichment in Java")
-* [Java Exception Handling](http://jenkov.com/books/java-exception-handling/index.html, "Java Exception Handling")
+* [Exception Enrichment in Java](http://tutorials.jenkov.com/java-exception-handling/exception-enrichment.html)

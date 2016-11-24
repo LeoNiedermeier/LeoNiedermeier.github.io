@@ -1,0 +1,26 @@
+<div class="toc">
+
+    {% assign categoryToPapges = site.docs | group_by:"category" | sort: "name""%}
+
+    <ul class="nav nav-pills">
+        {% for categoryAndPages in categoryToPapges %}
+        <li role="presentation">
+            <a href="#section_{{ categoryAndPages.name }}"> {% if categoryAndPages.name !=''%} {{ categoryAndPages.name | replace: "_", " "}} {% else %} no category {% endif %} </a>
+        </li>
+        {% endfor %}
+    </ul>
+
+    {% for categoryAndPages in categoryToPapges %}
+    <section id="section_{{ categoryAndPages.name }}">
+        <h2>{% if categoryAndPages.name !=''%} {{ categoryAndPages.name | replace: "_", " "}} {% else %} no category {% endif %}</h2>
+        <div class="row">
+            {% assign sorted_pages = (categoryAndPages.items | sort: 'title') %} 
+            {% for current in sorted_pages %}
+            <div class="col-md-3">
+                <a class="{% if page.url == current.url %} active{% endif %}" href="{{ current.url }}">{{ current.title }}</a>
+            </div>
+            {% endfor %}
+        </div>
+    </section>
+    {% endfor %}
+</div>

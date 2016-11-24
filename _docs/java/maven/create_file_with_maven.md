@@ -1,4 +1,12 @@
+---
+title: Create File
+tags: [maven]
+category: maven
+summary: "Create a File with Maven"
+---
+
 # Motivation
+
 Sometimes it is desirable to write a simple file with maven. Examples are:
 * version.txt file with the version and some other information
 * ...
@@ -35,7 +43,9 @@ With the help of the maven-antrun-plugin and the ant echo task, it is quite easy
 </build>
 ```
 ## Conditionally create file
+
 The target element supports among other the following attributes:
+
 * if : The name of the property that must be set in order for this task. 
 * unless: The name of the property that must NOT be set in order for this task.
 
@@ -48,5 +58,6 @@ If we want to create a file when the property maven.create.file is *set* to any 
 ```
 
 # References
+
 * <http://maven.apache.org/plugins/maven-antrun-plugin/>
 * <https://ant.apache.org/manual/Tasks/echo.html> 
