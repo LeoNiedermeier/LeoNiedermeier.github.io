@@ -30,6 +30,7 @@ These constraints should be taken into account when defining the maven poms.
 Our application is a spring based web application. The application consists of two maven projects with submodules:
 
 **Project structure**
+
 ~~~
 example.base
     |---- example.base.core
