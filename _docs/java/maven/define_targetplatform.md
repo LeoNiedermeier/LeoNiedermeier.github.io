@@ -24,11 +24,13 @@ Our application is deployed in an known and well defined environment like as a w
 These constraints should be taken into account when defining the maven poms.
 
 # Implementation
+
 ## The Example
+
 Our application is a spring based web application. The application consists of two maven projects with submodules:
 
 **Project structure**
-```
+~~~
 example.base
     |---- example.base.core
     |---- example.base.web
@@ -37,8 +39,10 @@ example.ui
     |---- example.ui.core
     |---- example.ui.web
 
-```
+~~~
+
 Therefore we have the following dependencies
+
 * spring
 * slf4j as  logging framework
 * javax.servlet (provided by server)
