@@ -52,8 +52,8 @@ Therefore we have the following dependencies
 
 {: .info title="What is a Target Platform?"}
 'Target Platform' is a term in eclipse plug-in development:  
-*The Target Platform refers to the plug-ins which your workspace will be built and run against. It describes the platform that you are developing for.*
-<http://help.eclipse.org/luna/index.jsp?topic=%2Forg.eclipse.pde.doc.user%2Fconcepts%2Ftarget.htm>
+*The Target Platform refers to the plug-ins which your workspace will be built and run against. It describes the platform that you are developing for.*  
+See <http://help.eclipse.org/luna/index.jsp?topic=%2Forg.eclipse.pde.doc.user%2Fconcepts%2Ftarget.htm>
 
 With a [bom](./bill_of_material.html) (alias target platform) we can define a set of dependencies for our project. The target platform contains all dependencies for your project and the necessary artifacts for the deployment.
 
@@ -190,10 +190,14 @@ In this case we have to check, whether we have to change elements (code, configu
 
 ###  Different inherited versions
 If we use 3rd party libraries with dependencies to other libraries, it can happen that an other common library is used by this libraries, but with different versions.
+
 * compatible version: use the newest
-* incompatible versions: we can use only one of the libraries with the common dependency. In some cases the libraries may work together, for instance because they do not depend on incompatible code. But this is a very risky assumption.
+* incompatible versions: we can use only one of the libraries with the common dependency. In some cases the libraries may work together, for instance because they do not depend 
+
+on incompatible code. But this is a very risky assumption.
 
 **Example**
+
 * A (our application) depends on B and C (3rd party libraries) 
 * B depends on X version 1.0.0
 * C depends on X version 2.0.0

@@ -8,6 +8,7 @@ a.active {
 }
 
 body {
+	
 }
 
 blockquote {
@@ -48,13 +49,12 @@ Navbar
 
 .navbar-default .navbar-toggle .icon-bar {
 	height: 3px;
-	background-color: #4582ec;
 }
 
-.navbar-default .navbar-toggle {
-	border-color: #4582ec;
+.navbar-toggle {
+ border: 2px solid;
 }
 
-.navbar-brand{
+.navbar-brand {
 	font-size: 25px;
 }
