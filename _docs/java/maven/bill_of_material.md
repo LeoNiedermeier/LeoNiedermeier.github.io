@@ -2,7 +2,7 @@
 title: Bill of Material
 tags: [maven]
 category: maven
-summary: ""
+summary: "Difine the dependencies with a bill of material."
 ---
 
 # Motivation
