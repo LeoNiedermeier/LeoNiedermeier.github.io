@@ -53,3 +53,7 @@ $(document).ready(
     $("table").addClass("table table-bordered table-striped");
 });
 ~~~
+
+# Site info
+
+Generatd: {{ site.time | date_to_rfc822 }}
