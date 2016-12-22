@@ -27,6 +27,14 @@ Navbar
 	float: none;
 }
 
+.navbar-page-title {
+	font-size: 25px;
+	padding: 15px;
+	line-height: 20px;
+	text-align: center;
+	color: #eaf8ff;
+}
+
 .navbar-toggle {
 	display: block;
 }
@@ -52,7 +60,7 @@ Navbar
 }
 
 .navbar-toggle {
- border: 2px solid;
+	border: 2px solid;
 }
 
 .navbar-brand {
