@@ -54,12 +54,14 @@ In this case the `NumberFormatException` which is thrown from `Integer::valueOf`
 <div class="danger" title="Returning Stream from DAO method with @Transactional annotation." markdown="1">
 
 Consider a typical spring application with a DAO which has a method like following: 
+
 ~~~java
 @Transactional
 Stream<Person> getAll(){
 	return ...
 }
 ~~~
+
 Note that the method is annotated with `@Transactional`. In the case that the returned stream throws an exception during processing, the `@Transactional` has **no** effect. Because the stream processing is executed outside the `@Transactional` context (not processed in the `getAll` method).
 
 </div>
