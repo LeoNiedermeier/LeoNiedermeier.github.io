@@ -40,15 +40,15 @@ public void service() {
 		System.out.println(exception.getMessage());
 		/* prints
 		Exception thrown from DataBase
-        Exception Context:
-	    [1:query=select * from table]
+		Exception Context:
+		[1:query=select * from table]
         ---------------------------------
 		*/
 		throw exception.addContextValue("Service", "Context information of service");
 	}
 }
 public void outer() {
-    try
+	try
 	{
 		service();
 	}
@@ -56,10 +56,10 @@ public void outer() {
 	{
 		/* prints
 		Exception thrown from DataBase
-        Exception Context:
-	    [1:query=select * from table]
-	    [2:Service=Context information of service]
-	    ---------------------------------
+		Exception Context:
+		[1:query=select * from table]
+		[2:Service=Context information of service]
+		---------------------------------
 		*/
 		System.out.println(exception.getMessage());
 		}

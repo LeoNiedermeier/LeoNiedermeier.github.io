@@ -76,3 +76,8 @@ By Joshua Kerievsky
 
 **[Implementation Patterns ](https://www.amazon.de/Implementation-Patterns-Kent-Beck/dp/0321413091)**  
 By Kent Beck
+
+# Misc
+
+**[Next Generation Databases NoSQL and Big Data](http://www.apress.com/us/book/9781484213308)**  
+By Guy Harrison
