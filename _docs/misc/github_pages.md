@@ -31,6 +31,15 @@ Some text
 {: .success title="My Title"}
 Some text
 
+~~~  markdown
+{: .danger title="My Title"}
+Some text
+~~~
+
+{: .danger title="My Title"}
+Some text
+
+
 
 ## Backup
 The title is set by css:

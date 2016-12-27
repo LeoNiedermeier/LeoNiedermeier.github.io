@@ -15,7 +15,7 @@ blockquote {
 	font-size: 14px;
 }
 
-.success::before, .info::before {
+.alert::before {
 	content: attr(title);
 	display: block;
 	font-weight: bold;

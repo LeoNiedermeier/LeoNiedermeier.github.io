@@ -41,7 +41,7 @@ From <https://docs.oracle.com/javase/8/docs/api/java/util/Comparator.html#thenCo
 > Returns a lexicographic-order comparator with a function that extracts a Comparable sort key.
 
 {: .info title="Note"}
-The key extractor og this methods has a return type which implements `Comparable`
+The key extractor of this methods has a return type which implements `Comparable`
 
 Example:
 
