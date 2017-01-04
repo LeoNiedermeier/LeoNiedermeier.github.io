@@ -28,6 +28,7 @@ export SWT_GTK3=0
 /home/lubuntu/bin/eclipse/eclipse
 ~~~
 
+Depending on the theme the ToolTips background color should be customized:
 
 ![Customize Look and Feel - Color](setup_virtual_box_for_development/customizeLookAndFeel.png)
 
