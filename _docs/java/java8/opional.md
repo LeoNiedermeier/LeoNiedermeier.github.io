@@ -44,6 +44,8 @@ Person person = ...
 String street = Optional.ofNullable(person).map(Person::getAddress).map(Address::getStreet).orElse("Default Street");
 ~~~
 
+The resulting code is shorter and the probability of making a mistake is substantially reduced.
+
 # References
 
 * <http://www.oracle.com/technetwork/articles/java/java8-optional-2175753.html>
