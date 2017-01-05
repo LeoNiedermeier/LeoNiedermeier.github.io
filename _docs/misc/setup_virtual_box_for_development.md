@@ -5,6 +5,23 @@ category: misc
 summary: "Setup a VirtualBox for development with java, eclipse etc."
 ---
 
+# General
+
+<div class="danger" title="Dynamically allocated image" markdown="1">
+Using a **dynamically allocated image** does **NOT** mean that the file system size of the guest system grows dynamically. It means that the image file will be grow on demand. Therefore select a appropriate size of the guest file system. 
+
+> This will initially be very small and not occupy any space for unused virtual disk sectors, but will grow every time a disk sector is written  
+(https://www.virtualbox.org/manual/ch05.html) 
+
+</div>
+
+## Installing Guest Additions
+ 
+ Required packages:
+ 
+* make
+* gcc
+
 # Tweaks
 
 ## Set a Theme
