@@ -7,6 +7,8 @@ summary: "Setup a VirtualBox for development with java, eclipse etc."
 
 # General
 
+## VirtualBox
+
 <div class="danger" title="Dynamically allocated image" markdown="1">
 Using a **dynamically allocated image** does **NOT** mean that the file system size of the guest system grows dynamically. It means that the image file will be grow on demand. Therefore select a appropriate size of the guest file system. 
 
@@ -14,6 +16,30 @@ Using a **dynamically allocated image** does **NOT** mean that the file system s
 (https://www.virtualbox.org/manual/ch05.html) 
 
 </div>
+
+## Installing Lubuntu
+
+<http://lubuntu.net/>
+
+<div class="success" title="Partition" markdown="1">
+We do not use the default partitioning. If the swap partition is left of the root partition, it is easier to grow the root partition. Resizing the size of a VirtualBox disk needs two steps
+
+1. Resize the VirtualBox disk in the host
+2. Resize the partitions in the guest
+
+See for instance <http://derekmolloy.ie/resize-a-virtualbox-disk/>
+</div>
+
+![Installation Tye](setup_virtual_box_for_development/lubuntu_install_1.png  "Installation Type")
+
+![Partition Create](setup_virtual_box_for_development/lubuntu_install_2.png  "Partition Create")
+
+![Swap Area](setup_virtual_box_for_development/lubuntu_install_3.png  "Swap Area")
+
+![Root](setup_virtual_box_for_development/lubuntu_install_4.png  "Root")
+
+![Partition](setup_virtual_box_for_development/lubuntu_install_5.png  "Partition")
+
 
 ## Installing Guest Additions
  
@@ -71,5 +97,3 @@ Name[en]=Eclipse
 ~~~
 
 The `Exec` path is to the `eclipse.sh` file mentioned above.
-
-# References
