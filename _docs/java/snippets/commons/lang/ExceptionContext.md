@@ -22,55 +22,54 @@ An easy way to implement exception enhancement is to use the commons lang `Excep
 
 # How to use
 
-```java
+## With Exception Enhancement
+
+~~~java
 private void dataBase()
 {
-	throw new ContextedRuntimeException("Exception thrown from DataBase")
-	              .addContextValue("query", "select * from table");
+    throw new ContextedRuntimeException("Exception thrown from DataBase")
+                      .addContextValue("query", "select * from table");
 }
 
 
 public void service() {
-	try
-	{
-		dataBase();
-	}
-	catch(ContextedRuntimeException exception)
-	{
-		System.out.println(exception.getMessage());
-		/* prints
-		Exception thrown from DataBase
-		Exception Context:
-		[1:query=select * from table]
-        ---------------------------------
-		*/
-		throw exception.addContextValue("Service", "Context information of service");
-	}
+    try{
+        dataBase();
+    }
+    catch(ContextedRuntimeException exception)
+    {
+        System.out.println(exception.getMessage());
+        /* prints
+                Exception thrown from DataBase
+                Exception Context:
+                [1:query=select * from table]
+                ---------------------------------
+        */
+        // enhance the current exception and rethrow it
+        throw exception.addContextValue("Service", "Context information of service");
+    }
 }
 public void outer() {
-	try
-	{
-		service();
-	}
-	catch(ContextedRuntimeException exception)
-	{
-		/* prints
-		Exception thrown from DataBase
-		Exception Context:
-		[1:query=select * from table]
-		[2:Service=Context information of service]
-		---------------------------------
-		*/
-		System.out.println(exception.getMessage());
-		}
-	}
+    try{
+        service();
+    }
+    catch(ContextedRuntimeException exception)
+    {
+        /* prints
+                Exception thrown from DataBase
+                Exception Context:
+                [1:query=select * from table]
+                [2:Service=Context information of service]
+                ---------------------------------
+        */
+        System.out.println(exception.getMessage());
+    }
 }
-```
+~~~
 
-{: .info title="Method chaining"}
->The `addContextValue`method of the `ContextedException` and `ContextedRuntimeException` returns the current instance. Therefore it is easy to add additional context values, especially when catching and re-throwing a exception.
->
-```java
+<div class="info" title="Method chaining" markdown="1">
+The `addContextValue`method of the `ContextedException` and `ContextedRuntimeException` returns the current instance. Therefore it is easy to add additional context values, especially when catching and re-throwing a exception.
+~~~java
 try {
       ...
     } catch (Exception e) {
@@ -79,7 +78,50 @@ try {
            .addContextValue("Amount Posted", amountPosted)
            .addContextValue("Previous Balance", previousBalance)
 }
-```
+~~~
+</div>
+
+## Working with Error Codes
+
+In some environments an error code can be helpful in order to provide a way to identify the exception without providing to much details to the outside.
+
+Define an interface like:
+
+~~~java
+interface ErrorCode {
+    String ERROR_CODE = "ERROR_CODE";
+    String code();
+}
+~~~
+
+There can be multiple implementations of this interface. For instance one can use a `enun`:
+
+~~~java
+enum MyErrorCodes implements ErrorCode {
+    MY_EC_1,
+    MY_EC_2;
+
+    public String code() {
+        return name();
+    }
+}
+~~~
+
+The error codes can be added to the `ContextedRuntimeException` like any other contextes value:
+
+~~~java
+throw new ContextedRuntimeException("Some Error")//
+    .addContextValue(ErrorCode.ERROR_CODE, MyErrorCodes.MY_EC_1)
+    .addContextValue(ErrorCode.ERROR_CODE, MyErrorCodes.MY_EC_2);
+    
+/* prints
+    Exception Context:
+    [1:ERROR_CODE=MY_EC_1]
+    [2:ERROR_CODE=MY_EC_2]
+*/
+~~~
+
+Note that there can be more than one error code added. This can be useful in the case of exception enhancement.
 
 
 # References
