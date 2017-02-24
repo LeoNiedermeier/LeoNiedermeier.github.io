@@ -1,5 +1,5 @@
 ---
-title: Target Platfporm
+title: Target Platform
 tags: [maven]
 category: maven
 summary: "Define a target platform for dependencies."
