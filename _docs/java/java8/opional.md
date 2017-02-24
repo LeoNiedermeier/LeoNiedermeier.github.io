@@ -46,6 +46,9 @@ String street = Optional.ofNullable(person).map(Person::getAddress).map(Address:
 
 The resulting code is shorter and the probability of making a mistake is substantially reduced.
 
+{: .info title="Helper Class"}
+In this context the `java.util.Optional` plays a role of a bean accessor helper class. The naming for helper class could be like `PropertyAccessor.with(person).then(Person::getAddress).then(Address::getStreet).orElse("Default Street")`. 
+
 # References
 
 * <http://www.oracle.com/technetwork/articles/java/java8-optional-2175753.html>
