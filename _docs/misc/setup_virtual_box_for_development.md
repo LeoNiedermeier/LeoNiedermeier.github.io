@@ -97,3 +97,21 @@ Name[en]=Eclipse
 ~~~
 
 The `Exec` path is to the `eclipse.sh` file mentioned above.
+
+## Change Key Shortcut F11
+
+Eclipse binds the key F11 to "Debug the selected resource or active editor". Lubuntu binds F11 to "Toggle Fullscreen". In order to change comment out the `action` associated with F11 in the file `~/.config/openbox/lubuntu-rc.xml`
+
+~~~
+<keybind key="F11">
+  <!-- <action name="ToggleFullscreen"/> -->
+</keybind>
+~~~
+
+Then reconfigure the openbox window manager by executing the following shell command
+
+~~~bash
+openbox --reconfigure
+~~~
+
+see <http://askubuntu.com/questions/354664/how-do-i-actually-disable-f11-fullscreen-on-lubuntu-13-04>
