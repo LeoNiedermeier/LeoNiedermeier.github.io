@@ -114,4 +114,6 @@ Then reconfigure the openbox window manager by executing the following shell com
 openbox --reconfigure
 ~~~
 
+Same can be done with Ctrl+F11 (Run the selected resource or active editor) (lubuntu: "C-F11")
+
 see <http://askubuntu.com/questions/354664/how-do-i-actually-disable-f11-fullscreen-on-lubuntu-13-04>
