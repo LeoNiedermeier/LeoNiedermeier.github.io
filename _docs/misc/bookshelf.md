@@ -87,6 +87,10 @@ By Steve Northover
 **[Component-Oriented Development and Assembly: Paradigm, Principles, and Practice Using Java](https://www.crcpress.com/Component--Oriented-Development-and-Assembly-Paradigm-Principles-and/Manickam-Sangeetha-Subrahmanya/p/book/9781466580992)**  
 By Piram Manickam, S. Sangeetha, S. V. Subrahmanya
 
+
+**[Creating Maintainable APIs - A Practical, Case-Study Approach](http://www.apress.com/us/book/9781484221952)**  
+By Ervin Varga 
+
 **[Implementation Patterns ](https://www.amazon.de/Implementation-Patterns-Kent-Beck/dp/0321413091)**  
 By Kent Beck
 
