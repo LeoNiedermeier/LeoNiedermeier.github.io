@@ -7,6 +7,9 @@ summary: ""
 
 # Java
 
+**[Apache Solr A Practical Approach to Enterprise Search](http://www.apress.com/us/book/9781484210710)**
+By Shahi, Dikshant
+
 **[Java 8 Lambdas](http://shop.oreilly.com/product/0636920030713.do)**  
 By Richard Warburton
 
