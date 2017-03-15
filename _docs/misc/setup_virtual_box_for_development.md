@@ -117,3 +117,40 @@ openbox --reconfigure
 Same can be done with Ctrl+F11 (Run the selected resource or active editor) (lubuntu: "C-F11")
 
 see <http://askubuntu.com/questions/354664/how-do-i-actually-disable-f11-fullscreen-on-lubuntu-13-04>
+
+## Slow Boot of Lubuntu
+
+A slow boot can have different causes. One can be that the swap mount takes a long time. This seems to be caused by invalid uuid entries in `/etc/fstab`. To check this, execute a `ls -al /dev/disk/by-uuid/` and compare it with  `/etc/fstab` entries.
+
+Example:
+
+~~~bash
+dev@dev-box:~$ ls -al /dev/disk/by-uuid/
+total 0
+drwxr-xr-x 2 root root 100 Mär 15 19:46 .
+drwxr-xr-x 7 root root 140 Mär 15 19:46 ..
+lrwxrwxrwx 1 root root   9 Mär 15 19:46 2017-03-08-15-05-51-00 -> ../../sr0
+lrwxrwxrwx 1 root root  10 Mär 15 19:46 834ae6f0-0a33-4542-a717-0120299a97f5 -> ../../sda1
+lrwxrwxrwx 1 root root  10 Mär 15 19:46 e39c41f4-6196-45bf-8cd9-0a98c67094de -> ../../sda5
+dev@dev-box:~$ 
+~~~
+
+The  `/etc/fstab`
+~~~
+# /etc/fstab: static file system information.
+#
+# Use 'blkid' to print the universally unique identifier for a
+# device; this may be used with UUID= as a more robust way to name devices
+# that works even if disks are added and removed. See fstab(5).
+#
+# <file system> <mount point>   <type>  <options>       <dump>  <pass>
+# / was on /dev/sda5 during installation
+UUID=e39c41f4-6196-45bf-8cd9-0a98c67094de /               ext4    errors=remount-ro 0       1
+# swap was on /dev/sda1 during installation
+UUID=834ae6f0-0a33-4542-a717-000000000000 none            swap    sw              0       0
+~~~
+
+If the uuids are different (as in our example for `/dev/sda1`), 
+
+* open an editor with  `sudo leafpad /etc/fstab`, change the value and save it
+* Maybe execute : `sudo swapoff -a` and `sudo swapon -a` 
