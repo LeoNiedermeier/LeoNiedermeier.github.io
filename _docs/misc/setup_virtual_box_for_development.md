@@ -154,3 +154,5 @@ If the uuids are different (as in our example for `/dev/sda1`),
 
 * open an editor with  `sudo leafpad /etc/fstab`, change the value and save it
 * Maybe execute : `sudo swapoff -a` and `sudo swapon -a` 
+
+See <http://askubuntu.com/questions/612600/15-04-very-slow-boot> or <https://ubuntuforums.org/showthread.php?t=1754867>
