@@ -156,3 +156,7 @@ If the uuids are different (as in our example for `/dev/sda1`),
 * Maybe execute : `sudo swapoff -a` and `sudo swapon -a` 
 
 See <http://askubuntu.com/questions/612600/15-04-very-slow-boot> or <https://ubuntuforums.org/showthread.php?t=1754867>
+
+## Disable Lock Screen
+
+Open XFce Power Manager via "Preferences" > "Power Manager", change to tab "Security". There you can change the Light Locker settings.
