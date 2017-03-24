@@ -7,7 +7,7 @@ summary: "Notes about Eclipse"
 
 ## Change Author and Committers Name and Email
 
-* Gloal
+* Global
 * Per Project
 
 ### Project Specific Settings
@@ -23,4 +23,4 @@ Add specific git properties
 * "user.name"
 
 Tip:
-You can use the "XYZ@users.noreply.github.com" email, see <https://help.github.com/articles/keeping-your-email-address-private/>
+You can use the "{myGithubUserName}@users.noreply.github.com" email, see <https://help.github.com/articles/keeping-your-email-address-private/>
