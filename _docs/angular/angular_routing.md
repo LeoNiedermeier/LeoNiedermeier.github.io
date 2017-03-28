@@ -9,6 +9,9 @@ summary: "Angular Routing"
 
 WORK IN PROGRESS
 
+??? Open Point: URL and Bookmarking:
+The URL changes due to rooting. How to handle bookmarking?
+
 ## routerLink Directive
 
 A static link target uses the `routerLink` without binding:
