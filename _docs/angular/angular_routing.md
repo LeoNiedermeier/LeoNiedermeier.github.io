@@ -21,7 +21,7 @@ A static link target uses the `routerLink` without binding:
 A dynamically calculated target uses the `[routerLink]`. 
 Add
 
-~~~html
+~~~
 <tr class="" *ngFor="let myElement of someArray; let i = index">
     ...
     <a [routerLink]="['/my-target', { 'parameter1': myElement.property1}]">Dynamic Link with matrix variables</button>
