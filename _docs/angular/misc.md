@@ -9,9 +9,10 @@ Some unrelated stuff
 
 # Overlay
 
-Oberlay with Font Awedome and Bootstrap 4. Note that the overlay is always shown. (The bootstrap examples show the overlay on button click).
+Oberlay with Font Awesome and Bootstrap 4. Note that the overlay is always shown. (The bootstrap examples show the overlay on button click).
 
 ~~~html
+<!-- load css from cdns: -->
 <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" rel="stylesheet">
 <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
 
