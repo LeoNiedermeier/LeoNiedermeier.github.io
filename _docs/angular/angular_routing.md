@@ -62,7 +62,8 @@ export class MyResolver implements Resolve<MyData> {
   constructor() {
   }
 
-  resolve(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<MyData> {
+  resolve(routeSnapshot: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<MyData> {
+    // here we have access to parameters via e.g. routeSnapshot.params['myParam'];
     // return Observable<MyData> object.
     return ...;
   }
