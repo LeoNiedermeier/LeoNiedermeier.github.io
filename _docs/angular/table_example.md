@@ -79,6 +79,8 @@ export class TableSorterComponent implements OnInit {
 
 ## The TableSorterEventService
 
+![](./table_example/table_sorter_events.png)
+
 The comunication between the various `TableSorterComponent` instances and the host component is realized by a simple event service which is based on RxJs `Subject`: 
 
 ~~~typescript
