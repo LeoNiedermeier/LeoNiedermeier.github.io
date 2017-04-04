@@ -34,6 +34,59 @@ Add
 
 results in `/myTarget;parameter1=propertyValue1`.
 
+# Fetch data With Resolver
+
+For details see also <https://angular.io/docs/ts/latest/guide/router.html#!#resolve-guard>
+
+In the rout definition we have a `resolve` property defined. The property is an object literal. The properties of this object describe the data. The value of a property is the resolver class.
+
+~~~typescript
+// route definition
+{ path: 'myPath', component: MyComponent, resolve: { myData: MyDataResolver } },
+~~~
+
+The `MyDataResolver` has to be defined a a `provider` od a `NgModule`:
+
+~~~typescript
+@NgModule({
+  ...
+  providers: [MyDataResolver]
+})
+~~~
+
+The `MyResolver` class implements the `Resolve` interface.
+
+~~~typescript
+export class MyResolver implements Resolve<MyData> {
+  
+  constructor() {
+  }
+
+  resolve(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<MyData> {
+    // return Observable<MyData> object.
+    return ...;
+  }
+}
+
+~~~
+
+# Subscribe to Resolved Data
+
+For details see also <https://angular.io/docs/ts/latest/guide/router.html#!#resolve-guard>
+
+
+
+## Miscellaneous
+
+### Access to URL Parameters
+
+The simples way to accessed url parameters is via the `ActivatedRouteSnapshot` or `ActivatedRoute` objects. 
+
+~~~typescript
+route: ActivatedRoute = ....
+route.snapshot.params['myParam']
+~~~
+
 # References
 
 * <https://angular.io/docs/ts/latest/guide/router.html>
