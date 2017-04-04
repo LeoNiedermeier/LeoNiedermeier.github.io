@@ -71,11 +71,24 @@ export class MyResolver implements Resolve<MyData> {
 
 ~~~
 
-# Subscribe to Resolved Data
+# Subscribe to Resolved Data in the Component
 
 For details see also <https://angular.io/docs/ts/latest/guide/router.html#!#resolve-guard>
 
+The `ActivatedRoute` object is injected into the constructor of the component. The data provided by the resolver can be retrieved in the component by subscribing to the `ActivatedRoute.property`. 
 
+~~~typescript
+constructor(private route: ActivatedRoute, ....)
+...
+route.data.subscribe((data: { myData: MyData }) => {
+      // We do change the array, therefore copy it in other not change the original array
+      let inputData: MyData = data.myData;
+      ...
+    });
+~~~
+
+{: .info title="Nested Path"}
+The resolved data is provided by a parameter with the name 'data'. The resolved objects are nested in this object. Therefore we have to access the resolved data with the path prefix 'data.'. In the example the resolbed object is stored in the 'myData' property. Therefore we have to access is `data.myData`.
 
 ## Miscellaneous
 
