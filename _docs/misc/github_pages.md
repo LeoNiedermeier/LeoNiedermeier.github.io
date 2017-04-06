@@ -63,6 +63,33 @@ $(document).ready(
 });
 ~~~
 
+# HTML in Markdown PAge
+
+HTML can be uses in the markdown, see <https://kramdown.gettalong.org/syntax.html#html-blocks>
+
+If the content of the html should be parsed as marksown, add a `markdown=1` attribute.
+
+
+~~~html
+<div class="danger" title="My Danger Title" markdown="1">
+...
+~~~html
+<div class="danger" title="My Danger Title" markdown="1">
+~~~
+...
+</div>
+~~~
+
+remders like 
+
+<div class="danger" title="My Danger Title" markdown="1">
+...
+~~~html
+<div class="danger" title="My Danger Title" markdown="1">
+~~~
+...
+</div>
+
 # Site info
 
 
