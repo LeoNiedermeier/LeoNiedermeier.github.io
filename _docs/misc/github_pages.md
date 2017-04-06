@@ -73,9 +73,9 @@ If the content of the html should be parsed as marksown, add a `markdown=1` attr
 ~~~html
 <div class="danger" title="My Danger Title" markdown="1">
 ...
-~~~html
+~ ~ ~html
 <div class="danger" title="My Danger Title" markdown="1">
-~~~
+~ ~ ~
 ...
 </div>
 ~~~
