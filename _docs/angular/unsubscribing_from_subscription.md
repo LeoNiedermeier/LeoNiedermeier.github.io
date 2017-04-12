@@ -21,7 +21,7 @@ in a subscription (see above), the object can not be garbage collected. Worst it
 
 The need for unsubscribing depends on
 
-* Lifetime of Objects: If the subscriber has a shorter lifetime as the `Observable`, then unsubscribe
+* Lifetime of objects: If the subscriber has a shorter lifetime as the `Observable`, then unsubscribe
 * Infiniteness of sequence: If the `Observable` produces a finite sequence and calls `complete` or `error`, no need for unsubscribe
 
 ## Solution
