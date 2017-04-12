@@ -7,39 +7,6 @@ summary: "Diverse Notes about Angular 2"
 
 Some unrelated stuff
 
-# Unsubscribing from Subscription
-
-See <https://angular.io/docs/ts/latest/guide/router.html>
-
-> When subscribing to an observable in a component, you almost always arrange to unsubscribe when the component is destroyed.
-> There are a few exceptional observables where this is not necessary. The ActivatedRoute observables are among the exceptions.
-> The ActivatedRoute and its observables are insulated from the Router itself. The Router destroys a routed component when it is no longer needed and the injected ActivatedRoute dies with it.
-> Feel free to unsubscribe anyway. It is harmless and never a bad practice.
-
-and <http://stackoverflow.com/questions/38008334/angular2-rxjs-when-should-i-unsubscribe-from-subscription>
-
-~~~typescript
-
-import 'rxjs/add/operator/takeUntil';
-
-... implements OnDestroy, OnInit {
-    private ngUnsubscribe: Subject<void> = new Subject<void>();
-
-   
-    ngOnInit() {
-        this.myThingService.getThings()
-              // this is important:
-            .takeUntil(this.ngUnsubscribe)
-            .subscribe(things => console.log(things));
-    }
-
-    ngOnDestroy() {
-        this.ngUnsubscribe.complete();
-    }
-}
-~~~
-
-
 # Overlay
 
 Oberlay with Font Awesome and Bootstrap 4. Note that the overlay is always shown. (The bootstrap examples show the overlay on button click).
