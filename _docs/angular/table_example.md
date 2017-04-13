@@ -11,6 +11,8 @@ Some experiments with a table component in Angular.
 
 # Paging
 
+![](./table_example/table_pagination_component.png)
+
 ## The Pagination Component
 
 The template has the following structure:
