@@ -127,7 +127,7 @@ Note that most actions require a call to `recalculatePages()`.
 
 ## Use the Pagination Component in a Component with a Table
 
-The `PaginatorAsViewChild` is used a a `ViewChild` of the parent component. The reason for this is the two way communicatuin between them.
+The `PaginatorAsViewChild` is used a a `ViewChild` of the parent component. The reason for this is the two way communication between them. Angular injects the first child of the type due to the `@ViewChild(PaginatorAsViewChild)` annotation. 
 
 ~~~typescript
   @ViewChild(PaginatorAsViewChild)
@@ -147,7 +147,7 @@ The `PaginatorAsViewChild` holds the data which should be shown on in the table.
   }
 ~~~
  
-The input data can be set at the right place, like the `ngOnInit` method: 
+The input data can be set at the right place, like the `ngAfterViewInit` method:
  
 ~~~typescript
   ...
@@ -155,6 +155,8 @@ The input data can be set at the right place, like the `ngOnInit` method:
   this.paginatorComponent.setData(inputData);
   ...
 ~~~
+
+It is important to respect the Angular lifecycle and the point of time when Angular injects the view child. Before the injection the view child field (`this.paginatorComponent`) is simply null.
 
 # Sorting
 
