@@ -11,7 +11,7 @@ summary: "Java 8 Optional class and how to use"
 (<http://stackoverflow.com/questions/26327957/should-java-8-getters-return-optional-type/26328555#26328555>)
 
 {: .info title="Not Serializable"}
-`Optioal` does not implement `Serializable`. 
+`Optional` does not implement `Serializable`. 
 (see also <http://stackoverflow.com/questions/24547673/why-java-util-optional-is-not-serializable-how-to-serialize-the-object-with-suc>)
 
 Other interesting things can be found at <http://blog.codefx.org/java/dev/design-optional/>
