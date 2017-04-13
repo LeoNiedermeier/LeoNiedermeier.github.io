@@ -7,6 +7,8 @@ summary: "Angular table example with angular and bootstrap 4"
 
 # Overview
 
+Some experiments with a table component in Angular.
+
 # Paging
 
 ## The Pagination Component
