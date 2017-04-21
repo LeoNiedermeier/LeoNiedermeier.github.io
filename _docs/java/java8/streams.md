@@ -34,19 +34,19 @@ Exceptions which are thrown due to intermediate operations occur when the stream
 
 ~~~java
 
-public void test(){
-		integerStream().forEach(System.out::println);
-	}
+public void test() {
+    integerStream().forEach(System.out::println);
+}
 
-	private Stream<Integer> integerStream() {
-		try {
-			return Stream.of("1","noNumber","3").map(Integer::valueOf);
-		}
-		catch (Exception e) {
-			e.printStackTrace();
-		}
-		return Stream.empty();
+private Stream<Integer> integerStream() {
+    try {
+        return Stream.of("1","noNumber","3").map(Integer::valueOf);
+    }
+    catch (Exception e) {
+        e.printStackTrace();
 	}
+    return Stream.empty();
+}
 ~~~
 
 In this case the `NumberFormatException` which is thrown from `Integer::valueOf` due to parse errors of "noNumber" is **not** catched from the catch block in the `integerStream` method. The Exception is thrown from the `integerStream` method.
