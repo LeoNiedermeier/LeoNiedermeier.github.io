@@ -9,7 +9,7 @@ summary: "Java 8 Streams"
 
 ## Filters
 
-## Filter nulls
+### Filter nulls
 
 ~~~ java
 
