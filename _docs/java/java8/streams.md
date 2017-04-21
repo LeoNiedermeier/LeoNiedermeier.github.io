@@ -44,7 +44,7 @@ private Stream<Integer> integerStream() {
     }
     catch (Exception e) {
         e.printStackTrace();
-	}
+    }
     return Stream.empty();
 }
 ~~~
