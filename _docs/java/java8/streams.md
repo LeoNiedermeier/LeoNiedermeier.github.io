@@ -39,7 +39,7 @@ public void test(){
 	}
 
 	private Stream<Integer> integerStream() {
-		try{
+		try {
 			return Stream.of("1","noNumber","3").map(Integer::valueOf);
 		}
 		catch (Exception e) {
@@ -70,6 +70,64 @@ Note that the method is annotated with `@Transactional`. In the case that the re
 Do not return streams which have (maybe hidden) processing dependencies to the context.
 
 
+# Dynamically Create a Stream with Limited Number of Elements 
+
+With the help of classes
+
+* `java.util.stream.StreamSupport`
+* `java.util.Spliterators`
+* `java.util.Iterator<Integer>`
+
+one can create a stream with a limited (but unknown) number of elements.
+
+Example: 
+
+~~~java
+Iterator<Integer> iter = new Iterator<Integer>() {
+    Random rand = new Random();
+    
+    public boolean hasNext() {
+        // Iterator has a random number of elements:
+        return rand.nextInt(100) < 90;
+    }
+
+    public Integer next() {
+        return Integer.valueOf(rand.nextInt(100));
+    }
+};
+
+Stream<Integer> stream = 
+    StreamSupport.stream(Spliterators.spliteratorUnknownSize(iter, Spliterator.ORDERED | Spliterator.NONNULL), false);
+    // for details see javadoc 
+    // https://docs.oracle.com/javase/8/docs/api/java/util/stream/StreamSupport.html
+    // https://docs.oracle.com/javase/8/docs/api/java/util/Spliterators.html
+stream.forEach(System.out::println);
+~~~
+
+
+Examples:
+
+Read lines with `java.io.BufferedReader.lines()` with enumeration
+    Via Enumeration -> Interator kann man über eine Enumeation streamen
+
+~~~java 
+Enumeration<T> e = ...
+Stream<T> stream =   StreamSupport.stream(Spliterators.spliteratorUnknownSize(new Iterator<T>() {
+      public T next() {
+        return e.nextElement();
+      }
+
+      public boolean hasNext() {
+        return e.hasMoreElements();
+      }
+    }, Spliterator.ORDERED), false);
+~~~
+
+
+Or one can use a utils class which transforms an `Enumeration` to an `Iterator` like  `org.springframework.util.CollectionUtils.toIterator(Enumeration<E>)`
+
+
 # References
 
 * <http://stackoverflow.com/questions/24676877/should-i-return-a-collection-or-a-stream>
+* <https://docs.oracle.com/javase/8/docs/api/java/util/stream/StreamSupport.html>
