@@ -1,5 +1,5 @@
 ---
-title: Diverse Eclipse Notes
+title: Eclipse and Git
 tags: [eclipse]
 category: eclipse
 summary: "Notes about Eclipse"
