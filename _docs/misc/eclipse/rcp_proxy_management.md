@@ -22,7 +22,7 @@ In Eclipse kann man den Proxy über die Preferences \-> General \-> Network Conn
 
 Der "native" ProxyProvider wird im Konstruktor von `org.eclipse.core.internal.net.ProxyManager` per Reflection erzeugt:
 
-~~~javy
+~~~java
 private ProxyManager() {
       try {
             nativeProxyProvider = (AbstractProxyProvider) Class.forName("org.eclipse.core.net.ProxyProvider").newInstance(); //$NON-NLS-1$
@@ -40,7 +40,7 @@ Die Klasse `ProxyManager` befindet sich im Bundle `org.eclipse.core.net`.
 Damit unsere Klasse `org.eclipse.core.net.ProxyProvider` per Reflection erzeugt werden kann, 
 bauen wir ein Fragment zum Bundle `org.eclipse.core.net`.
 
-Manifet.mf
+**MANIFEST.MF**
 ~~~
 Manifest-Version: 1.0
 Fragment-Host: org.eclipse.core.net
@@ -63,7 +63,7 @@ and provides you an ready to use proxy selector.
 
 Nun muss man nur noch die Klasse implementieren. Das kann so aussehen:
 
-~~~
+~~~java
 package org.eclipse.core.net;
 import java.net.InetSocketAddress;
 import java.net.Proxy;
@@ -87,22 +87,17 @@ public class ProxyProvider extends AbstractProxyProvider
 
   private volatile boolean initialized = false;
 
-public ProxyProvider()
-  {
+public ProxyProvider() {
     super();
   }
 
-  private synchronized void init()
-  {
-    if (this.initialized)
-    {
+  private synchronized void init() {
+    if (this.initialized) {
       return;
     }
-    try
-    {
+    try {
       final ProxySearch proxySearch = new ProxySearch();
-      if (PlatformUtil.getCurrentPlattform() == Platform.WIN)
-      {
+      if (PlatformUtil.getCurrentPlattform() == Platform.WIN) {
         proxySearch.addStrategy(Strategy.FIREFOX);
         proxySearch.addStrategy(Strategy.IE);
         proxySearch.addStrategy(Strategy.JAVA);
@@ -110,45 +105,37 @@ public ProxyProvider()
       }
       this.proxySelector = proxySearch.getProxySelector();
     }
-    catch (final Exception e)
-    {
-      Activator.logError("Fehler beim Einrichten des Proxyselectors.", e);
+    catch (final Exception e) {
+      ...
     }
     this.initialized = true;
   }
 
   @Override
-  protected String[] getNonProxiedHosts()
-  {
+  protected String[] getNonProxiedHosts() {
     return new String[] {};
   }
 
   @Override
-  protected IProxyData[] getProxyData()
-  {
+  protected IProxyData[] getProxyData() {
     return new IProxyData[] {};
   }
 
   @Override
-  protected IProxyData[] getProxyData(final URI uri)
-  {
+  protected IProxyData[] getProxyData(final URI uri) {
     init();
-    if (this.proxySelector == null)
-    {
+    if (this.proxySelector == null) {
       return null;
     }
 
     final List<Proxy> select = this.proxySelector.select(uri);
     final ArrayList<IProxyData> datas = new ArrayList<IProxyData>();
-    if (select == null || select.size() == 0)
-    {
+    if (select == null || select.size() == 0) {
       return null;
     }
-    for (final Proxy proxy : select)
-    {
+    for (final Proxy proxy : select) {
       final SocketAddress address = proxy.address();
-      if (address instanceof InetSocketAddress)
-      {
+      if (address instanceof InetSocketAddress) {
         final ProxyData data = new ProxyData(proxy.type().name(), ((InetSocketAddress) address).getHostName(),
             ((InetSocketAddress) address).getPort(), false, "");
         datas.add(data);
@@ -164,7 +151,7 @@ In der `getProxyData` Methode wird für eine URL ein passender Proxy gesucht.
 Hierbei liefert ein über `com.btr.proxy.search.ProxySearch` konfigurierter `java.net.ProxySelector` den passenden 
 Proxy (oder keinen).
 
-*Manifest.mf*
+**MANIFEST.MF**
 ~~~
 Eclipse-BundleShape: dir
 Bundle-ClassPath: proxy-vole_20111102.jar,library.jar
