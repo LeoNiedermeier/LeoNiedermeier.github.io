@@ -5,7 +5,7 @@ category: misc
 summary: "Notes about Eclipse"
 ---
 
-## Change Author and Committers Name and Email
+## GIT: Change Author and Committers Name and Email
 
 * Global
 * Per Project
