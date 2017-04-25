@@ -70,7 +70,7 @@ Example with Code:
   <div class="panel-heading">
     <h3 class="panel-title">Panel title</h3>
   </div>
-  <div class="panel-body">
+  <div class="panel-body" markdown="1">
 
 ~~~html
 <div class="danger" title="My Danger Title" markdown="1">
