@@ -1,3 +1,10 @@
+---
+title: Proxymanagement in Eclipse (RCP)
+tags: [eclipse]
+category: eclipse
+summary: "Proxymanagement in Eclipse (RCP)"
+---
+
 # Übersicht
 
 In Eclipse kann man den Proxy über die Preferences \-> General \-> Network Connections einstellen. 
@@ -9,7 +16,7 @@ In Eclipse kann man den Proxy über die Preferences \-> General \-> Network Conn
 
 "Native" greift auf die Systemeinstellungen für den Proxy zurück. Das ist normalerweise nicht die Einstellung vom Internet Explorer oder Firefox. Es wäre also schön, wenn man auf die IE oder Firefox Einstellungen zurückgreifen kann. Ferner werden Proxy-Einstellungen oft über pac-Skripte gemacht. Auch diese sollten ausgewertet werden können.
 
-![](rcp_proxy_management/EclipseNetworkConnections.png)
+![](rcp_proxy_management/EclipseNetworkConnections.png){:height="300px"}
 
 # Umsetzung
 
