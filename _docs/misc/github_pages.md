@@ -64,7 +64,23 @@ Example with Code:
 ...
 </div>
 
-# Panel Header
+## Panel Header
+
+~~~ html
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <h3 class="panel-title">Panel title</h3>
+  </div>
+  <div class="panel-body" markdown="1">
+
+Panel Content here
+
+</div>
+</div>
+
+
+~~~
+
 
 <div class="panel panel-default">
   <div class="panel-heading">
@@ -79,6 +95,14 @@ Example with Code:
 </div>
 </div>
 
+# Summary
+
+<details markdown="1">
+  <summary>With Code Block</summary>
+~~~html
+<div class="danger" title="My Danger Title" markdown="1">
+~~~
+</details>
 
 # Site info
 
