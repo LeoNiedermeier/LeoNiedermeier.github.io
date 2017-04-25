@@ -40,30 +40,7 @@ Some text
 Some text
 
 
-
-## Backup
-The title is set by css:
-
-~~~ css
-.success::before, .info::before {
-	content: attr(title);
-	display: block;
-	font-weight: bold;
-}
-~~~
-
-With a small javascript the to the jekyll css classes bootstrap classes are added:
-
-~~~ javascript
-$(document).ready(
-  function() {
-    $(".success").addClass("alert alert-success");
-    $(".info").addClass("alert alert-info");
-    $("table").addClass("table table-bordered table-striped");
-});
-~~~
-
-# HTML in Markdown PAge
+# HTML in Markdown Page
 
 HTML can be uses in the markdown, see <https://kramdown.gettalong.org/syntax.html#html-blocks>
 
@@ -91,3 +68,25 @@ Example with Code:
 
 
 Generatd: {{ site.time | date_to_rfc822 }}
+
+# Backup
+The title is set by css:
+
+~~~ css
+.success::before, .info::before {
+	content: attr(title);
+	display: block;
+	font-weight: bold;
+}
+~~~
+
+With a small javascript the to the jekyll css classes bootstrap classes are added:
+
+~~~ javascript
+$(document).ready(
+  function() {
+    $(".success").addClass("alert alert-success");
+    $(".info").addClass("alert alert-info");
+    $("table").addClass("table table-bordered table-striped");
+});
+~~~
