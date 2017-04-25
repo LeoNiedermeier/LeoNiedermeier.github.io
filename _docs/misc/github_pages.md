@@ -64,6 +64,22 @@ Example with Code:
 ...
 </div>
 
+# Panel Header
+
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <h3 class="panel-title">Panel title</h3>
+  </div>
+  <div class="panel-body">
+
+~~~html
+<div class="danger" title="My Danger Title" markdown="1">
+~~~
+
+</div>
+</div>
+
+
 # Site info
 
 
