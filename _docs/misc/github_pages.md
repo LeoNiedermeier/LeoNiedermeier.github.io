@@ -97,6 +97,8 @@ Panel Content here
 
 # Summary
 
+Soes not work in IE 
+
 <details markdown="1">
   <summary>With Code Block</summary>
 ~~~html
