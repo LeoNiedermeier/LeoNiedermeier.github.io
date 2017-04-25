@@ -26,7 +26,7 @@ Set the detail formatter
 Set a breakpoint where an instance of the class is available.
 The result can be seen in the variables view:
 
- ![](class_loading_location/classLocation.png =250x)
+ ![](class_loading_location/classLocation.png)
 
 {: .danger title="Tip"}
 Do not forget to reset the detail formatter afterwards
