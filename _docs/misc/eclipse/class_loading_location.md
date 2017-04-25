@@ -16,17 +16,17 @@ getClass().getProtectionDomain().getCodeSource().getLocation();
 
 In the variables view of the debug perspective open the context menu:
 
-![edit detail formatter](class_loading_location/setDetailFormatter.png "edit detail formatter")
+![edit detail formatter](class_loading_location/setDetailFormatter.png "edit detail formatter"){:height="200px" }
 
 Set the detail formatter
 
-![set detail formatter](class_loading_location/detailFormatter.png "set detail formatter"){:height="400px" }
+![set detail formatter](class_loading_location/detailFormatter.png "set detail formatter"){:height="300px" }
 
 
 Set a breakpoint where an instance of the class is available.
 The result can be seen in the variables view:
 
- ![](class_loading_location/classLocation.png)
+ ![](class_loading_location/classLocation.png){:height="300px" }
 
 {: .danger title="Tip"}
 Do not forget to reset the detail formatter afterwards
