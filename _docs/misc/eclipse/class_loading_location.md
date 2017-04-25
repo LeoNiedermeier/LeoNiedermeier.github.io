@@ -20,7 +20,7 @@ In the variables view of the debug perspective open the context menu:
 
 Set the detail formatter
 
-![set detail formatter](class_loading_location/detailFormatter.png "set detail formatter")
+![set detail formatter](class_loading_location/detailFormatter.png "set detail formatter"){:height="400px" }
 
 
 Set a breakpoint where an instance of the class is available.
