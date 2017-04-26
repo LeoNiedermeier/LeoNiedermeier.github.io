@@ -10,6 +10,9 @@ summary: ""
 **[Apache Solr A Practical Approach to Enterprise Search](http://www.apress.com/us/book/9781484210710)**  
 By Shahi, Dikshant
 
+**[Building Trading Bots Using Java](http://www.apress.com/br/book/9781484225196)**
+By Shekhar Varshney
+
 **[Java 8 Lambdas](http://shop.oreilly.com/product/0636920030713.do)**  
 By Richard Warburton
 
@@ -116,6 +119,9 @@ By Bhakti Mehta
 
 **[Next Generation Databases NoSQL and Big Data](http://www.apress.com/us/book/9781484213308)**  
 By Guy Harrison
+
+***[Pro Angular](http://www.apress.com/us/book/9781484223062)**
+By Adam Freeman
 
 **[Pro TypeScript Application-Scale JavaScript Development](http://www.apress.com/us/book/9781430267911)**  
 By Steve Fenton
