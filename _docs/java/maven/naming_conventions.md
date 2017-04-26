@@ -51,7 +51,7 @@ If m.a.z consists of more modules:
 > <http://wiki.eclipse.org/MT4E_FAQ>
 
 
-{: .success titile="Java 9 Modules"}
+{: .success title="Java 9 Modules"}
 This kind of naming conventions should play nice together with Java 9 modules, see also <http://blog.joda.org/2017/04/java-se-9-jpms-module-naming.html>
 
 # References
