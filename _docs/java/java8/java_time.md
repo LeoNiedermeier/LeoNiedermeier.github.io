@@ -28,7 +28,7 @@ Duration
 in terms of seconds and nanoseconds.  
 (<https://docs.oracle.com/javase/8/docs/api/java/time/Duration.html>)
 
-{: .info="Hinweis"}
+{: .info title="Hinweis"}
 Ein Monat (Period) kann eine Duration zwischen 28*86400s = 2419200s und 31*86400=2678400s haben 
 (Schalt-Stunden nicht berücksichtigt).
 
@@ -152,7 +152,7 @@ long periodInDays = date_1.until(date_2, ChronoUnit.DAYS);
 System.out.println(periodInDays); // 469  
 ~~~ 
 
-{: .info title="Hinweis"
+{: .info title="Hinweis"}
 In diesem Beispiel sieht man sehr schön den Unterschied Period und die Zeitdifferenz in Tagen. 
 Geht die Differenz über den 29. Februar eines Schaltjahres, so bleibt die die Period gleich, die Differenz in 
 Tagen wird aber eins größer (um den 29. Februar).
@@ -171,7 +171,6 @@ From <https://docs.oracle.com/javase/8/docs/api/java/time/format/DateTimeFormatt
 
 Man beachte die Unterschiede bei ZonedDateTime und LocalDateTime!
 
- 
 ~~~java
 
 DateTimeFormatter.ISO_DATE_TIME.format(LocalDateTime.now()); // 2014-07-22T15:18:47.328  
@@ -204,8 +203,7 @@ Man kann damit neue temporale Objekte erzeugen, die in Beziehung zum Ausgangsobj
 
 * den nächsten Monatag
 * den ersten des folgenden Monats
-* den nächsten Zahltag (Cusom Adjuster, 
-<http://docs.oracle.com/javase/tutorial/displayCode.html?code=http://docs.oracle.com/javase/tutorial/datetime/iso/examples/NextPayday.java>)
+* den nächsten Zahltag (Cusom Adjuster, <http://docs.oracle.com/javase/tutorial/displayCode.html?code=http://docs.oracle.com/javase/tutorial/datetime/iso/examples/NextPayday.java>)
 * ...
 
  
