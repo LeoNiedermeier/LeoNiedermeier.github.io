@@ -43,6 +43,9 @@ By Sujoy Acharya
 **[Portlets in Action](https://www.manning.com/books/portlets-in-action)**  
 By Ashish Sarin
 
+**[Pro JPA 2 Mastering the Java™ Persistence API](http://www.apress.com/us/book/9781430219569)**  
+By Keith, Mike, Schincariol, Merrick, Keith, Jeremy 
+
 **[Reactive Java Programming](http://www.apress.com/us/book/9781484214299)**  
 By  Andrea Maglie
  
