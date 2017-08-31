@@ -60,6 +60,9 @@ By Geoffroy Warin
 **[Pro Spring Boot](http://www.apress.com/us/book/9781484214329)**  
 By Felipe Gutierrez 
 
+**[Spring Boot Messaging - Messaging APIs for Enterprise and Integration Solutions](http://www.springer.com/de/book/9781484212257)**  
+From Felipe Gutierrez
+
 **[Spring Security 3.1](https://www.packtpub.com/application-development/spring-security-31)**  
 By Robert Winch, Peter Mularien
 
