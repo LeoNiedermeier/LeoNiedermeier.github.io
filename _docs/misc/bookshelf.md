@@ -126,7 +126,7 @@ By Bhakti Mehta
 **[Next Generation Databases NoSQL and Big Data](http://www.apress.com/us/book/9781484213308)**  
 By Guy Harrison
 
-**[Pro Angular](http://www.apress.com/us/book/9781484223062)**
+**[Pro Angular](http://www.apress.com/us/book/9781484223062)**  
 By Adam Freeman
 
 **[Pro TypeScript Application-Scale JavaScript Development](http://www.apress.com/us/book/9781430267911)**  
