@@ -19,6 +19,9 @@ An easy way to implement exception enhancement is to use the commons lang `Excep
 * `org.apache.commons.lang3.exception.ContextedRuntimeException` for unchecked exceptions and
 * `org.apache.commons.lang3.exception.ContextedException` for checked exceptions.
 
+**Terminology**
+A system **failure** is an event that occurs when the delivered service deviates from correct service. A system may fail either because it does not comply with the specification, or because the specification did not adequately describe its function. An **error** is that part of the system state that may cause a subsequent failure: a failure occurs when an error reaches the service interface and alters the service. A **fault** is the adjudged or hypothesized cause of an error.  
+(https://softwareengineering.stackexchange.com/questions/184412/whats-the-difference-between-fault-error-and-defect/184418)
 
 # How to use
 
@@ -129,6 +132,7 @@ Note that there can be more than one error code added. This can be useful in the
 * <http://commons.apache.org/proper/commons-lang/apidocs/org/apache/commons/lang3/exception/ContextedException.html>
 * <http://commons.apache.org/proper/commons-lang/apidocs/org/apache/commons/lang3/exception/ContextedRuntimeException.html>
 * <http://commons.apache.org/proper/commons-lang/apidocs/org/apache/commons/lang3/exception/DefaultExceptionContext.html>
+* <https://softwareengineering.stackexchange.com/questions/184412/whats-the-difference-between-fault-error-and-defect/184418>
 
 Some links from <http://jenkov.com/>
 
