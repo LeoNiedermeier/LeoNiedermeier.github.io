@@ -11,7 +11,7 @@ Throwing a exception through through multiple layers of an application can add s
 **Exception enhancement**  
 Whenever it is necessary to catch an exception in order to add some additional information to the exception and re-throw it, no new exception is created rather then the original exception is enhanced with some context information.
 
-**Exception Wrapping**
+**Exception Wrapping**  
 Catch a exception and throw a new exception with additional information and the original exception. This results usually in a long and 'stacked' stack trace, but most of the time, only the stack trace of the original exception is interesting. The other stacktraces are just noise.
 
 An easy way to implement exception enhancement is to use the commons lang `ExceptionContext` classes:
