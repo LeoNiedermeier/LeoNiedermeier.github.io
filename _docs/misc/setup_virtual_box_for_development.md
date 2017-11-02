@@ -60,6 +60,9 @@ Download the files and copy the theme to `~/themes` and the icons to `~/.icons`
 
 ## Set Tooltip Color of Eclipse
 
+{: .info title="Eclipse 4.7"}
+Tooltips are not anymore black with eclipse 4.7 (seems to be so)
+
 Per default the tooltips in eclipse are black. This is not very readable. In order to change this, do the following:
 
 Create a `eclipse.sh` file
