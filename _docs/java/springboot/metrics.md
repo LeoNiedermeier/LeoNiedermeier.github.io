@@ -19,6 +19,11 @@ Bei Export über JMX werden die Tags zum Objektnamen hinzugefügt:
 
 ![Metrik in JConsole](metrics/grafik.png  "Metrik in JConsole")
 
+
+# Metrics bei `RestTemplate`
+
+Über die Klassen `RestTemplateMetricsConfiguration`, `MetricsRestTemplateCustomizer` wird ein `MetricsClientHttpRequestInterceptor` zum `RestTemplate` hinzugefügt. 
+
 # References
 
 * <https://docs.spring.io/spring-boot/docs/2.0.0.BUILD-SNAPSHOT/reference/htmlsingle/#production-ready-metrics>
