@@ -57,6 +57,9 @@ By Ludovic Dewailly
 **[Mastering Spring MVC 4](https://www.packtpub.com/application-development/mastering-spring-mvc-4)**  
 By Geoffroy Warin
 
+**[Pro Java Clustering and Scalability - Building Real-Time Apps with Spring, Cassandra, Redis, WebSocket and RabbitMQ](http://www.apress.com/de/book/9781484229842)**  
+By Jorge Acetozi 
+
 **[Pro Spring Boot](http://www.apress.com/us/book/9781484214329)**  
 By Felipe Gutierrez 
 
@@ -91,6 +94,9 @@ By Steve Northover
 
 # Software Architecture and Design
 
+**[Architecting for Scale - High Availability for Your Growing Applications](http://shop.oreilly.com/product/0636920047070.do)**  
+By Lee Atchison 
+
 **[Cloud Design Patterns: Prescriptive Architecture Guidance for Cloud Applications](https://msdn.microsoft.com/de-de/library/dn568099.aspx)**  
 
 **[Component-Oriented Development and Assembly: Paradigm, Principles, and Practice Using Java](https://www.crcpress.com/Component--Oriented-Development-and-Assembly-Paradigm-Principles-and/Manickam-Sangeetha-Subrahmanya/p/book/9781466580992)**  
@@ -108,6 +114,9 @@ By Kirk Knoernschild
 
 **[Java Design Pattern Essentials](https://www.amazon.com/Java-Design-Pattern-Essentials-Bevis-ebook/dp/B00A9HSR2M)**  
 By Tony Bevis
+
+**[Microservices From Day One - Build robust and scalable software from the start](http://www.apress.com/br/book/9781484219362)**  
+By Cloves Carneiro, Tim Schmelmer 
 
 **[Patterns for Fault Tolerant Software](http://eu.wiley.com/WileyCDA/WileyTitle/productCd-1118351541.html)**  
 By Robert Hanmer
