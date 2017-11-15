@@ -55,6 +55,24 @@ The layout template can be used as following
 
 ~~~
 
+# Other Implementations
+
+Dynamic fragment inclusion based on a model variable. The view name is always the name of the main layout template, the fragment is selected by a model property.
+
+Main layout:
+~~~html
+...
+<div th:replace="${freagmentToShow} :: content">
+    Content
+</div>
+...
+~~~
+
+This approach is described in more detail by
+
+* http://blog.codeleak.pl/2013/11/thymeleaf-template-layouts-in-spring.html
+* https://github.com/jsumners/thymeleaf-layout-interceptor
+
 # References
 
 * <http://www.thymeleaf.org/doc/tutorials/3.0/usingthymeleaf.html#template-layout>
