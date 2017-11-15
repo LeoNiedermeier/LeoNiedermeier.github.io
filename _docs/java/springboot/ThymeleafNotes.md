@@ -11,7 +11,7 @@ summary: "Thymeleaf Notes"
 <a th:href="@{/stock/{symbol}/news/last/4(symbol=${item.symbol}) }" >...</a>
 ~~~
 
-Conditional Rendering
+## Conditional Rendering
 
 Renders if "someNumber" is available. Note that "0" evaluates to false.
 ~~~html
