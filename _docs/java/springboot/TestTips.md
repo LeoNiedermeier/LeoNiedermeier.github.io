@@ -5,7 +5,20 @@ category: spring
 summary: "Test Tips for Spring Boot"
 ---
 
-# Request / Response wirh `MockRestServiceServer`
+## Setup with RestTemplateBuilder
+
+Set up a `RestTemplateBuilder` in unit tests without psring application context.
+
+~~~java
+MockServerRestTemplateCustomizer mockServerCustomizer = new MockServerRestTemplateCustomizer();
+MyService myService = new MyServiceService(new RestTemplateBuilder(mockServerCustomizer));
+MockRestServiceServer server = mockServerCustomizer.getServer();
+~~~
+
+See also javadoc of `MockServerRestTemplateCustomizer`
+
+
+## Request / Response with MockRestServiceServer
 
 Use
 
@@ -17,7 +30,7 @@ Use
              .andRespond(MockRestResponseCreators.withSuccess(..., MediaType.APPLICATION_JSON));
 ~~~
 
-# Disable Security
+## Disable Security
 
 ~~~java
 @WebMvcTest( secure = false)
