@@ -5,7 +5,7 @@ category: spring
 summary: "Spring boot Caching"
 ---
 
-From [https://docs.spring.io/spring-boot/docs/2.0.x-SNAPSHOT/reference/html/boot-features-caching.html#boot-features-caching-provider-generic]
+From <https://docs.spring.io/spring-boot/docs/2.0.x-SNAPSHOT/reference/html/boot-features-caching.html#boot-features-caching-provider-generic>
 
 > Generic caching is used if the context defines at least one `org.springframework.cache.Cache` bean. A `CacheManager` 
 > wrapping all beans of that type is created.
@@ -38,4 +38,4 @@ public class CompanyServiceCacheConfiguration {
 
 # References
 
-* [https://docs.spring.io/spring-boot/docs/2.0.x-SNAPSHOT/reference/html/boot-features-caching.html#boot-features-caching-provider-generic]
+* <https://docs.spring.io/spring-boot/docs/2.0.x-SNAPSHOT/reference/html/boot-features-caching.html#boot-features-caching-provider-generic>
