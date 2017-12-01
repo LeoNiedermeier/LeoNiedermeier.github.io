@@ -13,7 +13,7 @@ summary: "The RestTemplateBuilder Class"
 
 This setup is useful for unit tests which should be independent of spring application context.
 Like described in the javadoc of the class `org.springframework.boot.test.web.client.MockServerRestTemplateCustomizer`.
-~~~java
+~~~ java
 MockServerRestTemplateCustomizer mockServerCustomizer = new MockServerRestTemplateCustomizer();
 MyService companyService = new MyService(new RestTemplateBuilder(mockServerCustomizer));
 MockRestServiceServer server = mockServerCustomizer.getServer();
@@ -29,7 +29,7 @@ In order to build expectations against the `RestTemplate` invocations, one can u
 
 A easy way to circumvent this problem is to create a custom `RestTemplateCustomizer` which has similar functionality but uses only one `RequestExpectationManager` for all `RestTemplate`s.
 
-~~~java
+~~~ java
 public class MockRestServerRestTemplateCustomizer implements RestTemplateCustomizer {
 
     private final RequestExpectationManager expectationManager = new SimpleRequestExpectationManager();
@@ -58,7 +58,7 @@ public class MockRestServerRestTemplateCustomizer implements RestTemplateCustomi
 ~~~
 
 
-~~~java
+~~~ java
 @RunWith(SpringRunner.class)
 @SpringBootTest(classes = {..., MockRestServerRestTemplateCustomizer.class })
 @AutoConfigureMockMvc
