@@ -26,11 +26,11 @@ import org.springframework.context.annotation.Configuration;
 import com.github.benmanes.caffeine.cache.Caffeine;
 
 @Configuration
-public class CompanyServiceCacheConfiguration {
+public class MyCacheConfiguration {
 
 	@Bean
 	public CaffeineCache companyCache() {
-		return new CaffeineCache(CompanyService.CACHE_NAME_COMPANY,
+		return new CaffeineCache("CACHE_NAME",
 				Caffeine.newBuilder().expireAfterWrite(30, MINUTES).maximumSize(100).build());
 	}
 }
