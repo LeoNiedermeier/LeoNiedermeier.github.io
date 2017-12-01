@@ -21,7 +21,7 @@ one can use fragments to build a common layout.
 
 Defines the layout
 
-~~~html
+~~~ html
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org" th:fragment="template(title,content)">
 <head>
@@ -45,7 +45,7 @@ Here we define a parametrized fragment `th:fragment="template(title,content)"` a
 
 The layout template can be used as following
 
-~~~html
+~~~ html
 <html xmlns:th="http://www.thymeleaf.org" th:replace="fragments/layout :: template('My Title',~{::content})">
    ...
     <div class="row" th:fragment="content">
@@ -60,7 +60,7 @@ The layout template can be used as following
 Dynamic fragment inclusion based on a model variable. The view name is always the name of the main layout template, the fragment is selected by a model property.
 
 Main layout:
-~~~html
+~~~ html
 ...
 <div th:replace="${freagmentToShow} :: content">
     Content
