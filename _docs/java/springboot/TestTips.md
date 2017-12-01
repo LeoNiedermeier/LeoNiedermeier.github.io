@@ -9,7 +9,7 @@ summary: "Test Tips for Spring Boot"
 
 Set up a `RestTemplateBuilder` in unit tests without psring application context.
 
-~~~java
+~~~ java
 MockServerRestTemplateCustomizer mockServerCustomizer = new MockServerRestTemplateCustomizer();
 MyService myService = new MyServiceService(new RestTemplateBuilder(mockServerCustomizer));
 MockRestServiceServer server = mockServerCustomizer.getServer();
@@ -25,19 +25,19 @@ Use
 * `org.springframework.test.web.client.match.MockRestRequestMatchers`
 * `org.springframework.test.web.client.response.MockRestResponseCreators`
 
-~~~java
+~~~ java
  this.server.expect(MockRestRequestMatchers.requestTo("..."))
              .andRespond(MockRestResponseCreators.withSuccess(..., MediaType.APPLICATION_JSON));
 ~~~
 
 ## Disable Security
 
-~~~java
+~~~ java
 @WebMvcTest( secure = false)
 ~~~
 
 or exclude autoconfiguration:
 
-~~~java
+~~~ java
 @WebMvcTestexcludeAutoConfiguration = { MockMvcSecurityAutoConfiguration.class })
 ~~~
