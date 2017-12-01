@@ -13,7 +13,7 @@ The `com.fasterxml.jackson.datatype.jsr310.deser.InstantDeserializer` supports m
  
 One possible solution: use a converter which converts a `long` to a `LocalDateTime`.
  
-~~~java
+~~~ java
 public static class LongToLocalDateTimeConverter extends StdConverter<Long, LocalDateTime> {
     public LocalDateTime convert(final Long value) {
         return Instant.ofEpochMilli(value).atZone(ZoneId.systemDefault()).toLocalDateTime();
@@ -23,7 +23,7 @@ public static class LongToLocalDateTimeConverter extends StdConverter<Long, Loca
 
 And add a `@JsonDeserialize` to the field:
 
-~~~java
+~~~ java
 @JsonDeserialize(converter = LongToLocalDateTimeConverter.class)
 private LocalDateTime localDateTime;
 ~~~
