@@ -16,7 +16,7 @@ Therefore, if you have different configuration of caches, just create `Cache` be
 
 Example for Caffeine cache configuration bean:
 
-~~~java
+~~~ java
 import static java.util.concurrent.TimeUnit.MINUTES;
 
 import org.springframework.cache.caffeine.CaffeineCache;
