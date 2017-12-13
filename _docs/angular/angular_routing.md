@@ -100,6 +100,7 @@ route.data.subscribe((data: { myData: MyData }) => {
       ...
     });
 ~~~
+
 {: .info title="Unsubscribe"}
 When subscribing to an observable in a component, you almost always arrange to unsubscribe when the component is destroyed.    
 There are a few exceptional observables where this is not necessary. The ActivatedRoute observables are among the exceptions.    
