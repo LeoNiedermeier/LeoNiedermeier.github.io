@@ -47,7 +47,7 @@ HTML can be uses in the markdown, see <https://kramdown.gettalong.org/syntax.htm
 If the content of the html should be parsed as marksown, add a `markdown=1` attribute.
 
 
-~~~html
+~~~ html
 <div class="danger" title="My Danger Title" markdown="1">
 ...
 ...
@@ -58,7 +58,7 @@ Example with Code:
 
 <div class="danger" title="My Danger Title" markdown="1">
 ...
-~~~html
+~~~ html
 <div class="danger" title="My Danger Title" markdown="1">
 ~~~
 ...
@@ -88,7 +88,7 @@ Panel Content here
   </div>
   <div class="panel-body" markdown="1">
 
-~~~html
+~~~ html
 <div class="danger" title="My Danger Title" markdown="1">
 ~~~
 
@@ -97,14 +97,26 @@ Panel Content here
 
 # Summary
 
-Soes not work in IE 
+Does not work in IE 
 
 <details markdown="1">
   <summary>With Code Block</summary>
-~~~html
+~~~ html
 <div class="danger" title="My Danger Title" markdown="1">
 ~~~
 </details>
+
+# Errors Syntax Highlighting
+
+Problem: Html code with angular elements is not valid html and therefore the syntax highlighter marks these elements as invalid (red).
+
+Solution: remove the `.highlight .err` from the file `syntax.css`
+
+~~~ css
+.highlight .c { color: #999; } /* Comment */
+//.highlight .err { color: #a00; background-color: #faa } /* Error */
+.highlight .k { color: #069; } /* Keyword */
+~~~
 
 # Site info
 
