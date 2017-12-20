@@ -97,6 +97,10 @@ By Steve Northover
 **[Architecting for Scale - High Availability for Your Growing Applications](http://shop.oreilly.com/product/0636920047070.do)**  
 By Lee Atchison 
 
+**[Clean Architecture: A Craftsman's Guide to Software Structure and Design](https://www.pearson.com/us/higher-education/program/Martin-Clean-Architecture-A-Craftsman-s-Guide-to-Software-Structure-and-Design/PGM333762.html)**    
+By Robert C. Martin
+
+
 **[Cloud Design Patterns: Prescriptive Architecture Guidance for Cloud Applications](https://msdn.microsoft.com/de-de/library/dn568099.aspx)**  
 
 **[Component-Oriented Development and Assembly: Paradigm, Principles, and Practice Using Java](https://www.crcpress.com/Component--Oriented-Development-and-Assembly-Paradigm-Principles-and/Manickam-Sangeetha-Subrahmanya/p/book/9781466580992)**  
