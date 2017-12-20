@@ -10,7 +10,7 @@ summary: ""
 **[Apache Solr A Practical Approach to Enterprise Search](http://www.apress.com/us/book/9781484210710)**  
 By Shahi, Dikshant
 
-**[Building Trading Bots Using Java](http://www.apress.com/br/book/9781484225196)**
+**[Building Trading Bots Using Java](http://www.apress.com/br/book/9781484225196)**    
 By Shekhar Varshney
 
 **[Java 8 Lambdas](http://shop.oreilly.com/product/0636920030713.do)**  
@@ -130,16 +130,24 @@ By Joshua Kerievsky
 **[RESTful Java Patterns and Best Practices](https://www.packtpub.com/application-development/restful-java-patterns-and-best-practices)**  
 By Bhakti Mehta
 
-# Misc
+# Angular & Typescript
 
-**[Next Generation Databases NoSQL and Big Data](http://www.apress.com/us/book/9781484213308)**  
-By Guy Harrison
+**[Angular](https://www.dpunkt.de/buecher/12400/9783864903571-angular.html)**    
+By Gregor Woiwode / Ferdinand Malcher / Danny Koppenhagen / Johannes Hoppe
 
 **[Pro Angular](http://www.apress.com/us/book/9781484223062)**  
 By Adam Freeman
 
 **[Pro TypeScript Application-Scale JavaScript Development](http://www.apress.com/us/book/9781430267911)**  
 By Steve Fenton
+
+**[Reactive Programming with Angular and ngrx](https://www.apress.com/de/book/9781484226193)**    
+by Farhi, Oren 
+
+# Misc
+
+**[Next Generation Databases NoSQL and Big Data](http://www.apress.com/us/book/9781484213308)**  
+By Guy Harrison
 
 **[What Every Web Developer Should Know About HTTP](https://www.amazon.com/Every-Developer-Should-OdeToCode-Programming-ebook/dp/B0076Z6VMI)**  
 By K. Scott Allen
