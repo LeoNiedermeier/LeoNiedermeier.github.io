@@ -31,7 +31,7 @@ summary: Overload Method Resolution
 
 # Overriding
 
-{: .info="Overiding" }
+{: .info="Overiding Methods from Super Class" }
 > An instance method mC declared in or inherited by class C, overrides from C another method mA declared in class A, 
 > iff all of the following are true:
 >
@@ -42,6 +42,44 @@ summary: Overload Method Resolution
 > ... und access modifiert müssen passen
 
 * It is a compile-time error if an instance method overrides a static method.
+
+{: .info="Overiding Methods from Implemented Interface" }
+> An instance method mC declared in or inherited by class C, overrides from C another method mI declared in an interface I, 
+> iff all of the following are true:
+>
+> * I is a superinterface of C.
+> * mI is an abstract or default method.
+> * The signature of mC is a subsignature (§8.4.2) of the signature of mI.
+
+
+**Beispiel**
+override-equivalent Methoden in Interface (static) und implementierender Klasse:
+~~~java
+interface I1 {
+  static void doSomething() {}
+}
+
+class C1 implements I1 {
+  public void doSomething() {}
+}
+~~~
+
+`c1.doSomething()` ruft die Methode der Instanz von `C1` auf. Die statische Methode des Interfaces `I1` kann nur mit `I1.doSomething()` angesprochen werden. Im Prinzip sind das zwei verschiedene Methoden.
+
+Hinweis: statische Methoden eines Interfaces können nur über das Interface angesprochen werden: `MyInterface.myStaticMethod(...)`. Das ist anderas als bei statischen methoden eine Klasse. Diese können auch über eine Instanz der Klasse angesprochen werden `myInstance..myStaticMethod(...)`.
+
+**Beispiel**
+override-equivalent Methoden in Interface (default) und implementierender Klasse:
+~~~java
+interface I1 {
+  default void doSomething() {}
+}
+
+class C1 implements I1 {
+  public void doSomething() {}
+}
+~~~
+Methode der Klasse überschreibt die default-Methode des Interfaces.
 
 # Hiding
 
@@ -67,6 +105,7 @@ class C2 extends C1 {
 ~~~
 
 
+# Sonstiges
 
 {: .info title="Covariant Return Types" }
 > If a method declaration d1 with return type R1 overrides or hides the declaration of another method d2 with return type R2, 
@@ -74,37 +113,6 @@ class C2 extends C1 {
 >
 > (This rule allows for covariant return types - refining the return type of a method when overriding it).
 
-
-
-# Beispiele
-
-override-equivalent Methoden in Interface (static) und implementierender Klasse:
-~~~java
-interface I1 {
-  static void doSomething() {}
-}
-
-class C1 implements I1 {
-  public void doSomething() {}
-}
-~~~
-
-`c1.doSomething()` ruft die Methode der Instanz von `C1` auf. Die statische Methode des Interfaces `I1` kann nur mit `I1.doSomething()` angesprochen werden. Im Prinzip sind das zwei verschiedene Methoden.
-
-Hinweis: statische Methoden eines Interfaces können nur über das Interface angesprochen werden: `MyInterface.myStaticMethod(...)`. Das ist anderas als bei statischen methoden eine Klasse. Diese können auch über eine Instanz der Klasse angesprochen werden `myInstance..myStaticMethod(...)`.
-
-
-override-equivalent Methoden in Interface (default) und implementierender Klasse:
-~~~java
-interface I1 {
-  default void doSomething() {}
-}
-
-class C1 implements I1 {
-  public void doSomething() {}
-}
-~~~
-Methode der Klasse überschreibt die default-Methode des Interfaces.
 
 # Referenzen
 
