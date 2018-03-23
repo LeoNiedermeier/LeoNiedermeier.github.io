@@ -5,12 +5,7 @@ category: OCAP
 summary: Overload Method Resolution
 ---
 
-# Übersicht
-
-{: .info title="Overloading"}
-> If two methods of a class (whether both declared in the same class, or both inherited by a class, or one declared and one inherited) have the same name but signatures that are not override-equivalent, then the method name is said to be overloaded.    
-> (from <https://docs.oracle.com/javase/specs/jls/se8/html/jls-8.html#jls-8.4.9>)
-
+# Allgemeine Begriffe
 
 {: .info title="override-equivalent"}
 > Two methods or constructors, M and N, have the same signature if they have the same name, the same type parameters (if any) (§8.4.4),
@@ -26,19 +21,60 @@ summary: Overload Method Resolution
 
 * It is a compile-time error to declare two methods with override-equivalent signatures in a class
 
+
+# Overloading
+
+{: .info title="Overloading"}
+> If two methods of a class (whether both declared in the same class, or both inherited by a class, or one declared and one inherited) have the same name but signatures that are **not override-equivalent**, then the method name is said to be overloaded.    
+> (from <https://docs.oracle.com/javase/specs/jls/se8/html/jls-8.html#jls-8.4.9>)
+
+
+# Overriding
+
+{: .info="Overiding" }
+> An instance method mC declared in or inherited by class C, overrides from C another method mA declared in class A, 
+> iff all of the following are true:
+>
+> * A is a superclass of C.
+> * C does not inherit mA.
+> * The signature of mC is a subsignature (§8.4.2) of the signature of mA.
+> 
+> ... und access modifiert müssen passen
+
+* It is a compile-time error if an instance method overrides a static method.
+
+# Hiding
+
 {: .info title="Hiding (by Class Methods)"}
 > If a class C declares or inherits a static method m, then m is said to **hide** any method m', where the signature of m is 
 > a subsignature of the signature of m', in the superclasses and superinterfaces of C that would otherwise be accessible to code in C.
+>
+> It is a compile-time error if a static method hides an instance method.
 
+"Hide" geht also nur mit statischen Methoden.
 
-* A class does not inherit static methods from its superinterfaces.
+**Beispiel**
+~~~java
+class C1 {
+	static public void doSomething() {
+	}
+}
+
+class C2 extends C1 {
+	static public void doSomething() {
+	}
+}
+~~~
+
 
 
 {: .info title="Covariant Return Types" }
 > If a method declaration d1 with return type R1 overrides or hides the declaration of another method d2 with return type R2, 
-> then d1 must be return-type-substitutable   for d2, or a compile-time error occurs.
+> then d1 must be return-type-substitutable for d2, or a compile-time error occurs.
 >
 > (This rule allows for covariant return types - refining the return type of a method when overriding it).
+
+
 
 # Beispiele
 
