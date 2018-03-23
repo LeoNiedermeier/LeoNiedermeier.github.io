@@ -31,7 +31,7 @@ summary: Overload Method Resolution
 
 # Overriding
 
-{: .info="Overiding Methods from Super Class" }
+{: .info title="Overiding Methods from Super Class"}
 > An instance method mC declared in or inherited by class C, overrides from C another method mA declared in class A, 
 > iff all of the following are true:
 >
@@ -43,7 +43,7 @@ summary: Overload Method Resolution
 
 * It is a compile-time error if an instance method overrides a static method.
 
-{: .info="Overiding Methods from Implemented Interface" }
+{: .info title="Overiding Methods from Implemented Interface" }
 > An instance method mC declared in or inherited by class C, overrides from C another method mI declared in an interface I, 
 > iff all of the following are true:
 >
