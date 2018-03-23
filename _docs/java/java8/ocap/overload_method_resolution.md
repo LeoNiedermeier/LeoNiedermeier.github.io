@@ -36,15 +36,14 @@ summary: Overload Method Resolution
 override-equivalent Methoden in Interface (static) und implementierender Klasse:
 ~~~java
 interface I1 {
-		static void doSomething() {
-		}
-	}
+  static void doSomething() {}
+}
 
-	class C1 implements I1 {
-		public void doSomething() {
-		}
-	}
+class C1 implements I1 {
+  public void doSomething() {}
+}
 ~~~
+
 `c1.doSomething()` ruft die Methode der Instanz von `C1` auf. Die statische Methode des Interfaces `I1` kann nur mit `I1.doSomething()` angesprochen werden. Im Prinzip sind das zwei verschiedene Methoden.
 
 Hinweis: statische Methoden eines Interfaces können nur über das Interface angesprochen werden: `MyInterface.myStaticMethod(...)`. Das ist anderas als bei statischen methoden eine Klasse. Diese können auch über eine Instanz der Klasse angesprochen werden `myInstance..myStaticMethod(...)`.
@@ -53,14 +52,12 @@ Hinweis: statische Methoden eines Interfaces können nur über das Interface ang
 override-equivalent Methoden in Interface (default) und implementierender Klasse:
 ~~~java
 interface I1 {
-		default void doSomething() {
-		}
-	}
+  default void doSomething() {}
+}
 
-	class C1 implements I1 {
-		public void doSomething() {
-		}
-	}
+class C1 implements I1 {
+  public void doSomething() {}
+}
 ~~~
 Methode der Klasse überschreibt die default-Methode des Interfaces.
 
