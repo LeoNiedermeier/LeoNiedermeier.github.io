@@ -24,12 +24,21 @@ summary: Overload Method Resolution
 > Two method signatures m1 and m2 are **override-equivalent** iff either m1 is a subsignature of m2 or m2 is a subsignature of m1.    
 >(from <https://docs.oracle.com/javase/specs/jls/se8/html/jls-8.html#jls-8.4.2>)
 
-* It is a compile-time error to declare two methods with override-equivalent signatures in a class.
+* It is a compile-time error to declare two methods with override-equivalent signatures in a class
 
-* An abstract class can override an abstract method by providing another abstract method declaration.
+{: .info title="Hiding (by Class Methods)"}
+> If a class C declares or inherits a static method m, then m is said to **hide** any method m', where the signature of m is 
+> a subsignature of the signature of m', in the superclasses and superinterfaces of C that would otherwise be accessible to code in C.
 
-+ A class does not inherit static methods from its superinterfaces.
 
+* A class does not inherit static methods from its superinterfaces.
+
+
+{: .info title="Covariant Return Types" }
+> If a method declaration d1 with return type R1 overrides or hides the declaration of another method d2 with return type R2, 
+> then d1 must be return-type-substitutable   for d2, or a compile-time error occurs.
+>
+> (This rule allows for covariant return types - refining the return type of a method when overriding it).
 
 # Beispiele
 
