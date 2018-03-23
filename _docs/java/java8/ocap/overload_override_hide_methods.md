@@ -113,6 +113,10 @@ class C2 extends C1 {
 >
 > (This rule allows for covariant return types - refining the return type of a method when overriding it).
 
+* Bei Klassen sind das Sub-Klassen (Interfaces)
+* Bei Zahlen entspricht covarinaz == widening, z.B. original long, overridden: int
+
+
 {: .info title="Exceptions"}
 > A method that overrides or hides another method, including methods that implement abstract methods defined in interfaces,
 > may not be declared to throw more checked exceptions than the overridden or hidden method.
