@@ -8,7 +8,7 @@ summary: Overload Method Resolution
 # Allgemeine Begriffe
 
 {: .info title="override-equivalent"}
-> Two methods or constructors, M and N, have the same signature if they have the same name, the same type parameters (if any) (§8.4.4),
+> Two methods or constructors, M and N, have the same signature if they have the same name, the same type parameters (if any),
 > and, after adapting the formal parameter types of N to the the type parameters of M, the same formal parameter types.
 >
 > The signature of a method m1 is a **subsignature** of the signature of a method m2 if either:
@@ -39,7 +39,7 @@ summary: Overload Method Resolution
 > * C does not inherit mA.
 > * The signature of mC is a subsignature (§8.4.2) of the signature of mA.
 > 
-> ... und access modifiert müssen passen
+> ... und access modifier müssen passen
 
 * It is a compile-time error if an instance method overrides a static method.
 
@@ -105,7 +105,7 @@ class C2 extends C1 {
 ~~~
 
 
-# Sonstiges
+# Requirements in Overriding and Hiding
 
 {: .info title="Covariant Return Types" }
 > If a method declaration d1 with return type R1 overrides or hides the declaration of another method d2 with return type R2, 
@@ -113,6 +113,9 @@ class C2 extends C1 {
 >
 > (This rule allows for covariant return types - refining the return type of a method when overriding it).
 
+{: .info title="Exceptions"}
+> A method that overrides or hides another method, including methods that implement abstract methods defined in interfaces,
+> may not be declared to throw more checked exceptions than the overridden or hidden method.
 
 # Referenzen
 
