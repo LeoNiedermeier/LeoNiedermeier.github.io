@@ -113,6 +113,7 @@ class C2 extends C1 {
 >
 > (This rule allows for covariant return types - refining the return type of a method when overriding it).
 
+* *return-type-substitutable* siehe: <https://docs.oracle.com/javase/specs/jls/se8/html/jls-8.html#jls-8.4.5>
 * Bei Klassen sind das Sub-Klassen (Interfaces)
 * Bei primitives: keine Kovarianz (d.h überschreibende Methoden müssen den gleichen primitiven Return Type haben) 
 
