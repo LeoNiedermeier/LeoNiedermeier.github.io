@@ -114,7 +114,7 @@ class C2 extends C1 {
 > (This rule allows for covariant return types - refining the return type of a method when overriding it).
 
 * Bei Klassen sind das Sub-Klassen (Interfaces)
-* Bei Zahlen entspricht covarinaz == widening, z.B. original long, overridden: int
+* Bei primitives: keine Kovarianz (d.h überschreibende Methoden müssen den gleichen primitiven Return Type haben) 
 
 
 {: .info title="Exceptions"}
