@@ -42,6 +42,16 @@ summary: Overload Method Resolution
 > ... und access modifier müssen passen
 
 * It is a compile-time error if an instance method overrides a static method.
+Beispiel:
+~~~java
+class CA {
+  public static void doSomething() {}
+}
+
+class CB extends CA {
+  public void doSomething() {} // compiler error: instance method cannot override the static method 
+}
+~~~
 
 {: .info title="Overiding Methods from Implemented Interface" }
 > An instance method mC declared in or inherited by class C, overrides from C another method mI declared in an interface I, 
