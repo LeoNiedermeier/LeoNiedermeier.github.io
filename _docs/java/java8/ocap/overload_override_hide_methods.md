@@ -61,6 +61,7 @@ class CB extends CA {
 > * mI is an abstract or default method.
 > * The signature of mC is a subsignature (§8.4.2) of the signature of mI.
 
+* Falls eine Methode, die in mehreren Interfaces dekalerirt wird, implementiert wird, dann muss jede einzelne override passen (insbesondere falls checked exceptions auftreten). 
 
 **Beispiel**
 override-equivalent Methoden in Interface (static) und implementierender Klasse:
