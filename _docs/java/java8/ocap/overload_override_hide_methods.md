@@ -133,6 +133,16 @@ class C2 extends C1 {
 > A method that overrides or hides another method, including methods that implement abstract methods defined in interfaces,
 > may not be declared to throw more checked exceptions than the overridden or hidden method.
 
+# Beispiel
+
+| Super Klasse |Sub Klasse | Beschreibung |
+|:--------------------|:-----------------:|--------:|
+| void foo()          | void foo()        | ok      |
+| static void foo()   | void foo()        | This instance method cannot override the static method    |
+| static void foo()         | static void foo() | ok (hiding)      |
+| static final void foo()   | static void foo() | Eclipse compiler: Cannot override the final method  |
+
+
 # Referenzen
 
 * <https://docs.oracle.com/javase/specs/jls/se8/html/jls-15.html>
