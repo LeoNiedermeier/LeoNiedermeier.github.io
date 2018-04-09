@@ -10,12 +10,12 @@ private -> default -> protected -> public
 
 ## Beispiele
 
-Default Modifier schränkt Sichtbarkeit der Methode foo mit ein, ist die Subklasse aber public, dann wird diese Einschränkung aufgehoben.
+Default Modifier schränkt Sichtbarkeit der Methode foo mit ein, ist die Subklasse aber public, dann wird diese Einschränkung aufgehoben. PublicSubclass#foo ist public. 
 ~~~java
 class Base {
 	public void foo() {}
 }
 
-public class AccessModifiersSubclass extends Base {
+public class PublicSubclass extends Base {
 }
 ~~~
