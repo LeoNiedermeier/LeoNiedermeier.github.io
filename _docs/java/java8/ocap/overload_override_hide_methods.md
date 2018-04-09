@@ -138,7 +138,8 @@ class C2 extends C1 {
 | Super Klasse |Sub Klasse | Beschreibung |
 |:--------------------|:-----------------:|--------:|
 | void foo()          | void foo()        | ok      |
-| static void foo()   | void foo()        | This instance method cannot override the static method    |
+| static void foo()   | void foo()        |  instance method cannot override the static method    |
+| void foo()          | static void foo()  | static method cannot hide the instance method |
 | static void foo()         | static void foo() | ok (hiding)      |
 | static final void foo()   | static void foo() | Eclipse compiler: Cannot override the final method  |
 
