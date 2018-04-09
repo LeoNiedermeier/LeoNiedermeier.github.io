@@ -136,7 +136,7 @@ class C2 extends C1 {
 # Beispiel
 
 | Super Klasse |Sub Klasse | Beschreibung |
-|:--------------------|:-----------------:|--------:|
+|:--------------------|:-----------------|:--------|
 | void foo()          | void foo()        | ok      |
 | static void foo()   | void foo()        |  instance method cannot override the static method    |
 | void foo()          | static void foo()  | static method cannot hide the instance method |
