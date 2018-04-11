@@ -5,6 +5,24 @@ category: java8
 summary: "Method References"
 ---
 
+# Examples
+
+~~~java
+
+// object::instanceMethod
+Function<String, Integer> f = String::length;
+// or
+ToIntFunction<String> f = String:: length;
+// same as
+ToIntFunction<String> f = s -> s.length();
+
+// class::instanceMethod
+BiFunction<String, String, String> f = String::concat;
+// same as
+	BiFunction<String, String, String> f = (a,b) -> a.concat(b);
+
+~~~
+
 # Useful Methods
 
 ## Set Value if Not Null
