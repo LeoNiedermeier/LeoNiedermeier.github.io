@@ -43,6 +43,7 @@ summary: Overload Method Resolution
 
 * It is a compile-time error if an instance method overrides a static method.
 Beispiel:
+
 ~~~java
 class CA {
   public static void doSomething() {}
@@ -61,10 +62,13 @@ class CB extends CA {
 > * mI is an abstract or default method.
 > * The signature of mC is a subsignature (§8.4.2) of the signature of mI.
 
+
 * Falls eine Methode, die in mehreren Interfaces dekalerirt wird, implementiert wird, dann muss jede einzelne override passen (insbesondere falls checked exceptions auftreten). 
 
 **Beispiel**
+
 override-equivalent Methoden in Interface (static) und implementierender Klasse:
+
 ~~~java
 interface I1 {
   static void doSomething() {}
@@ -80,7 +84,9 @@ class C1 implements I1 {
 Hinweis: statische Methoden eines Interfaces können nur über das Interface angesprochen werden: `MyInterface.myStaticMethod(...)`. Das ist anderas als bei statischen methoden eine Klasse. Diese können auch über eine Instanz der Klasse angesprochen werden `myInstance..myStaticMethod(...)`.
 
 **Beispiel**
+
 override-equivalent Methoden in Interface (default) und implementierender Klasse:
+
 ~~~java
 interface I1 {
   default void doSomething() {}
@@ -103,6 +109,7 @@ Methode der Klasse überschreibt die default-Methode des Interfaces.
 "Hide" geht also nur mit statischen Methoden.
 
 **Beispiel**
+
 ~~~java
 class C1 {
 	static public void doSomething() {
@@ -123,6 +130,7 @@ class C2 extends C1 {
 > then d1 must be return-type-substitutable for d2, or a compile-time error occurs.
 >
 > (This rule allows for covariant return types - refining the return type of a method when overriding it).
+
 
 * *return-type-substitutable* siehe: <https://docs.oracle.com/javase/specs/jls/se8/html/jls-8.html#jls-8.4.5>
 * Bei Klassen sind das Sub-Klassen (Interfaces)
