@@ -144,3 +144,7 @@ $(document).ready(
     $("table").addClass("table table-bordered table-striped");
 });
 ~~~
+
+## Title Capitalization
+
+<https://capitalizemytitle.com/>
