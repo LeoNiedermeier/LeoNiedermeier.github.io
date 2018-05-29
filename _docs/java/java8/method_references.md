@@ -70,6 +70,52 @@ Comparator.comparing(Person::getLastName).thenComparing(Person::getFirstName)
 Compares the persons by their last name and first name. 
 
 
+## Interface With Multiple Methods
+
+An interface with multiple methods is not a functional interface. Therefore, it is not a one liner to use method refereces or lamdas for it. Consider the exampe interface
+
+~~~java
+interface MyInterface {
+  void foo(String s);
+  String bar(String p1, String p2);
+}
+~~~
+
+With a simple factory method and an adequate implementation, we can connect it to method references:
+
+~~~java
+static MyInterface of(Consumer<String> foo, BiFunction<String, String, String> bar) {
+  return new MyInterface() {
+    public void foo(String s) {
+      foo.accept(s);
+    }
+    public String bar(String p1, String p2) {
+      return bar.apply(p1, p2);
+    }
+  };
+}
+~~~
+
+~~~java
+MyInterface myInterface = of(System.out::println, "a_a"::replaceAll);
+~~~
+
+Same can be done for classes, for instance for `MouseListener``:
+~~~java
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
+import java.awt.event.MouseListener;
+import java.util.function.Consumer;
+...
+MouseListener forMouseClicked(Consumer<MouseEvent> mouseClickListener) {
+  return new MouseAdapter() {
+    public void mouseClicked(MouseEvent e) {
+      mouseClickListener.accept(e);
+    }
+  };
+}
+~~~
+
 # References
 
 * <https://docs.oracle.com/javase/tutorial/java/javaOO/methodreferences.html>
