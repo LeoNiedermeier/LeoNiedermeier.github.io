@@ -25,7 +25,7 @@ BiFunction<String, String, String> f = String::concat;
 
 # Useful Methods
 
-## Set Value if Not Null
+## Set Value If Not Null
 
 Example: set a value in a bean if the value is not null.
 
@@ -47,7 +47,7 @@ setIfNotNull("myValue", target::setString);
 
 ~~~
 
-## Comparator With Method References
+## Comparator with Method References
 
 With the `Comparator.comparing` and `Comparator.thenComparing` it is easy to create `Comparator`s. 
 
@@ -70,7 +70,7 @@ Comparator.comparing(Person::getLastName).thenComparing(Person::getFirstName)
 Compares the persons by their last name and first name. 
 
 
-## Interface With Multiple Methods
+## Interface or Class with Multiple Methods
 
 An interface with multiple methods is not a functional interface. Therefore, it is not a one liner to use method refereces or lamdas for it. Consider the exampe interface
 
