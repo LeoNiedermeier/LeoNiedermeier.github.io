@@ -14,6 +14,7 @@ Some notes about Project Reactor (<https://projectreactor.io/>>)
 Add event listener to button and process events:
 
 ~~~java
+
 JButton button = ...;
 
 Flux.create(sink -> button.addActionListener(sink::next))
@@ -33,6 +34,7 @@ Flux.create(sink -> button.addActionListener(sink::next))
 
 // set the new text of the button
 .subscribe(button::setText);
+
 ~~~
 
 # References
