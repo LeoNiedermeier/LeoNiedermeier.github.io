@@ -1,7 +1,7 @@
 ---
 title: Strings etc
 tags: [java]
-category: OCAP
+category: ocap
 summary: Strings etc.
 ---
 
