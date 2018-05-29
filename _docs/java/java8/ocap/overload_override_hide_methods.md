@@ -1,7 +1,7 @@
 ---
 title: Methods - Overload, Override, Hide
 tags: [java]
-category: OCAP
+category: ocap
 summary: Overload Method Resolution
 ---
 
