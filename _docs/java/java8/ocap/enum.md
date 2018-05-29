@@ -1,7 +1,7 @@
 ---
 title: Enum
 tags: [java]
-category: OCAP
+category: ocap
 summary: Enum
 ---
 
