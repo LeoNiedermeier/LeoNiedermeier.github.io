@@ -1,7 +1,7 @@
 ---
 title: Methods Invocation Expression
 tags: [java]
-category: OCAP
+category: ocap
 summary: Methods Invocation Expression
 ---
 
