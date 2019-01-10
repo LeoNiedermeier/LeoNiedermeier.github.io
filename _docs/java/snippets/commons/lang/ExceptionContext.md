@@ -126,6 +126,18 @@ throw new ContextedRuntimeException("Some Error")//
 
 Note that there can be more than one error code added. This can be useful in the case of exception enhancement.
 
+## Interface ExceptionContext
+
+Interface `ExceptionContext` with default methods:
+
+<https://github.com/LeoNiedermeier/io.github.leoniedermeier.utils/blob/master/src/main/java/io/github/leoniedermeier/utils/excecption/ExceptionContext.java>
+
+Used in a custom `ContextedRuntimeException`
+
+<https://github.com/LeoNiedermeier/io.github.leoniedermeier.utils/blob/master/src/main/java/io/github/leoniedermeier/utils/excecption/ContextedRuntimeException.java>
+
+And in a spring web `RestControllerAdvice`
+<https://github.com/LeoNiedermeier/io.github.leoniedermeier.utils/blob/master/src/main/java/io/github/leoniedermeier/utils/web/advice/RestExceptionHandler.java>
 
 # References
 * <http://commons.apache.org/proper/commons-lang/apidocs/org/apache/commons/lang3/exception/ExceptionContext.html>
