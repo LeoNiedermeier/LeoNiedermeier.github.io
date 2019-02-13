@@ -48,7 +48,8 @@ The resulting code is shorter and the probability of making a mistake is substan
 
 {: .info title="Helper Class"}
 In this context the `java.util.Optional` plays a role of a bean accessor helper class. The naming for helper class could be like `PropertyAccessor.with(person).then(Person::getAddress).then(Address::getStreet).orElse("Default Street")`.  
-A impplmentation variant with the syntax `PropertyAccessor.get(person, Person::getAddress, Address::getStreet)` can be found in
+  
+An implmentation variant with the syntax `PropertyAccessor.get(person, Person::getAddress, Address::getStreet)` can be found in
 https://github.com/LeoNiedermeier/io.github.leoniedermeier.utils/blob/master/src/main/java/io/github/leoniedermeier/utils/beans/PropertyAccessor.java
 
 # References
