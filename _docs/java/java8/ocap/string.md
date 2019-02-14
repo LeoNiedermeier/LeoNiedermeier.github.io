@@ -1,30 +1,36 @@
 ---
 title: Strings etc
-tags: [java]
-category: ocap
+tags: [java,java8]
+category: java8
 summary: Strings etc.
 ---
 
-~~~java
-public class Test {
-  public static void main(String[] args) {
-    MyToString mts = new MyToString();
-    String s = "X" + mts;
-}
+# String Concatination
 
-class MyToString {
-  public String toString() {
-    throw new NullPointerException("From toString");
-  }
+* Take readability into account
+* The compiler does some optimizations
+    * depends on java version
+    * hand crafted optimizations can not be optimized by the compiler later
+
+* Whenever possible use `+`
+* Note that an assignement creates a new string instance
+    * do not use s = s + "someString" or similar in a loop
+
+## Pre Java 9
+~~~java
+String m(String a, int b) {
+  return a + "(" + b + ")";
 }
 ~~~
 
-Stacktrace: schön zu sehen, dass aus `"X" + j` ein irgendwas mit`StringBuilder.append` compiliert wird:
-
+The compiler generates somthing like
 ~~~java
-Exception in thread "main" java.lang.NullPointerException: From toString
-	at test.MyToString.toString(Test.java:15)
-	at java.lang.String.valueOf(String.java:2994)
-	at java.lang.StringBuilder.append(StringBuilder.java:131)
-	at test.Test.main(Test.java:6)
+String m(String a, int b) {
+  return new StringBuilder().append(a).append("(").append(b).append(")").toString();
+}
 ~~~
+
+# References
+
+* <https://github.com/kabutz/string-performance/blob/master/Enough%20java.lang.String%20to%20Hang%20Ourselves%20....pdf>
+* <http://openjdk.java.net/jeps/280>
