@@ -4,6 +4,38 @@ tags: [java,java8]
 category: java8
 summary: "Java 8 Streams"
 ---
+# When to return Streams
+
+Consider: 
+
+* Stream is not a data structure
+* Steam can only be consumed once
+
+See:  <https://stackoverflow.com/questions/24676877/should-i-return-a-collection-or-a-stream>:
+
+* "And it depends very much on how the user is likely to use the answer."
+* If your result might be infinite, there's only one choice: Stream.
+* If your result might be very large, you probably prefer Stream
+
+
+<div class="danger" title="Returning Stream from DAO method with @Transactional annotation." markdown="1">
+
+Consider a typical spring application with a DAO which has a method like following: 
+
+~~~java
+@Transactional
+Stream<Person> getAll(){
+	return ...
+}
+~~~
+
+Note that the method is annotated with `@Transactional`. In the case that the returned stream throws an exception during processing, the `@Transactional` has **no** effect. Because the stream processing is executed outside the `@Transactional` context (not processed in the `getAll` method).
+
+</div>
+
+{: .success title="Tip"}
+Do not return streams which have (maybe hidden) processing dependencies to the context.
+
 
 # Useful Methods
 
@@ -50,24 +82,6 @@ private Stream<Integer> integerStream() {
 ~~~
 
 In this case the `NumberFormatException` which is thrown from `Integer::valueOf` due to parse errors of "noNumber" is **not** catched from the catch block in the `integerStream` method. The Exception is thrown from the `integerStream` method.
-
-<div class="danger" title="Returning Stream from DAO method with @Transactional annotation." markdown="1">
-
-Consider a typical spring application with a DAO which has a method like following: 
-
-~~~java
-@Transactional
-Stream<Person> getAll(){
-	return ...
-}
-~~~
-
-Note that the method is annotated with `@Transactional`. In the case that the returned stream throws an exception during processing, the `@Transactional` has **no** effect. Because the stream processing is executed outside the `@Transactional` context (not processed in the `getAll` method).
-
-</div>
-
-{: .success title="Tip"}
-Do not return streams which have (maybe hidden) processing dependencies to the context.
 
 
 # Dynamically Create a Stream with Limited Number of Elements 
@@ -131,3 +145,4 @@ Or one can use a utils class which transforms an `Enumeration` to an `Iterator` 
 
 * <http://stackoverflow.com/questions/24676877/should-i-return-a-collection-or-a-stream>
 * <https://docs.oracle.com/javase/8/docs/api/java/util/stream/StreamSupport.html>
+* <https://stackoverflow.com/questions/24676877/should-i-return-a-collection-or-a-stream>
