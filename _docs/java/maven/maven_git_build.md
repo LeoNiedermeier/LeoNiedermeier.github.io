@@ -49,7 +49,7 @@ Can set the version:
 
 If we have a multi module setup, the maven ci friendly versions <https://maven.apache.org/maven-ci-friendly.html> simlifies the setup. IN this case, we have one property which defines the version, even in a multi module setup.
 
-The parent pom:
+The `pom.xml` parent pom:
 ~~~xml
 <groupId>...</groupId>
 <artifactId>...</artifactId>
