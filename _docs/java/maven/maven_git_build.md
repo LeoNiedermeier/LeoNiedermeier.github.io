@@ -7,7 +7,31 @@ summary: ""
 
 # Overview
 
-Git can be used with many different workflows, see for instance <https://www.atlassian.com/git/tutorials/comparing-workflows/gitflow-workflow>. Usually you work with a master branch and different feature branches. 
+Git can be used with many different workflows, see for instance <https://www.atlassian.com/git/tutorials/comparing-workflows/gitflow-workflow>. Usually you work with a master branch and different feature branches.
+
+# Git Branches and Maven Version Scheme
+
+The maven version is the branch name in git plus "-SNAPSHOT". So the branch "my-feature-branch" has the maven version "my-feature-branch-SNAPSHOT". 
+
+kramdown
+: A Markdown-superset converter
+
+Maruku
+:     Another Markdown-superset converter
+
+Advantages
+: Simple mapping between git branch and maven version
+: Can easily checked with maven constraints
+
+Drawbacks
+
+* No "traditional" maven version scheme
+
+
+-> git maven plugin, add commit id to manifest.mf
+-> check whether branch name in version
+
+# Build Release
 
 ## The Maven Release Plugin
 
@@ -32,24 +56,7 @@ This has the following disadvantages
 * Version changes. e.g. fom 1.0.0-SNAPSHOT to 1.0.0 to 1.0.1-SNAPSHOT in the branch.
 * Here commit means also push to origin. In the case the release build fails, there are changes in origin without need.
 
-# Git Branches and Maven Version Scheme
-
-The maven version is the branch name in git plus "-SNAPSHOT". So the branch "my-feature-branch" has the maven version "my-feature-branch-SNAPSHOT". 
-
-Advantages
-
-* Simple mapping between git branch and maven version
-* Can easily checked with maven constraints
-
-Drawbacks
-
-* No "traditional" maven version scheme
-
-
--> git maven plugin, add commit id to manifest.mf
--> check whether branch name in version
-
-# Build on Tags
+## Build on Tags
 
 
 Advantages
@@ -60,7 +67,7 @@ Drawbacks
 
 * Tag more difficult to find in history
 
-# Steps
+## Steps
 
 * Checkout from git
 * set maven version
