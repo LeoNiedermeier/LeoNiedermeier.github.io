@@ -19,19 +19,58 @@ The maven version is the branch name in git plus "-SNAPSHOT". For example:
 
 **Advantages**
 * Simple mapping between git branch and maven version
+* Generated artifacts have a dedicated version with respect to the source branch and are distinguishable
 * Can easily checked with maven constraints
 
 **Drawbacks**
 * No "traditional" maven version scheme
 
-## Versions and Dependencies
+## Numbered Versions and Dependencies
 
-The traditional maven version scheme has versions like 1.2.3-SNAPSHOT. After a release build, the number is changed. Most of the time, the dependencies to SNAPSHOTs have to be updated (e.g from 1.2.3-SNAPSHOT to 1.2.3-SNAPSHT).  
+When we have a dependency to a SNAPSHOT version does ususally mean that the dependency should be to the newest SNAPSHOT version, not to an older one. When we use the traditional maven version scheme, we have SNAPSHOT versions like 1.2.3-SNAPSHOT. After a release build, the number is changed (to e.g. 1.2.4-SNAPSHOT). Most of the time, the dependencies to SNAPSHOTs have to be updated (e.g from 1.2.3-SNAPSHOT to 1.2.4-SNAPSHT). This is errorprone work.
 
 
-
+## Check Correct Version
 -> git maven plugin, add commit id to manifest.mf
 -> check whether branch name in version
+
+
+
+## Implementation
+
+Setting the versions in multiple `pom.xml` files by hand can be tedious. 
+
+### Simplification with Maven Set Versions Plugin
+
+Can set the version:
+<https://www.mojohaus.org/versions-maven-plugin/>
+
+### Simplification with CI Friendly Versions
+
+If we have a multi module setup, the maven ci friendly versions <https://maven.apache.org/maven-ci-friendly.html> simlifies the setup. IN this case, we have one property which defines the version, even in a multi module setup.
+
+The parent pom:
+~~~xml
+<groupId>...</groupId>
+<artifactId>...</artifactId>
+<version>${revision}</version>
+  ...
+<properties>
+    <revision>master-SNAPSHOT</revision>
+</properties>
+~~~
+
+and the `pom.xml` of the child module references the parent pom like:
+~~~xml
+...
+<parent>
+    <groupId>...</groupId>
+    <artifactId>...</artifactId>
+    <version>${revision}</version>
+</parent>
+...
+~~~
+
 
 # Build Release
 
@@ -85,3 +124,4 @@ Drawbacks
 * <https://axelfontaine.com/blog/final-nail.html>
 * <https://www.atlassian.com/git/tutorials/comparing-workflows/gitflow-workflow>
 * <http://maven.apache.org/maven-release/maven-release-plugin/examples/perform-release.html>
+* <https://maven.apache.org/maven-ci-friendly.html>
