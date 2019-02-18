@@ -9,23 +9,25 @@ summary: ""
 
 Git can be used with many different workflows, see for instance <https://www.atlassian.com/git/tutorials/comparing-workflows/gitflow-workflow>. Usually you work with a master branch and different feature branches.
 
-# Git Branches and Maven Version Scheme
+# Git Branches and Maven SNAPSHOT Version Scheme
 
-The maven version is the branch name in git plus "-SNAPSHOT". So the branch "my-feature-branch" has the maven version "my-feature-branch-SNAPSHOT". 
+The maven version is the branch name in git plus "-SNAPSHOT". For example:
 
-kramdown
-: A Markdown-superset converter
+* master: master-SNAPSHOT
+* development: development-SNAPSHOT
+* feature-ABC: feature-ABC-SNAPSHOT
 
-Maruku
-:     Another Markdown-superset converter
+**Advantages**
+* Simple mapping between git branch and maven version
+* Can easily checked with maven constraints
 
-Advantages
-: Simple mapping between git branch and maven version
-: Can easily checked with maven constraints
-
-Drawbacks
-
+**Drawbacks**
 * No "traditional" maven version scheme
+
+## Versions and Dependencies
+
+The traditional maven version scheme has versions like 1.2.3-SNAPSHOT. After a release build, the number is changed. Most of the time, the dependencies to SNAPSHOTs have to be updated (e.g from 1.2.3-SNAPSHOT to 1.2.3-SNAPSHT).  
+
 
 
 -> git maven plugin, add commit id to manifest.mf
