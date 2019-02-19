@@ -53,7 +53,7 @@ In a multi module setup, the child module's `pom.xml` references the parent's
 ~~~
 
 {: .success title="Single Place"}
-With the CI friendly versions there is only one place in a maven multi module setup, where a concrete version is defined. The parent's version is identified by the ${revision} property. 
+With the CI friendly versions there is only one place in a maven multi module setup, where a concrete version is defined. The parent's version is identified by the `${revision}` property. 
 
 
 ### Eclipse
@@ -61,7 +61,7 @@ The `${revision}` is resolved to the configured value, in our case to "local-SNA
 
 # CI SNAPSHOT Builds from Branches
 
-In order to identify SNAPSHOT artifacts of the different branches, the maven version can be the name of the branch + "-SNAPSHOT". Examples:
+In order to identify SNAPSHOT artifacts of the different branches, the maven version can be the <name of the branch> + "-SNAPSHOT". Examples:
 
 * master: master-SNAPSHOT
 * feature-123: feature-123-SNAPSHOT
@@ -96,14 +96,32 @@ There are no version changes in the different `pom.xml` files.
   * m_1 and m_2, can be in different git repositories
   * m_2 depends an m_1 
 * Checked out with the same feature branch (same name)
-* In the `pom.xml` od m_2 the version of the m_1 dependency is changed to ${project.version}
+* In the `pom.xml` of m_2 the version of the m_1 dependency is changed to `${project.version}`
 
-# CI SNAPHSOT Feature Build
+### CI SNAPHSOT Feature Build
 CI must ensure, that the builds are called with the same revision value.
 
 ### Merge
 In this case, each independend module is merged individually. After each merge the dependency versions are adjusted
 
 # CI Release Builds
+<https://axelfontaine.com/blog/dead-burried.html>
+* Checkout from git
+* Determine the version / revision
+* Tag with "RELEASE" + version /revision
+* commit but do not push
+* build with maven
+* push to git repo
 
-TODO
+
+TODO:
+# Additional 
+
+## Add Git Information to Artifacts
+
+With https://github.com/git-commit-id/maven-git-commit-id-plugin add git commit id and other information to META-INF/MANIFEST.MF
+
+## Enforcer Rules
+### For Versions
+### For Dependencies
+* no transitive dependencies
