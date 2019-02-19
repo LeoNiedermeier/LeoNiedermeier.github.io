@@ -22,6 +22,9 @@ If we work with differnt git branches, it can be useful to build identifiable ar
 * For all `pom.xml` the version is `<version>local-SNAPSHOT</version>`
 * The CI server can set individual versions
 
+{: .success title="No pom.xml merges"}
+There are no changes of the `pom.xml` files due to different version configurations in different branches. Therefore merges do not produce conflicts or unwanted overrides with respect to the version configuration.
+
 # Versioning with CI Friendly Versions
 
 See <https://maven.apache.org/maven-ci-friendly.html>
