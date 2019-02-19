@@ -58,12 +58,19 @@ The `${revision}` is resolved to the configured value, in our case to "local-SNA
 
 # CI SNAPSHOT Builds from Branches
 
-In order to identify SNAPSHOT artifacts of the different branches, the maven version is the name of the branch + "-SNAPSHOT". Examples:
+In order to identify SNAPSHOT artifacts of the different branches, the maven version can be the name of the branch + "-SNAPSHOT". Examples:
 
 * master: master-SNAPSHOT
 * feature-123: feature-123-SNAPSHOT
 
 The version can be set as maven command line argument `-Drevision=my-version`. 
+
+A short script can look like:
+~~~
+branch=$(git rev-parse --abbrev-ref HEAD)
+mvn -Drevision=$branch-SNAPSHOT ...
+~~~
+(Jenkins has a variable with the branch name)
 
 # Dependency Management for Development
 
@@ -94,13 +101,6 @@ CI must ensure, that the builds are called with the same revision value.
 ### Merge
 In this case, each independend module is merged individually. After each merge the dependency versions are adjusted
 
-
-
-
-If multiple modules should be changed together, they have the same feature branch (maybe in different git repositories). 
-
-If the module 
-
-
-
 # CI Release Builds
+
+TODO
