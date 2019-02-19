@@ -29,25 +29,29 @@ The maven version is the branch name in git plus "-SNAPSHOT". For example:
 
 When we have a dependency to a SNAPSHOT version does ususally mean that the dependency should be to the newest SNAPSHOT version, not to an older one. When we use the traditional maven version scheme, we have SNAPSHOT versions like 1.2.3-SNAPSHOT. After a release build, the number is changed (to e.g. 1.2.4-SNAPSHOT). Most of the time, the dependencies to SNAPSHOTs have to be updated (e.g from 1.2.3-SNAPSHOT to 1.2.4-SNAPSHT). This is errorprone work.
 
-
-## Check Correct Version
--> git maven plugin, add commit id to manifest.mf
--> check whether branch name in version
-
-
-
 ## Implementation
 
 Setting the versions in multiple `pom.xml` files by hand can be tedious. 
 
-### Simplification with Maven Set Versions Plugin
+### Use Maven Set Versions Plugin
 
 Can set the version:
 <https://www.mojohaus.org/versions-maven-plugin/>
 
-### Simplification with CI Friendly Versions
+* Changes the `pom.xml` files
 
-If we have a multi module setup, the maven ci friendly versions <https://maven.apache.org/maven-ci-friendly.html> simlifies the setup. IN this case, we have one property which defines the version, even in a multi module setup.
+### Use Maven Extension
+
+* <https://github.com/qoomon/maven-git-versioning-extension>
+* <https://github.com/jgitver/jgitver-maven-plugin>
+
+
+But does not work with eclipse (https://bugs.eclipse.org/bugs/show_bug.cgi?id=530587)
+
+
+### Use CI Friendly Versions
+
+If we have a single or multi module setup, the maven ci friendly versions <https://maven.apache.org/maven-ci-friendly.html> simplifies the setup. In this case, we have one property which defines the version, even in a multi module setup.
 
 The `pom.xml` parent pom:
 ~~~xml
@@ -56,7 +60,7 @@ The `pom.xml` parent pom:
 <version>${revision}</version>
   ...
 <properties>
-    <revision>master-SNAPSHOT</revision>
+    <revision>some-SNAPSHOT</revision>
 </properties>
 ~~~
 
@@ -70,6 +74,45 @@ and the `pom.xml` of the child module references the parent pom like:
 </parent>
 ...
 ~~~
+
+## The pom.xml Merge Problem
+
+When we have different versions or revision entries in the pom.xml, we have
+
+* merge conflicts or
+* unwanted merges of the version/revision entry to the taget branch
+
+### Possible Solution
+
+* Use of ci friendly versions
+* Set the revsion value to somthing like "local-SNAPSHOT"
+* When building with CI / maven command line, use the `-Drevision=xyz` command line option
+
+Version and revision properties do not change between branches. So no merge conflicts or unwanted overrrides
+
+**Advantages**
+* Works with eclipse: uses the version given by the `revision` tag: local-SNAPSHOT
+
+#### Case: Multi Module Setup
+
+* All modules of the multi module setup have the same revision: "local-SNAPSHOT"
+* Dependencies between modules of the multi module setup have the verseion `${project.version}`
+
+#### Case: Mutliple Single Modules with Same Versioning
+
+* like multi module setup
+
+#### Case: Mutliple Single Modules with Different Versioning
+
+* Both modules have the same feature branch and therefore the same `${project.version}`
+* If module M2 depends on module M2: the version property in the `pom.xml` of module M2 `<m1.version>1.2.3</m1.version>` becomes `<m1.version>${project.version}</m1.version>`
+* Works in Eclipse and CI envirionement
+
+Merge to master
+* First merge module M1
+* Adjust version property for dependency to M1 in module M2: `pom.xml` in M2 changed
+* Merge module M2 to master: `pom.xml` changes
+
 
 
 # Build Release
