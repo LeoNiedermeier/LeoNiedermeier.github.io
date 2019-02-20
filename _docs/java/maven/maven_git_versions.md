@@ -9,21 +9,22 @@ summary: ""
 
 ## The Need for Different Maven SNAPSHOT Versions
 
-If we work with differnt git branches, it can be useful to build identifiable artifacts from different branches. For instance the different branches can be related to individual (test) environments.
+If we work with different git branches, it can be useful to build identifiable artifacts from different branches. For instance 
+the different branches can be related to individual (test) environments.
 
 # Assumptions
 
 * Only CI Server deploys to artifact repository
-* Artifacts from different branches sould be distinguishable by their version
-* Should work in dev environemnt like eclipse
+* Artifacts from different branches should be distinguishable by their version
+* Should work in dev environment like eclipse
 
 # Implementation
 
 * For all `pom.xml` the version is `<version>local-SNAPSHOT</version>`
 * The CI server can set individual versions
 
-{: .success title="No pom.xml merges"}
-There are no changes of the `pom.xml` files due to different version configurations in different branches. Therefore merges do not produce conflicts or unwanted overrides with respect to the version configuration.
+{: .success title="No pom.xml merges"} There are no changes of the `pom.xml` files due to different version configurations 
+in different branches. Therefore merges do not produce conflicts or unwanted overrides with respect to the version configuration.
 
 # Versioning with CI Friendly Versions
 
@@ -52,8 +53,8 @@ In a multi module setup, the child module's `pom.xml` references the parent's
 ...
 ~~~
 
-{: .success title="Single Place"}
-With the CI friendly versions there is only one place in a maven multi module setup, where a concrete version is defined. The parent's version is identified by the `${revision}` property. 
+{: .success title="Single Place"} With the CI friendly versions there is only one place in a maven multi module setup, where 
+a concrete version is defined. The parent's version is identified by the `${revision}` property. 
 
 
 ### Eclipse
@@ -61,7 +62,8 @@ The `${revision}` is resolved to the configured value, in our case to "local-SNA
 
 # CI SNAPSHOT Builds from Branches
 
-In order to identify SNAPSHOT artifacts of the different branches, the maven version can be the <name of the branch> + "-SNAPSHOT". Examples:
+In order to identify SNAPSHOT artifacts of the different branches, the maven version can be the <name of the branch> + "-SNAPSHOT". 
+Examples:
 
 * master: master-SNAPSHOT
 * feature-123: feature-123-SNAPSHOT
@@ -80,21 +82,23 @@ mvn -Drevision=$branch-SNAPSHOT ...
 ## Multi Module Setup
 
 ### Development
-In a multi module setup all modules have the same version. The version of another module from the setup is specified by `${project.version}` (see <https://maven.apache.org/maven-ci-friendly.html>).
+In a multi module setup all modules have the same version. The version of another module from the setup is specified by `${project.version}` 
+(see <https://maven.apache.org/maven-ci-friendly.html>).
 
 ### CI SNAPHSOT Feature Build
-All modules of the multi module setup have the same version which refernces to the revsion value. 
+All modules of the multi module setup have the same version which references to the revision value. 
 
 ### Merge
 There are no version changes in the different `pom.xml` files.
 
-## Multiple Independend Modules
+## Multiple Independent Modules
 
 ### Development
 
-* Modules: 
-  * m_1 and m_2, can be in different git repositories
-  * m_2 depends an m_1 
+
+* Modules:
+* m_1 and m_2, can be in different git repositories
+* m_2 depends an m_1
 * Checked out with the same feature branch (same name)
 * In the `pom.xml` of m_2 the version of the m_1 dependency is changed to `${project.version}`
 
@@ -102,26 +106,22 @@ There are no version changes in the different `pom.xml` files.
 CI must ensure, that the builds are called with the same revision value.
 
 ### Merge
-In this case, each independend module is merged individually. After each merge the dependency versions are adjusted
+In this case, each independent module is merged individually. After each merge the dependency versions are adjusted
 
 # CI Release Builds
-<https://axelfontaine.com/blog/dead-burried.html>
-* Checkout from git
-* Determine the version / revision
-* Tag with "RELEASE" + version /revision
-* commit but do not push
-* build with maven
-* push to git repo
 
+Release builds are builds which have a numbered version instead of "-SNAPSHOT" suffix. In order to be reproducible, a tag in 
+git is advisable.
 
-TODO:
-# Additional 
+A nice article about how to build a release can be found at <https://axelfontaine.com/blog/dead-burried.html>.
 
-## Add Git Information to Artifacts
+## Steps
+* Checkout from git repository
+* Tag
+* Build
+* Push to git repository
 
-With https://github.com/git-commit-id/maven-git-commit-id-plugin add git commit id and other information to META-INF/MANIFEST.MF
+## Additional Optional Steps
+* Calculate the revision depending on branch, available tags
+* Include git information in the artifact with <https://github.com/git-commit-id/maven-git-commit-id-plugin>
 
-## Enforcer Rules
-### For Versions
-### For Dependencies
-* no transitive dependencies
