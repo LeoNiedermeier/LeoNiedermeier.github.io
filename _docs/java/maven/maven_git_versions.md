@@ -2,7 +2,7 @@
 title: Maven, Versions and Git
 tags: [maven,git]
 category: maven
-summary: ""
+summary: "Maven artifact versions, git branches and builds."
 ---
 
 # Overview
@@ -97,7 +97,6 @@ There are no version changes in the different `pom.xml` files.
 
 ### Development
 
-
 * Modules:
 * m_1 and m_2, can be in different git repositories
 * m_2 depends an m_1
@@ -122,6 +121,11 @@ A nice article about how to build a release can be found at <https://axelfontain
 * Tag
 * Build (same like SNAPSHOT)
 * Push to git repository
+
+{: .info title="No source changes"}  
+Because the release version is set by a command line parameter and not inside the `pom.xml` files, there are no source code 
+changes. On the opposite the maven release plugin (http://maven.apache.org/maven-release/maven-release-plugin/index.html) changes 
+the `pom.xml` two times. 
 
 ## Additional Optional Steps
 * Calculate the revision depending on branch, available tags
