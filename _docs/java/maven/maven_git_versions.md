@@ -54,9 +54,6 @@ In a multi module setup, the child module's `pom.xml` references the parent's
 ...
 ~~~
 
-{: .success title="My Title"}
-Some text
-
 {: .success title="Single Place"}
 With the CI friendly versions there is only one place in a maven multi module setup, where 
 a concrete version is defined. The parent's version is identified by the `${revision}` property. 
