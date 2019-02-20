@@ -23,7 +23,8 @@ the different branches can be related to individual (test) environments.
 * For all `pom.xml` the version is `<version>local-SNAPSHOT</version>`
 * The CI server can set individual versions
 
-{: .success title="No pom.xml merges"} There are no changes of the `pom.xml` files due to different version configurations 
+{: .success title="No pom.xml merges"} 
+There are no changes of the `pom.xml` files due to different version configurations 
 in different branches. Therefore merges do not produce conflicts or unwanted overrides with respect to the version configuration.
 
 # Versioning with CI Friendly Versions
@@ -53,7 +54,8 @@ In a multi module setup, the child module's `pom.xml` references the parent's
 ...
 ~~~
 
-{: .success title="Single Place"} With the CI friendly versions there is only one place in a maven multi module setup, where 
+{: .success title="Single Place"} 
+With the CI friendly versions there is only one place in a maven multi module setup, where 
 a concrete version is defined. The parent's version is identified by the `${revision}` property. 
 
 
@@ -110,15 +112,15 @@ In this case, each independent module is merged individually. After each merge t
 
 # CI Release Builds
 
-Release builds are builds which have a numbered version instead of "-SNAPSHOT" suffix. In order to be reproducible, a tag in 
-git is advisable.
+Release builds are builds which have a numbered version instead of "-SNAPSHOT" suffix. In order to be reproducible, a tag 
+in git is advisable.
 
 A nice article about how to build a release can be found at <https://axelfontaine.com/blog/dead-burried.html>.
 
 ## Steps
 * Checkout from git repository
 * Tag
-* Build
+* Build (same like SNAPSHOT)
 * Push to git repository
 
 ## Additional Optional Steps
