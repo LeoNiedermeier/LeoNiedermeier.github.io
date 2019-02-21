@@ -20,6 +20,10 @@ the different branches can be related to individual (test) environments.
 
 # Implementation
 
+{: .success title="No custom maven plugins"} 
+In order to reduce external dependencies, we try not to use or create custom maven plugins. The main drawback of self written 
+maven plugins is, that they have to be maintained (like production code), which is rarely the case.
+
 * For all `pom.xml` the version is `<version>local-SNAPSHOT</version>`
 * The CI server can set individual versions
 
@@ -42,7 +46,7 @@ See <https://maven.apache.org/maven-ci-friendly.html>
 </properties>
 ~~~
 
-In a multi module setup, the child module's `pom.xml` references the parent's
+In a multi module setup, the child module's `pom.xml` references the parent:
 
 ~~~xml
 ...
@@ -53,6 +57,7 @@ In a multi module setup, the child module's `pom.xml` references the parent's
 </parent>
 ...
 ~~~
+Note that the version of the parent is given by `${revision}`.
 
 {: .success title="Single Place"}
 With the CI friendly versions there is only one place in a maven multi module setup, where 
@@ -62,7 +67,7 @@ a concrete version is defined. The parent's version is identified by the `${revi
 ### Eclipse
 The `${revision}` is resolved to the configured value, in our case to "local-SNAPSHOT".
 
-# CI SNAPSHOT Builds from Branches
+# CI SNAPSHOT Builds
 
 In order to identify SNAPSHOT artifacts of the different branches, the maven version can be the <name of the branch> + "-SNAPSHOT". 
 Examples:
@@ -79,7 +84,7 @@ mvn -Drevision=$branch-SNAPSHOT ...
 ~~~
 (Jenkins has a variable with the branch name)
 
-# Dependency Management for Development
+# Dependency Management and Development
 
 ## Multi Module Setup
 
