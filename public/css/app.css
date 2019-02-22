@@ -1,7 +1,8 @@
-/* .alert::before,
-.success::before,
-.info::before {
-  content: attr(title);
-  display: block;
-  font-weight: bold;
-} */
+/* https://stackoverflow.com/questions/38970267/bootstrap-4-collapse-show-state-with-font-awesome-icon */
+[data-toggle='collapse'] .toggler::before {
+	content: '\f077';
+}
+
+[data-toggle='collapse'].collapsed .toggler::before {
+	content: '\f078';
+}

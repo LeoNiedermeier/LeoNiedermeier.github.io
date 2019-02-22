@@ -4,24 +4,13 @@ tags: [misc]
 category: misc
 summary: ""
 ---
-
- 
-
-{: .info title="Collapsible" .x}
-Content of Collapsible
-
-
-~~~  markdown
-{: .info title="Collapsible" .x}
-Collapsible
-~~~
-
 # Kramdown Syntax
 
 <https://kramdown.gettalong.org/quickref.html>
 
 # Local Extensions 
 
+# Panels
 With block attributes (<https://kramdown.gettalong.org/quickref.html#block-attributes>) we create custom styling:
 
 ~~~ markdown
@@ -49,6 +38,16 @@ Some text
 {: .danger title="My Title"}
 Some text
 
+## Collapsible Panel
+Same as panel wih an additional `.x`:
+
+~~~  markdown
+{: .success title="My Collapsible Panel" .x}
+Some text
+~~~
+
+{: .success title="My Collapsible Panel" .x}
+Some text
 
 # HTML in Markdown Page
 
@@ -58,7 +57,7 @@ If the content of the html should be parsed as marksown, add a `markdown=1` attr
 
 
 ~~~ html
-<div class="danger" title="My Danger Title" markdown="1">
+<div class="danger x" title="My Danger Title" markdown="1">
 ...
 ...
 </div>
@@ -66,54 +65,31 @@ If the content of the html should be parsed as marksown, add a `markdown=1` attr
 
 Example with Code:
 
-<div class="danger" title="My Danger Title" markdown="1">
-...
-~~~ html
-<div class="danger" title="My Danger Title" markdown="1">
+<div class="danger x" title="My Danger Title" markdown="1">
+Embedded code block
+~~~ java
+String x = "ABC";
 ~~~
 ...
 </div>
 
-## Panel Header
+ 
+# Misc
 
-~~~ html
-<div class="panel panel-default">
-  <div class="panel-heading">
-    <h3 class="panel-title">Panel title</h3>
-  </div>
-  <div class="panel-body" markdown="1">
+Does not work in IE:
 
-Panel Content here
-
-</div>
-</div>
-
-
+~~~html
+<details markdown="1">
+  <summary>With Code Block</summary>
+  # some text
+</details>
 ~~~
 
-
-<div class="panel panel-default">
-  <div class="panel-heading">
-    <h3 class="panel-title">Panel title</h3>
-  </div>
-  <div class="panel-body" markdown="1">
-
-~~~ html
-<div class="danger" title="My Danger Title" markdown="1">
-~~~
-
-</div>
-</div>
-
-# Summary
-
-Does not work in IE 
+Rendered:
 
 <details markdown="1">
   <summary>With Code Block</summary>
-~~~ html
-<div class="danger" title="My Danger Title" markdown="1">
-~~~
+# some text
 </details>
 
 # Errors Syntax Highlighting
@@ -134,15 +110,6 @@ Solution: remove the `.highlight .err` from the file `syntax.css`
 Generatd: {{ site.time | date_to_rfc822 }}
 
 # Backup
-The title is set by css:
-
-~~~ css
-.success::before, .info::before {
-	content: attr(title);
-	display: block;
-	font-weight: bold;
-}
-~~~
 
 With a small javascript the to the jekyll css classes bootstrap classes are added:
 
@@ -153,6 +120,23 @@ $(document).ready(
     $(".info").addClass("alert alert-info");
     $("table").addClass("table table-bordered table-striped");
 });
+~~~
+
+Collapse behaviour with `.x` is added by a littele javascript:
+~~~javascript
+$('p[title], div[title]').each(function () {
+        if ($(this).hasClass('x')) {
+          var randomid = 'collapse_' + (collapse_id_counter++);
+          $(this).wrapInner('<div class="collapse-inner collapse" id="' + randomid + '"></div>').prepend(function () {
+            return '<div class="font-weight-bold collapsed" style="cursor: pointer"  data-toggle="collapse" data-target="#' + randomid + '">'
+              + "<i class='toggler fa mr-2'></i>" + $(this).attr('title') + "</div></div>";
+          });
+        }
+        else {
+          $(this).wrapInner('<div class="no-collapse-inner"></div>')
+            .prepend(function () { return '<div class="font-weight-bold">' + $(this).attr('title') + '</div></div>'; });
+        }
+      });
 ~~~
 
 ## Title Capitalization
