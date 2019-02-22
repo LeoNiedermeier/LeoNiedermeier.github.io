@@ -32,6 +32,7 @@
   <script type="text/javascript">
     collapse_id_counter = 1;
     $(document).ready(function() {
+      $(".code").addClass("alert bg-light");
       $(".success").addClass("alert alert-success");
       $(".info").addClass("alert alert-info");
       $(".danger").addClass("alert alert-danger");
@@ -41,14 +42,14 @@
    $('p[title], div[title]').each(function () {
         if ($(this).hasClass('x')) {
           var randomid = 'collapse_' + (collapse_id_counter++);
-          $(this).wrapInner('<div class="collapse-inner collapse" id="' + randomid + '"></div>').prepend(function () {
-            return '<div class="font-weight-bold collapsed" style="cursor: pointer"  data-toggle="collapse" data-target="#' + randomid + '">'
-              + "<i class='toggler fa mr-2'></i>" + $(this).attr('title') + "</div></div>";
+          $(this).wrapInner('<div class="panel-inner collapse" id="' + randomid + '"></div>').prepend(function () {
+            return '<div class="font-weight-bold collapsed panel-title" style="cursor: pointer"  data-toggle="collapse" data-target="#' + randomid + '">'
+              + "<i class='toggler fa mr-2'></i>" + $(this).attr('title') + "</div></div><hr class='hr-in-panel'/>";
           });
         }
         else {
-          $(this).wrapInner('<div class="no-collapse-inner"></div>')
-            .prepend(function () { return '<div class="font-weight-bold">' + $(this).attr('title') + '</div></div>'; });
+          $(this).wrapInner('<div class="panel-inner"></div>')
+            .prepend(function () { return '<div class="font-weight-bold panel-title">' + $(this).attr('title') + '</div></div><hr class="hr-in-panel"/>'; });
         }
       });
     });

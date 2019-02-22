@@ -10,6 +10,7 @@ summary: ""
 
 # Local Extensions 
 
+
 # Panels
 With block attributes (<https://kramdown.gettalong.org/quickref.html#block-attributes>) we create custom styling:
 
@@ -37,6 +38,24 @@ Some text
 
 {: .danger title="My Title"}
 Some text
+
+Code Block:
+
+~~~~ markdown
+{: .code title="mycode title"}
+~~~css
+[data-toggle='collapse'] .toggler::before {
+	content: '\f077';
+}
+~~~
+~~~~
+
+{: .code title="mycode title"}
+~~~css
+[data-toggle='collapse'] .toggler::before {
+	content: '\f077';
+}
+~~~
 
 ## Collapsible Panel
 Same as panel wih an additional `.x`:

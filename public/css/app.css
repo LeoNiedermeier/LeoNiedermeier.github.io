@@ -1,8 +1,37 @@
 /* https://stackoverflow.com/questions/38970267/bootstrap-4-collapse-show-state-with-font-awesome-icon */
 [data-toggle='collapse'] .toggler::before {
-	content: '\f077';
+  content: '\f077';
 }
 
 [data-toggle='collapse'].collapsed .toggler::before {
-	content: '\f078';
+  content: '\f078';
+}
+
+/** from alert and bg-light */
+.highlight {
+  background-color: #f8f9fa !important;
+  position: relative;
+  padding: 0.75rem 1.25rem;
+  margin-bottom: 1rem;
+  border: 1px solid transparent;
+  border-radius: 0.25rem;
+}
+div.panel-inner > div.highlight {
+  padding: 0;
+  border: none;
+  margin-bottom: 0;
+}
+
+hr.hr-in-panel {
+	padding: 0;
+	margin: 0;
+	margin-bottom: 1rem;
+}
+
+.highlight pre {
+    padding: 0;
+    margin-top: 0;
+    margin-bottom: 0;
+    background-color: transparent;
+    border: 0
 }
