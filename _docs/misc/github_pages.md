@@ -5,6 +5,16 @@ category: misc
 summary: ""
 ---
 
+ 
+
+{: .info title="Collapsible" .x}
+Content of Collapsible
+
+
+~~~  markdown
+{: .info title="Collapsible" .x}
+Collapsible
+~~~
 
 # Kramdown Syntax
 
