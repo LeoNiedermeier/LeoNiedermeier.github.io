@@ -1,5 +1,5 @@
 ---
-title: Naming Conventions
+title: General - Naming Conventions
 tags: [maven]
 category: maven
 summary: "Naming conventions for aritfact and group id."

@@ -1,5 +1,5 @@
 ---
-title: Maven, Versions and Git
+title: General - Maven, Versions and Git
 tags: [maven,git]
 category: maven
 summary: "Maven artifact versions, git branches and builds."

@@ -1,5 +1,5 @@
 ---
-title: Transitive and Direct Dependencies
+title: Dependencies - Transitive and Direct Dependencies
 tags: [maven]
 category: maven
 summary: "Naming conventions for aritfact and group id."

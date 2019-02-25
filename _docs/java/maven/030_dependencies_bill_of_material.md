@@ -1,5 +1,5 @@
 ---
-title: Bill of Material
+title: Dependencies - Bill of Material
 tags: [maven]
 category: maven
 summary: "Difine the dependencies with a bill of material."
@@ -26,6 +26,7 @@ Steps:
 
 You define the dependencies of the bom in the dependencyManagement. There you can also define exclusions (for instance exclude commons logging from spring dependencies)
 
+{: .code title="pom.xml" .x}
 ``` xml
 <?xml version="1.0" encoding="UTF-8"?>
 <project>
@@ -66,7 +67,7 @@ The bom is referenced in a dependencyManagement dependency with
 * `<type>pom</type>`
 * `<scope>import</scope>`
 
-
+{: .code title="pom.xml" .x}
 ``` xml
 ...
  <dependencyManagement>
@@ -93,6 +94,7 @@ The bom is referenced in a dependencyManagement dependency with
 
 The dependencies can be defined as usual, but without version:
 
+{: .code title="pom.xml" .x}
 ``` xml
 ...
 <dependencies>

@@ -1,5 +1,5 @@
 ---
-title: Maven Plugins - git commit id
+title: Plugins - git commit id
 tags: [maven]
 category: maven
 summary: "Maven Plugins: git commit id"

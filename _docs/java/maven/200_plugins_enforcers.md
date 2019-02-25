@@ -1,5 +1,5 @@
 ---
-title: Maven Plugins - Enforcers
+title: Plugins - Enforcers
 tags: [maven]
 category: maven
 summary: " Useful Maven Enforcer Plugin Elements"
