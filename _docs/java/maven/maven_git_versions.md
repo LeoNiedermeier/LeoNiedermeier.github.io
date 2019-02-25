@@ -9,6 +9,7 @@ summary: "Maven artifact versions, git branches and builds."
 
 ## The Need for Different Maven SNAPSHOT Versions
 
+Git can be used with many different workflows, see for instance <https://www.atlassian.com/git/tutorials/comparing-workflows/gitflow-workflow>. Usually you work with a master branch and different feature branches.
 If we work with different git branches, it can be useful to build identifiable artifacts from different branches. For instance 
 the different branches can be related to individual (test) environments.
 
@@ -31,11 +32,18 @@ maven plugins is, that they have to be maintained (like production code), which 
 There are no changes of the `pom.xml` files due to different version configurations 
 in different branches. Therefore merges do not produce conflicts or unwanted overrides with respect to the version configuration.
 
+{: .success title="No numbers for SNAPSHOT"}
+When we have a dependency to a SNAPSHOT version does usually mean that the dependency should be to the newest SNAPSHOT version, 
+not to an older one. When we use the traditional maven version scheme, we have SNAPSHOT versions like 1.2.3-SNAPSHOT. 
+After a release build, the number is changed (to e.g. 1.2.4-SNAPSHOT). Most of the time, the dependencies to SNAPSHOTs have 
+to be updated (e.g from 1.2.3-SNAPSHOT to 1.2.4-SNAPSHT). This is error-prone work.
+
+
 # Versioning with CI Friendly Versions
 
 See <https://maven.apache.org/maven-ci-friendly.html>
 
-`pom.xml`
+{: .code title="pom.xml"}
 ~~~xml
 <groupId>...</groupId>
 <artifactId>...</artifactId>
@@ -48,6 +56,7 @@ See <https://maven.apache.org/maven-ci-friendly.html>
 
 In a multi module setup, the child module's `pom.xml` references the parent:
 
+{: .code title="child pom.xml"}
 ~~~xml
 ...
 <parent>

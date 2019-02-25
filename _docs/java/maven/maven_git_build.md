@@ -4,6 +4,8 @@ tags: [maven,git]
 category: maven
 summary: ""
 ---
+{: .danger title="Outdated"}
+Interesting only for historical reasons.
 
 # Overview
 
@@ -27,7 +29,7 @@ The maven version is the branch name in git plus "-SNAPSHOT". For example:
 
 ## Numbered Versions and Dependencies
 
-When we have a dependency to a SNAPSHOT version does ususally mean that the dependency should be to the newest SNAPSHOT version, not to an older one. When we use the traditional maven version scheme, we have SNAPSHOT versions like 1.2.3-SNAPSHOT. After a release build, the number is changed (to e.g. 1.2.4-SNAPSHOT). Most of the time, the dependencies to SNAPSHOTs have to be updated (e.g from 1.2.3-SNAPSHOT to 1.2.4-SNAPSHT). This is errorprone work.
+When we have a dependency to a SNAPSHOT version does usually mean that the dependency should be to the newest SNAPSHOT version, not to an older one. When we use the traditional maven version scheme, we have SNAPSHOT versions like 1.2.3-SNAPSHOT. After a release build, the number is changed (to e.g. 1.2.4-SNAPSHOT). Most of the time, the dependencies to SNAPSHOTs have to be updated (e.g from 1.2.3-SNAPSHOT to 1.2.4-SNAPSHT). This is errorprone work.
 
 ## Implementation
 
