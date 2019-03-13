@@ -4,7 +4,6 @@ tags: [java, apache_commons]
 category: apache_commons
 summary: "Some example usages of the org.apache.commons.lang3.exception.ExceptionContext class."
 ---
-
 # Overview
 Throwing a exception through through multiple layers of an application can add some more or less useful information.
 

@@ -158,6 +158,7 @@ $('p[title], div[title]').each(function () {
       });
 ~~~
 
-## Title Capitalization
+## Misc
 
-<https://capitalizemytitle.com/>
+* Title Capitalization: <https://capitalizemytitle.com/>
+* <https://www.gsbe.co.uk/grammar-lists.html>

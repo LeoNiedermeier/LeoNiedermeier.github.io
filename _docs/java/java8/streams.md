@@ -94,8 +94,7 @@ With the help of classes
 
 one can create a stream with a limited (but unknown) number of elements.
 
-Example: 
-
+{. code .x title="Example code"}
 ~~~java
 Iterator<Integer> iter = new Iterator<Integer>() {
     Random rand = new Random();
@@ -124,19 +123,39 @@ Examples:
 Read lines with `java.io.BufferedReader.lines()` with enumeration
     Via Enumeration -> Interator kann man über eine Enumeation streamen
 
+{. code .x title="Enumeration to Stream"}
 ~~~java 
-Enumeration<T> e = ...
-Stream<T> stream =   StreamSupport.stream(Spliterators.spliteratorUnknownSize(new Iterator<T>() {
-      public T next() {
-        return e.nextElement();
-      }
+public static <T> Stream<T> stream(Enumeration<T> enumeration) {
+        // https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Enumeration.html#asIterator()
+        return StreamSupport.stream(Spliterators.spliteratorUnknownSize(new Iterator<T>() {
+            @Override
+            public boolean hasNext() {
+                return enumeration.hasMoreElements();
+            }
 
-      public boolean hasNext() {
-        return e.hasMoreElements();
-      }
-    }, Spliterator.ORDERED), false);
+            @Override
+            public T next() {
+                return enumeration.nextElement();
+            }
+        }, Spliterator.ORDERED), false);
+    }
 ~~~
 
+{. code .x title="Iterable to Stream"}
+~~~java
+public static <T> Stream<T> stream(Iterable<T> iterable) {
+        return (iterable instanceof Collection) ? ((Collection<T>) iterable).stream()
+                : StreamSupport.stream(iterable.spliterator(), false);
+    }
+~~~
+
+
+{. code .x title="Iterator to Stream"}
+~~~java
+public static <T> Stream<T> stream(Iterator<T> iterator) {
+        return StreamSupport.stream(Spliterators.spliteratorUnknownSize(iterator, 0), false);
+    }
+~~~
 
 Or one can use a utils class which transforms an `Enumeration` to an `Iterator` like  `org.springframework.util.CollectionUtils.toIterator(Enumeration<E>)`
 

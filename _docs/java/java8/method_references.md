@@ -19,8 +19,12 @@ ToIntFunction<String> f = s -> s.length();
 // class::instanceMethod
 BiFunction<String, String, String> f = String::concat;
 // same as
-	BiFunction<String, String, String> f = (a,b) -> a.concat(b);
+BiFunction<String, String, String> f = (a,b) -> a.concat(b);
 
+// With generics
+ClassName::<TypeName>methodName
+
+ClassName<TypeName>::new
 ~~~
 
 # Useful Methods
