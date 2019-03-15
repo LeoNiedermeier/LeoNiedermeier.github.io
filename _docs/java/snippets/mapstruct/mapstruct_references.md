@@ -15,7 +15,7 @@ Example:
 
 {: .code title="Example Model Classes"}
 ~~~
- class University {
+class University {
     List<Department> departments = new ArrayList<Department>();
     List<Student> students = new ArrayList<Student>();
 }
@@ -31,7 +31,7 @@ class Student {
 
 {: .code title="Example DTO Classes"}
 ~~~
- class UniversityDTO {
+class UniversityDTO {
     List<DepartmentDTO> departments = new ArrayList<DepartmentDTO>();
     List<StudentDTO> students = new ArrayList<StudentDTO>();
 }
@@ -91,15 +91,20 @@ void registerInstance(DTO dto, @MappingTarget MODEL model) {
 
 Resolving references from a given key is similar to  what "Object Factories" <http://mapstruct.org/documentation/stable/reference/html/#object-factories> 
 do. But we have to take in to account, that when using an object factory, the instance for the key has to be available. This 
-means, that it has to be mapped before. But this can not be guaranteed. Therefore object factories can not be used.
+means, that it has to be mapped before. But this can not be guaranteed. Therefore object factories can not be used. The resolution 
+of references has to be postponed until the required reference is available.
 
 #### The ReferenceResolver Class
 
 The `ReferenceResolver` does
 
 * store the created model object instances
-* hold a list of references to resolve
+* hold a list of reference targets to resolve
 * resolve the references
+
+A reference target is a method, which sets the resolved model instance.
+It is a `Consumer<?>`, which can be provided by a method reference of a setter- / adder-method. 
+In the example above, such a method can be `Department.addStudent(Student)`. 
 
 {: .code .x title="Simple ReferenceResolver Implementation"}
 ~~~java
@@ -135,6 +140,8 @@ public class ReferenceResolver {
 }
 ~~~
 
+
+
 In order to store the created model object instances, the above mentioned `registerInstance` looks like:
 ~~~java
 @AfterMapping
@@ -144,7 +151,7 @@ void registerInstance(DTO dto, @MappingTarget MODEL model) {
 ~~~
 This method can be used in a generic way.
 
-Filling the list with references to resolve can not be generic. For the example above, it will look like: 
+Filling the list with references targets to resolve can not be generic. For the example above, it will look like: 
 ~~~java
 @AfterMapping
 void afterFromDTO(DTO departmentDTO, @MappingTarget Department department) {
@@ -168,8 +175,9 @@ referenceResolver.resolveReferences();
 #### Providing the ReferenceResolver
  An instance of `ReferenceResolver` has to be provided to the mapper methods. This can be done for instance by
 
-* passing a context object (see <http://mapstruct.org/documentation/stable/reference/html/#passing-context>)
-* use a `java.lang.ThreadLocal` 
+* passing a context object (see <http://mapstruct.org/documentation/stable/reference/html/#passing-context>). Note that the 
+context object has to be passed around all mappers used.
+* use a `java.lang.ThreadLocal`. This approach is not invasive in the sense that mapper methods do not have to be changed. 
 
 # References
 * <http://mapstruct.org/>
