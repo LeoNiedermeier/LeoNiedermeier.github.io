@@ -50,10 +50,16 @@ Note the difference between the `students` / `studentIds` field type of `Departm
 
 # Implementation
 
+## General Considerations
+
+* Field names: equal or different
+* Reference ID as `String` or dedicated object.
+
 ## Mapping from Model to DTO
 
-The mapping between DTO and  model is straightforward. When the name of the fields in DTO and model are the same, a conversion 
-is needed.
+### Equal Field Names
+The mapping between DTO and  model is straightforward. When the name of the fields in DTO and model are the equal, just a conversion 
+is needed. Depending on the overall implementation of model and DTOs, this conversion can be a general function. 
 
 If the referenced class (for instance `Student` above) implements an interface like `Identifiable`
 ~~~java
@@ -61,6 +67,7 @@ interface Identifiable {
   String getId();
 }
 ~~~
+
 the conversion can be a general method like:
 ~~~java
 String toId(Identifiable identifiable) {
@@ -69,17 +76,28 @@ String toId(Identifiable identifiable) {
 ~~~ 
 This method is automatically applied by mapstruct, if the names of the fields in source and target classes are the same.
 
+### Different Field Names
 
-## Mapping from Model to DTO
+If the field names in DTO and model are different, the mapping can be done by an `@AfterMapping` method.
 
-The mapping from DTO to model is a bit more difficult. The task is to find or create a suitable instance of the model object 
+For the example above, it will look like:
+~~~java
+@AfterMapping
+void afterToDTO(Department department, @MappingTarget DepartmentDTO departmentDTO) {
+    department.getStudents().stream().map(Identifiable::getId).forEach(departmentDTO::addStudentId);
+}
+~~~
+
+## Mapping from DTO to Model
+
+The mapping from DTO to model needs some extra code. The task is to find or create a suitable instance of the model object 
 for a given id value in the DTO. 
-
 
 ### Cache Created Model Instances
 
 In order to have access to instances of model objects, we store them in a map. The key is the id value. This can easily realized 
 by an after-mapping method like:
+
 ~~~java
 @AfterMapping
 void registerInstance(DTO dto, @MappingTarget MODEL model) {
@@ -87,16 +105,18 @@ void registerInstance(DTO dto, @MappingTarget MODEL model) {
 }
 ~~~
 
+This method has to be applied to all mappings where the target model object is a candidate for reference resolving.
+
 ### Resolve the References
 
 Resolving references from a given key is similar to  what "Object Factories" <http://mapstruct.org/documentation/stable/reference/html/#object-factories> 
-do. But we have to take in to account, that when using an object factory, the instance for the key has to be available. This 
+do. But we have to take into account, that when using an object factory, the instance for the key has to be available. This 
 means, that it has to be mapped before. But this can not be guaranteed. Therefore object factories can not be used. The resolution 
 of references has to be postponed until the required reference is available.
 
 #### The ReferenceResolver Class
 
-The `ReferenceResolver` does
+The `ReferenceResolver` does:
 
 * store the created model object instances
 * hold a list of reference targets to resolve
@@ -154,7 +174,7 @@ This method can be used in a generic way.
 Filling the list with references targets to resolve can not be generic. For the example above, it will look like: 
 ~~~java
 @AfterMapping
-void afterFromDTO(DTO departmentDTO, @MappingTarget Department department) {
+void afterFromDTO(DepartmentDTO departmentDTO, @MappingTarget Department department) {
     departmentDTO.getStudents()
                     .forEach(s -> referenceResolver.registerUnresolvedReference(s, department::addStudent));
 }
@@ -162,8 +182,8 @@ void afterFromDTO(DTO departmentDTO, @MappingTarget Department department) {
 
 #### Execution of Mapping
 
-The `ReferenceResolver` method `resolveReferences()` resolves the references. It has to be invoked after mapping the whole 
-object structure from DOT to model.
+The `ReferenceResolver` method `resolveReferences()` resolves the references. It has to be invoked after the mapping of 
+the whole object structure from DTO to model.
 
 ~~~java
 ReferenceResolver referenceResolver = ...
