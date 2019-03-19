@@ -1,8 +1,8 @@
 ---
-title: Mapstruct
+title: Mapstruct Assozitation Mapping
 tags: [misc]
 category: misc
-summary: "Mapstruct"
+summary: "Mapstruct Assozitation Mapping"
 ---
 
 # Overview
