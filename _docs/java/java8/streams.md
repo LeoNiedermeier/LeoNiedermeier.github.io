@@ -159,9 +159,25 @@ public static <T> Stream<T> stream(Iterator<T> iterator) {
 
 Or one can use a utils class which transforms an `Enumeration` to an `Iterator` like  `org.springframework.util.CollectionUtils.toIterator(Enumeration<E>)`
 
+# Recursive Tree Walking
 
+{. code .x title="Recursive Tree Walking with Stream"}
+~~~java
+
+public List<Node> getChildren() {
+   return ...
+}
+ 
+public Stream<Node> flattened() {
+    return Stream.concat(Stream.of(this), getChildren().stream().flatMap(Node::flattened));
+}
+
+* The call of `flatMap` 
+
+~~~
 # References
 
 * <http://stackoverflow.com/questions/24676877/should-i-return-a-collection-or-a-stream>
 * <https://docs.oracle.com/javase/8/docs/api/java/util/stream/StreamSupport.html>
 * <https://stackoverflow.com/questions/24676877/should-i-return-a-collection-or-a-stream>
+* <http://squirrel.pl/blog/2015/03/04/walking-recursive-data-structures-using-java-8-streams/>
