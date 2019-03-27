@@ -21,7 +21,7 @@ Example:
  BeanSetterGetterTester.assertSetterGetter(MyBean.class, MyBean::setName, MyBean::getName);
 ~~~
 
-{ .code .x title="Example Failure Trace"}
+{: .code .x title="Example Failure Trace"}
 ~~~
 org.opentest4j.AssertionFailedError: Reason: Setter - Getter different values!
 set-method: setWrong
@@ -51,7 +51,7 @@ Example:
 GenericBeanPropertyTester.testAllSettersGetters(MyBean.class);
 ~~~
 
-{ .code .x title="Example Failure Trace"}
+{: .code .x title="Example Failure Trace"}
 ~~~
 org.opentest4j.MultipleFailuresError: Test properties getter and setters (2 failures)
     -----------------
