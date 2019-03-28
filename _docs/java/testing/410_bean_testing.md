@@ -2,7 +2,7 @@
 title: Bean Testing
 tags: [testing]
 category: testing
-summary: "Testing pf bean properies"
+summary: "Testing bean properies"
 ---
 
 # Overview
