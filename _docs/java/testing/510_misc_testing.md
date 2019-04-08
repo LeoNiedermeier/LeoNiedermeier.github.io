@@ -5,7 +5,7 @@ category: testing
 summary: "Misc bean properies"
 ---
 
-# Creating an INstance of an Abstract Class
+# Creating an Instance of an Abstract Class
 
 With <http://objenesis.org/>:
 
