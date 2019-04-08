@@ -38,6 +38,9 @@ applied to the super-class.
 {: .danger title="Cyclic Dependencies"}
 The `JsonSubTypes` with `Type` annotations result in a cyclic dependency between super-class and sub-class.
 
+
+The type info is stored in a property due to `JsonTypeInfo.As.PROPERTY` and `property = "@type"`:
+
 ~~~java
 @JsonTypeInfo(use = JsonTypeInfo.Id.NAME, include = JsonTypeInfo.As.PROPERTY, property = "@type")
 @JsonSubTypes({ @Type(value = Car.class, name = "car"), @Type(value = Bicycle.class, name = "bicycle"), })
@@ -59,6 +62,34 @@ Example output:
   } ]
 }
 ~~~
+
+
+The same with type info as `WRAPPER_OBJECT`:
+
+~~~java
+@JsonTypeInfo(use = JsonTypeInfo.Id.NAME, include = JsonTypeInfo.As.WRAPPER_OBJECT, property = "@type")
+@JsonSubTypes({ @Type(value = Car.class, name = "car"), @Type(value = Bicycle.class, name = "bicycle"), })
+class Vehicle {
+    ...
+}
+~~~
+
+Example output:
+~~~json
+{
+  "vehicles" : [ {
+    "my-vehicle" : {
+      "name" : "myVehicle"
+    }
+  }, {
+    "my-car" : {
+      "name" : "myCar",
+      "horsePower" : "99"
+    }
+  } ]
+}
+~~~
+
 
 # Explicit Registering of Types
 

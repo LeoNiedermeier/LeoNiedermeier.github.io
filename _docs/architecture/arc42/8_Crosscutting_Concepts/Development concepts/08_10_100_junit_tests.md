@@ -30,9 +30,9 @@ Siehe auch:
 ### Wenige Features
 
 Hat eine Klasse wenige Features zu testen mit entsprechend wenig Testkode, so kann man diese in einer übergeordneten Testklasse zusammenführen. 
-In dieser Testklasse werden die Tests für einzelne Features mit Hilfe von Junit 5 nestetd Testklassen gruppiert.
+In dieser Testklasse werden die Tests für einzelne Features mit Hilfe von Junit 5 nested Testklassen gruppiert.
 
-Namenskonvention
+**Namenskonvention**
  
 * Name der Testklasse = \<Name der zu testenden Klasse\>  + "Test"
 * Name der nested Testklasse: \<Name Feature / Methode\>
@@ -52,9 +52,9 @@ class MyClassTest {
 
 ### Viele verschiedene Features
 
-Namenskonvention: 
+**Namenskonvention**
 
-* Name der Testklasse = \<Name der zu testenden Klasse\> +"_" + \<Name Feature / Methode\> + "_Test"
+* Name der Testklasse = \<Name der zu testenden Klasse\> + "_" + \<Name Feature / Methode\> + "_Test"
 * Name der Testmethoden: sollten beschreiben, was getestet wird
 
 Diese Namenskonvention orientiert sich an der üblichen Namensgebung und bringt mit dem Zusatz "\_\<Name Feature\>\_" ein einfaches 
