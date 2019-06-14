@@ -2,7 +2,7 @@
 title: Misc Testing
 tags: [testing]
 category: testing
-summary: "Misc bean properies"
+summary: "Misc Testing"
 ---
 
 # Creating an Instance of an Abstract Class

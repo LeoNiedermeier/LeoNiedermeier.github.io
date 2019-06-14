@@ -25,9 +25,16 @@ können sein:
 * Der Aufrufer kann beim Auftreten der Exceptionen den Fehler behandeln
 * Der Aufrufer muss (wird dazu gezwungen) die Exception zu behandeln.  
 
-Vergleiche auch ""Effective Java 3rd Edition":
+Vergleiche auch "Effective Java 3rd Edition":
 * "Item 70: Use checked exceptions for recoverable conditions and runtime exceptions for programming errors"
 * "Item 71 - Avoid unnecessary use of checked exceptions"
+
+##  Weitere Informationen zu unchecked Exceptions
+
+* "checked exception is a valid return value of the method"
+*  Die `@Transactional` Annotation von spring-tx und ejb behandeln checked und uncheked Exceptions unterschiedlich
+    * unchecked Exception: Rollback
+    * checked Exception: kein Rollback 
 
 # Custom Exceptions und Exception Hierarchie
 
@@ -46,7 +53,7 @@ In der Regel wird eine `ContextedRuntimeException` mit individuellem Errorkode v
 * Einheitliche und formatierte Fehlermeldung
 * Kontext Elemente möglich
 * Über einen eindeutigen ErrorCode kann man die Fehler und die Fehlerstelle identifizieren (auch ohne Stacktrace)
-* Mittels einer Excpetion Instanz spezifischen Korrelation-ID kann der Aufrufpfad nachverfolgt werden. (ggf. auch über Remote 
+* Mittels einer Exception Instanz spezifischen Korrelation-ID kann der Aufrufpfad nachverfolgt werden. (ggf. auch über Remote 
   Aufrufe hinweg)    
 
 ## Errorkodes
@@ -77,6 +84,16 @@ try {
 catch (ContextedRuntimeException e) {
     e.addContextValue("key", myValue);
     throw e;
+}
+~~~
+
+oder etwas kompakter:
+
+~~~java
+try {
+    ...
+catch (ContextedRuntimeException e) {
+    throw e.addContextValue("key", myValue);
 }
 ~~~
 
