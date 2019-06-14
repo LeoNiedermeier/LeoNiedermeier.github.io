@@ -1,4 +1,3 @@
-
 ---
 title: Docker, Jenkins, Sonarqube in Virtual Box
 tags: [misc]
