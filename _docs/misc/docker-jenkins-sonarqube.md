@@ -16,6 +16,17 @@ summary: "Setup a VirtualBox for development with Jenkins and Sonarqube"
 
 Follow the steps described in <https://github.com/galexandre/docker-jenkins-sonarqube>
 
+
+# Setup Sonar
+
+* <https://funnelgarden.com/sonarqube-jenkins-docker/>
+
+A docker-compose example with sonarqube and postgres:
+* <https://github.com/SonarSource/docker-sonarqube/blob/master/recipes/docker-compose-postgres-example.yml>
+* <https://hub.docker.com/r/bitnami/sonarqube>
+
+
+
 # Connect from Host System
 
 ![Host Only Adapter](docker-jenkins-sonarqube/HostOnlyAdapter.png  "Host Only Adapter")
