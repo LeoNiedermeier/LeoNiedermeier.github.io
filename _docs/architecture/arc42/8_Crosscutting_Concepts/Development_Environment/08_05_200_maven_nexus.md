@@ -1,5 +1,5 @@
 ---
-title: Maven Nexus Setup
+title: CI - Maven Nexus Setup
 tags: [arg42]
 category: arc42
 summary: "Maven Nexus Setup"

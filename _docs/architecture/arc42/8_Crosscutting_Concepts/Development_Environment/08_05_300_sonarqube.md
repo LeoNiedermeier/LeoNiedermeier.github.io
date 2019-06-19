@@ -1,5 +1,5 @@
 ---
-title: Sonarqube
+title: CI - Sonarqube
 tags: [arg42]
 category: arc42
 summary: "Sonarqube Setup"

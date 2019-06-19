@@ -1,5 +1,5 @@
 ---
-title: Jenkinsfile Beispiele
+title: CI - Jenkinsfile
 tags: [arg42]
 category: arc42
 summary: "Jenkinsfile Beispiele"
