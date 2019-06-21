@@ -72,6 +72,11 @@ Note that the version of the parent is given by `${revision}`.
 With the CI friendly versions there is only one place in a maven multi module setup, where 
 a concrete version is defined. The parent's version is identified by the `${revision}` property. 
 
+{: .success title="Flatten Maven Plugin "}
+From <https://maven.apache.org/maven-ci-friendly.html> section "Install / Deploy":  
+> If you like to install or deploy artifacts by using the above setup you have to use the flatten-maven-plugin 
+> otherwise you will install/deploy artifacts in your repository which will not be consumable by Maven anymore. 
+
 
 ### Eclipse
 The `${revision}` is resolved to the configured value, in our case to "local-SNAPSHOT".
