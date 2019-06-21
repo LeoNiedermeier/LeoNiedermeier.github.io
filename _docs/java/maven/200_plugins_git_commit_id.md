@@ -16,37 +16,40 @@ a git commit.
 
 In the `<build> <plugins>` section of `pom.xml`:
 
+{: .code .x title="pom.xml"}
 ~~~
 <plugin>
-    <groupId>pl.project13.maven</groupId>
-    <artifactId>git-commit-id-plugin</artifactId>
-    <version>2.2.6</version>
-    <executions>
-        <execution>
-            <id>get-the-git-infos</id>
-            <goals>
-                <goal>revision</goal>
-            </goals>
-        <phase>initialize</phase>
-        </execution>
-    </executions>
-    <configuration>
-        <!-- everything else is default -->
-        <generateGitPropertiesFile>false</generateGitPropertiesFile>
-    </configuration>
+  <groupId>pl.project13.maven</groupId>
+  <artifactId>git-commit-id-plugin</artifactId>
+  <version>2.2.6</version>
+  <executions>
+    <execution>
+      <id>get-the-git-infos</id>
+      <goals>
+        <goal>revision</goal>
+      </goals>
+      <phase>initialize</phase>
+    </execution>
+  </executions>
+  <configuration>
+    <!-- everything else is default -->
+    <generateGitPropertiesFile>false</generateGitPropertiesFile>
+  </configuration>
 </plugin>
+
+<!-- Add entries to MANIFEST.MF file -->
 <plugin>
-    <groupId>org.apache.maven.plugins</groupId>
-    <artifactId>maven-jar-plugin</artifactId>
-    <configuration>
-        <archive>
-            <manifestEntries>
-                <git-branch>${git.branch}</git-branch>
-                <git-commit-id>${git.commit.id.abbrev}</git-commit-id>
-                <git-tags>${git.tags}</git-tags>
-            </manifestEntries>
-        </archive>
-    </configuration>
+  <groupId>org.apache.maven.plugins</groupId>
+  <artifactId>maven-jar-plugin</artifactId>
+  <configuration>
+    <archive>
+      <manifestEntries>
+        <git-branch>${git.branch}</git-branch>
+        <git-commit-id>${git.commit.id.abbrev}</git-commit-id>
+        <git-tags>${git.tags}</git-tags>
+      </manifestEntries>
+    </archive>
+  </configuration>
 </plugin>
 ~~~
 ## Output
