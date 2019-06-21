@@ -14,10 +14,8 @@ summary: "Jenkinsfile Beispiele"
 {: .info title="Primäres Build Tool"}
 Maven ist das primäre Build-Tool. Es sollte möglich sein, ein Artefakt nur mit Maven vollständig zu bauen. 
 
-# Maven Konfiguration
 
-## Voraussetzung
-
+# Voraussetzung
 
 Installierte Plugins
 
@@ -29,14 +27,12 @@ Installierte Plugins
   
 ( * Pipeline Maven Plugin: <https://wiki.jenkins.io/display/JENKINS/Pipeline+Maven+Plugin> )
 
-## Konfiguration Config File Provider  
+# Konfiguration Config File Provider  
 
 
-### Maven settings.xml
+## Maven settings.xml
 
-**TODO: Gehört das eher zu allgemeine Maven Konfiguratoin?**
-
-{: .code title="settings.xml" .x}
+{: .code title="settings.xml für Config File Provider" .x}
 ~~~xml
 <settings>
   <servers>
@@ -84,29 +80,29 @@ Installierte Plugins
 {: .info title="Hinweis"}
 Eine ähnliche `settings.xml` Datei wird vom Entwickler benutzt. Diese wird üblicherweise in `<user_home>/.m2` abgelegt.
 
-#### Mirror Konfiguration
+### Mirror Konfiguration
 * Zentraler Mirror für alle Maven Repositories
 
-#### Properties Konfiguration
+### Properties Konfiguration
 * Properties für Server URLs
 
-### Server Credentials
+## Server Credentials
 
 Die Konfiguration von Server Credentials wird in <https://wiki.jenkins.io/display/JENKINS/Config+File+Provider+Plugin#ConfigFileProviderPlugin-MavenServerCredentials(since2.7)> 
 beschrieben. Wie übernehmen die Credentials für Repository Server `nexus-releases` und `nexus-snapshots`.
 
 ![Config File Provider Credentials](08_05_410_jenkins_jenkinsfile/configuration_file_provider_credentials.png "Config File Provider Credentials"){:height="300px" }
 
-## Jenkinsfile
+# Jenkinsfile
 
 {: .info title="Jenkins File Stages und Maven Lifecycle Phases"}
 Maven hat einen definierten Build Lifecycle mit mehreren Phasen, siehe
 <https://maven.apache.org/guides/introduction/introduction-to-the-lifecycle.html>. Man könnte nun im Jenkinsfile mit Stages 
 wie "Build", "Test", "Deploy" diese Lifecycle zum Teil nachbauen. Dabei ist aber zu berücksichtigen, dass bei maven Aufrufen 
 wie zum Beispiel `mvn test` der Maven Lifecycle bis zur angegebenen Phase durchgeführt wird und nicht nur die angegebene.  
-(siehe z.b. <https://stackoverflow.com/questions/55183989/maven-lifecycle-within-jenkins-pipeline-how-to-best-separate-responsibilities>). 
+(siehe z.B. <https://stackoverflow.com/questions/55183989/maven-lifecycle-within-jenkins-pipeline-how-to-best-separate-responsibilities>). 
 
-### Allgemein: 
+## Allgemein
 
 Maven als docker agent (<https://jenkins.io/doc/book/pipeline/syntax/#agent>):
 
@@ -119,14 +115,14 @@ agent {
 }
 ~~~
 
-#### Docker Maven Images
+### Docker Maven Images
 Findet man unter <https://hub.docker.com/_/maven/>.
 
-#### Weiterführende Dokumentation 
+### Weiterführende Dokumentation 
 * <https://jenkins.io/doc/book/pipeline/docker/>
 * <https://jenkins.io/doc/book/pipeline/syntax/#agent/>
 
-### Build Stage
+## Build Stage
 ~~~
 stage('Maven: clean deploy') {
   steps {
@@ -154,7 +150,7 @@ Hinweise:
   * Vgl. Dokumentation zu `withMaven` und was alles gemacht wird (<https://wiki.jenkins.io/display/JENKINS/Pipeline+Maven+Plugin>).
 
 
-#### Sonar Analysis
+### Sonar Analysis
 
 
 * <https://docs.sonarqube.org/display/SCAN/Analyzing+with+SonarQube+Scanner+for+Maven>
@@ -182,7 +178,7 @@ Sonar Analysis sollte während der verify-Phase von Maven laufen. Dazu ergänzt 
   </executions>
 </plugin>
 ~~~
-#### Deplyment in Artefakt Repository
+### Deplyment in Artefakt Repository
 {: .info title="Hinweis"}
 Nur Artefakte, die mittels eines Jenkins Buildes erzeugt wurden, sollten in Artefakt Repository abgelegt werden. 
 
