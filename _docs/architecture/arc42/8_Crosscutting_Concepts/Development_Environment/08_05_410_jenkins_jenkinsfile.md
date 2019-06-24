@@ -178,7 +178,9 @@ Sonar Analysis sollte während der verify-Phase von Maven laufen. Dazu ergänzt 
   </executions>
 </plugin>
 ~~~
+
 ### Deplyment in Artefakt Repository
+
 {: .info title="Hinweis"}
 Nur Artefakte, die mittels eines Jenkins Buildes erzeugt wurden, sollten in Artefakt Repository abgelegt werden. 
 
