@@ -13,6 +13,12 @@ Ein "Release" Build entspricht im Wesentlichen einem Snapshit-Build. Unterschied
 * Tag im Git Repository
 * Artefakte werden in das Release Artefakt Repository deployed  
 
+Ein Release Build wird als Pipeline angelegt. Die zu verwendende Release Version kann über den Parameter `ReleaseVersion` eingegeben 
+werden. Dazu wird dieser in der Konfguration angelegt. 
+
+![ReleaseVersion Parameter](08_05_410_jenkins_jenkinsfile/pipeline_release_parameter.png "ReleaseVersion Parameter"){:height="300px" }
+
+
 # Jenkinsfile
 
 Schritte:
@@ -95,8 +101,10 @@ weitergereicht. `sh 'git config --local credential.helper "! echo username=\\$GI
 Variablen `GIT_USERNAME` und `GIT_PASSWORD` werden mit `withCredentials([usernamePassword(credentialsId: 'git-pass-credentials-ID', passwordVariable: 'GIT_PASSWORD', usernameVariable: 'GIT_USERNAME')]) 
 ...` gefüllt.
 
-
-nexus-releases
+{: .info title="Kein neuer Commit"}
+Da die Maven Version des Projektes CI-friendly ist (<https://maven.apache.org/maven-ci-friendly.html>), wird durch das setzen 
+einer konkreten Version **kein** neuer Commit erzeugt (der Quellkode wird nicht verändert). Es wird lediglich ein Tag auf einen 
+vorhandenen Commit gesetzt.
 
 
 # Referenzen

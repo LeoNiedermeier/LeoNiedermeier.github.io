@@ -7,7 +7,8 @@ summary: "Jenkinsfile für SNAPSHOT Build"
 
 # Übersicht
 
-
+Der Snapshot Build wird als Multi-Branch-Pipeline angelegt. Dadurch kann für jeden vorhandenen Branch ein Snapshot Build erstellt 
+werden.
 
 # Maven Agent
 
