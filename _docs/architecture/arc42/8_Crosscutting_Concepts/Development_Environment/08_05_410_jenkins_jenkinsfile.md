@@ -141,7 +141,8 @@ stage('Maven: clean deploy') {
 
 
 Hinweise: 
-* Beim Anlegen der Konfigurationsdatei wurde die ID "jenkins-maven-settings" gesetzt.
+*  Der `agent` docker könnte auch nur im Build Stage definiert werden.  
+*  Beim Anlegen der Konfigurationsdatei wurde die ID "jenkins-maven-settings" gesetzt.
 * `post`: <https://jenkins.io/doc/book/pipeline/syntax/#post>  
 * `junit`: Archive JUnit-formatted test results: (<http://192.168.56.101:8080/job/io.github.leoniedermeier.jenkins.demo/pipeline-syntax/html>)
 * Das Maven Pipeline Plugin wird nicht benutzt, falls man es doch benutzen will, sollte man berücksichtigen:
