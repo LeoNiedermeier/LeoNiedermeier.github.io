@@ -1,5 +1,5 @@
 ---
-title: CI - Jenkinsfile für Release Build
+title: CI - Jenkinsfile für Build - Release
 tags: [arg42]
 category: arc42
 summary: "CI - Jenkinsfile für Release Build"
@@ -24,7 +24,6 @@ Schritte:
 
 {: .code title="Jenkinsfile für Release Build" .x}
 ~~~
-// Einfaches Jenkinsfile 
  pipeline {
   agent any 
   options {
@@ -95,6 +94,9 @@ konfiguriert.
 weitergereicht. `sh 'git config --local credential.helper "! echo username=\\$GIT_USERNAME; echo password=\\$GIT_PASSWORD;"'`  Die 
 Variablen `GIT_USERNAME` und `GIT_PASSWORD` werden mit `withCredentials([usernamePassword(credentialsId: 'git-pass-credentials-ID', passwordVariable: 'GIT_PASSWORD', usernameVariable: 'GIT_USERNAME')]) 
 ...` gefüllt.
+
+
+nexus-releases
 
 
 # Referenzen
