@@ -12,16 +12,16 @@ summary: "Deploy to Repository"
 > (from <https://maven.apache.org/plugins/maven-deploy-plugin/>)
 
 {: .info title="Minimum Version"}
-Minimum Version 2.8 required!
+Minimum version 2.8 of Apache Maven Deploy Plugin (<https://maven.apache.org/plugins/maven-deploy-plugin/>) required!
 
 # Configuration
 
-The repository locations are not fixed configured in the `pom.xml` file. 
+The repository locations are not configured in the `pom.xml` file. 
 Instead we use the parameters / properties `altReleaseDeploymentRepository` and `altSnapshotDeploymentRepository`
 (see <https://maven.apache.org/plugins/maven-deploy-plugin/deploy-mojo.html>). 
-They can be defined aas command line parameters or in the maven configuration file `settings.xml`:
+They can be defined as command line parameters or in the maven configuration file `settings.xml`:
 
-{: .code title="settings.xml"}
+{: .code title="Exmple of settings.xml"}
 ~~~xml
 <settings>
   <servers>
@@ -56,3 +56,4 @@ They can be defined aas command line parameters or in the maven configuration fi
 # References
 
 * <https://maven.apache.org/plugins/maven-deploy-plugin/>
+* <https://maven.apache.org/settings.html>
