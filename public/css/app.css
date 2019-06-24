@@ -35,3 +35,17 @@ hr.hr-in-panel {
     background-color: transparent;
     border: 0
 }
+
+.page  blockquote {
+  border-left: .25em solid #dfe2e5;
+  color: #6a737d;
+  padding: 0 1em;
+}
+
+.page  blockquote>:first-child {
+  margin-top: 0;
+}
+
+page blockquote>:last-child {
+  margin-bottom: 0;
+}
