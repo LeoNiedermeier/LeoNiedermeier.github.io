@@ -14,10 +14,11 @@ Ein "Release" Build entspricht im Wesentlichen einem Snapshit-Build. Unterschied
 * Artefakte werden in das Release Artefakt Repository deployed  
 
 Ein Release Build wird als Pipeline angelegt. Die zu verwendende Release Version kann über den Parameter `ReleaseVersion` eingegeben 
-werden. Dazu wird dieser in der Konfguration angelegt. 
+werden. Dies kann im Jenkinsfile oder in in der Konfguration konfiguriert werden. 
 
 ![ReleaseVersion Parameter](08_05_410_jenkins_jenkinsfile/pipeline_release_parameter.png "ReleaseVersion Parameter"){:height="300px" }
 
+Wir definieren den Parameter `ReleaseVersion` im Jenkinsfile (siehe unten).
 
 # Jenkinsfile
 
@@ -34,8 +35,11 @@ Schritte:
   agent any 
   options {
     skipStagesAfterUnstable()
+    buildDiscarder(logRotator(numToKeepStr: '5'))
   }
-  
+  parameters {
+    string(name: 'ReleaseVersion', defaultValue: '', description: 'Version angeben (Format x.y.z)')
+  }
   stages {
     stage('Clone') {
       steps {
@@ -100,7 +104,7 @@ konfiguriert.
 weitergereicht. `sh 'git config --local credential.helper "! echo username=\\$GIT_USERNAME; echo password=\\$GIT_PASSWORD;"'`  Die 
 Variablen `GIT_USERNAME` und `GIT_PASSWORD` werden mit `withCredentials([usernamePassword(credentialsId: 'git-pass-credentials-ID', passwordVariable: 'GIT_PASSWORD', usernameVariable: 'GIT_USERNAME')]) 
 ...` gefüllt.
-
+  * Das gesetzte Tag muss explizit upstream gepushed werden (<https://git-scm.com/book/en/v2/Git-Basics-Tagging>, <https://git-scm.com/docs/git-tag>).
 {: .info title="Kein neuer Commit"}
 Da die Maven Version des Projektes CI-friendly ist (<https://maven.apache.org/maven-ci-friendly.html>), wird durch das setzen 
 einer konkreten Version **kein** neuer Commit erzeugt (der Quellkode wird nicht verändert). Es wird lediglich ein Tag auf einen 
@@ -108,3 +112,5 @@ vorhandenen Commit gesetzt.
 
 
 # Referenzen
+
+
