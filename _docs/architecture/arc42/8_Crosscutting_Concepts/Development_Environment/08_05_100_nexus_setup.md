@@ -35,7 +35,7 @@ wird als zentrales Maven Repository inklusive Mirror für Maven Central verwende
 
 ## User
 
-TODO: jenkins-user
+Damit Jenkins Artefakte in Nexus deployen kann, legt man noch einen passenden User, z.B: "jenkins-nexus" an.
 
 # Referenzen
 
