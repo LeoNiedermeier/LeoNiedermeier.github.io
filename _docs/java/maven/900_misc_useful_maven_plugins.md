@@ -28,3 +28,17 @@ Configure sonar properties in `properties` area of maven `settings.xml` like:
 <sonar.host.url>http://192.168.56.101:9000</sonar.host.url>
 ...
 ~~~
+
+# depgraph-maven-plugin
+
+> A Maven plugin that generates dependency graphs in various formats (DOT, GML, PlantUML, JSON and Text)
+
+* <https://github.com/ferstl/depgraph-maven-plugin>
+
+~~~
+mvn com.github.ferstl:depgraph-maven-plugin:graph
+~~~  
+
+Output is in `/target/dependency-graph.dot`
+
+Can be viewed by an arbitrary online graphviz editor like <http://graphviz.it> 
