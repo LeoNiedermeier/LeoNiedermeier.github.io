@@ -5,4 +5,4 @@ permalink: index.html
 layout: "page"
 ---
 
-{% include toc.html %}
+{% include toc2.html html=content %}
