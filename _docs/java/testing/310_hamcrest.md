@@ -62,9 +62,10 @@ class Phone {
 }
 
 // Factory method for reuseable Matchers
+// with the help of PropertyAccess#property and org.hamcrest.Matchers static methods
 static Matcher<Person> allPhoneNumbersStartWith(String string) {
     return property(Person::getPhones, " person phones ")
-                .is(everyItem(property(Phone::getNumber, " number ").is(Matchers.startsWith(string))));
+                .is(everyItem(property(Phone::getNumber, " number ").is(startsWith(string))));
 }
 
 // Test setup
