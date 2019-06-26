@@ -14,10 +14,10 @@ How to write custom hamcrest matchers
 
 # Custom Matchers
 
-Referenced classes are part of the project `io.github.leoniedermeier.utils`.
+Referenced classes are part of the project `io.github.leoniedermeier.utils` (<https://github.com/LeoNiedermeier/io.github.leoniedermeier.utils/tree/master/src/main/java/io/github/leoniedermeier/utils/test/hamcrest>).
 
 ## The TransformingMatcher Class
-The `io.github.leoniedermeier.utils.test.hamcrest.TransformingMatcher` applies a `Function<T,R>` to the initial value and calls a 
+The `TransformingMatcher` applies a `Function<T,R>` to the initial value and calls a 
 `Matcher<R>` for the transformed value (note that the `TransformingMatcher` is a `Matcher<T>` ).
 
 ~~~java
@@ -34,6 +34,48 @@ assertThat("abcd", PropertyAccess.property(String::length, "length of string").i
 // or with static imports
 assertThat("abcd", property(String::length, "length of string").is(greaterThan(2)));
 ~~~
+
+{: .code .x title="Example with bean properties"}
+~~~java
+
+// Modell classes
+class Person {
+    private final List<Phone> phones = new ArrayList<>();
+    public void addPhone(Phone phone) {
+        phones.add(phone);
+    }
+    public List<Phone> getPhones() {
+        return phones;
+    }
+}
+
+class Phone {
+    private String number;
+
+    public Phone(String number) {
+        this.number = number;
+    }
+
+    public String getNumber() {
+        return number;
+    }
+}
+
+// Factory method for reuseable Matchers
+static Matcher<Person> allPhoneNumbersStartWith(String string) {
+    return property(Person::getPhones, " person phones ")
+                .is(everyItem(property(Phone::getNumber, " number ").is(Matchers.startsWith(string))));
+}
+
+// Test setup
+Person person = new Person("Name");
+person.addPhone(new Phone("0049-1234"));
+person.addPhone(new Phone("0049-ABCD"));
+
+// Test method
+assertThat(person, allPhoneNumbersStartWith("0049"));
+~~~
+
 
 ## ExceptionMatchers Class
 The class `io.github.leoniedermeier.utils.test.hamcrest.ExceptionMatchers` provides a method `throwA`. This method returns a 
