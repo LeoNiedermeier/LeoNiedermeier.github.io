@@ -1,6 +1,7 @@
 <div class="toc">
   {% assign categoryToPapges = site.docs | group_by:"category" | sort: "name" %}
 
+<button class="btn btn-primary" type="button" data-toggle="collapse" data-target=".multi-collapse" >Toggle all elements</button>
   <div class="accordion" id="accordion_toc">
 
     {% for categoryAndPages in categoryToPapges %}
@@ -13,7 +14,7 @@
         </h2>
       </div>
 
-      <div id="collapse_{{ categoryAndPages.name }}" class="collapse" data-parent="#accordion_toc">
+      <div id="collapse_{{ categoryAndPages.name }}" class="collapse multi-collapse" data-parent="#accordion_toc">
         <div class="card-body">
           <!-- sort pages by id (is path) -->
           {% assign sorted_pages = (categoryAndPages.items | sort: 'id') %} {% for current in sorted_pages %}
