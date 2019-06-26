@@ -1,7 +1,7 @@
 ---
 title: Jaxb  SOAP WS Polymorphism
-tags: [misc]
-category: misc
+tags: [java_misc]
+category: java_misc
 summary: "Jaxb  SOAP WS Polymorphism"
 ---
 

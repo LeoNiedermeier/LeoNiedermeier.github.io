@@ -1,7 +1,7 @@
 ---
 title: Jackson Json Subtype Mapping
-tags: [misc]
-category: misc
+tags: [java_misc]
+category: java_misc
 summary: " Jackson Json Subtype Mapping"
 ---
 

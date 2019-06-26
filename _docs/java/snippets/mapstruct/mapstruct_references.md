@@ -1,7 +1,7 @@
 ---
 title: Mapstruct Assozitation Mapping
-tags: [misc]
-category: misc
+tags: [java_misc]
+category: java_misc
 summary: "Mapstruct Assozitation Mapping"
 ---
 
