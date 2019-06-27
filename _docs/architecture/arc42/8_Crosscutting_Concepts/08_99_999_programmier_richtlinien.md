@@ -21,9 +21,7 @@ application components as immutable objects and ensures that required dependenci
 Setter injection should primarily only be used for optional dependencies that can be assigned reasonable default values within the class. 
 ...
 
-<div class="danger" title="Direct Field Injection" markdown="1">
-
-**Direkt Field in Injection ist in jedem Falle zu vermeiden.**
+<div class="danger" title="Direkt Field in Injection ist in jedem Falle zu vermeiden." markdown="1">
 
 ~~~java
 public class MyClass {
