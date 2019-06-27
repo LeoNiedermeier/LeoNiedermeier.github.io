@@ -36,7 +36,7 @@ An easy way to implement exception enhancement is to use a `ContextedRuntimeExce
 Printing a `ContextedRuntimeException` gives a message of the kind:
 
 {: .code title="Example output of ContextedRuntimeException"}
-~~~json
+~~~
 ErrorCodes: CODE_1, CODE_3
 CID: QQAWFR
 ---------------------------------
@@ -195,6 +195,7 @@ See <https://spring.io/blog/2013/11/01/exception-handling-in-spring-mvc>
 The http response status of the error code enum of the `ContextedRuntimeException` can be evaluated in a controller advice, 
 for instance
 <https://github.com/LeoNiedermeier/io.github.leoniedermeier.utils/blob/master/src/main/java/io/github/leoniedermeier/utils/web/advice/RestExceptionHandler.java>
+
 {: .code .x title="Controller Advice"}
 ~~~
 public ResponseEntity<ErrorInformation> handle(ContextedRuntimeException exception) {
