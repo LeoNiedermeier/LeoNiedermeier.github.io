@@ -32,7 +32,27 @@ public class MyClass {
 ~~~
 
 </div>
+
+# Koding
+## Util Klassen
+
+* Name endet auf "Utils", z.B. "MyUtils"
+* Haben einen privaten Konstruktor der Art:
+  ~~~java
+  private MyUtils() {
+        throw new AssertionError("No MyUtils instances for you!");
+  }
+  ~~~
+  passendes Eclipse Editor Template:
+  ~~~java
+  private ${enclosing_type}() {
+      throw new AssertionError("No ${enclosing_type} instances for you!");
+  }
+  ~~~
+  (siehe auch Kode von `java.util.Objects.Objects()`)
+
 # Tests
+
 # Exceptions
 
 # Logging
