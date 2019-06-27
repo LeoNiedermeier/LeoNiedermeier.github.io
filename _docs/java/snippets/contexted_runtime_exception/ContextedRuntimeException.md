@@ -175,9 +175,9 @@ public class CustomContextedRuntimeException extends RuntimeException
 ~~~ 
 
 ## Add a HttpResponseStatus to the Error Code Enum
-
-`@HttpResponseStatus` 
-<https://github.com/LeoNiedermeier/io.github.leoniedermeier.utils/blob/master/src/main/java/io/github/leoniedermeier/utils/web/advice/HttpResponseStatus.java>
+The `@HttpResponseStatus` annotation ( 
+ <https://github.com/LeoNiedermeier/io.github.leoniedermeier.utils/blob/master/src/main/java/io/github/leoniedermeier/utils/web/advice/HttpResponseStatus.java>)
+ adds a http response status (`org.springframework.http.HttpStatus`) to the error code enum.
 
 {: .code .x title="HttpRepsonseStatus"}
 ~~~
@@ -192,6 +192,8 @@ enum MyErrorCodes implements EnumErrorCode {
 ### The Spring Controller Advice
 See <https://spring.io/blog/2013/11/01/exception-handling-in-spring-mvc>
 
+The http response status of the error code enum of the `ContextedRuntimeException` can be evaluated in a controller advice, 
+for instance
 <https://github.com/LeoNiedermeier/io.github.leoniedermeier.utils/blob/master/src/main/java/io/github/leoniedermeier/utils/web/advice/RestExceptionHandler.java>
 {: .code .x title="Controller Advice"}
 ~~~
