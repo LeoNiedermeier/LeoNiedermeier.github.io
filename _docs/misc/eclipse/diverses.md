@@ -23,7 +23,14 @@ Marketplace: <https://marketplace.eclipse.org/content/dbeaver>
 
 (Preview does not work with umlauts?)
 
-# Font
+# Theme: Clean Sheet
+
+> An ergonomic theme for the Eclipse Java IDE on Windows 10 and Mac OS X.    
+<https://marketplace.eclipse.org/content/clean-sheet>
+
+# Font:  Source Code Pro
+
+Note: is used by Clean Sheet theme, but can also be installed without Clean Sheet theme (for instance in a linux environment).
 
 > Source Code Pro is a set of monospaced OpenType fonts that have been designed to work well in coding environments.    
 
