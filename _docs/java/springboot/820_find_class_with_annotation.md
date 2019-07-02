@@ -19,5 +19,8 @@ provider.addIncludeFilter(new AnnotationTypeFilter(MyAnnotationTypeName.class));
 
 // Find the classes under a given base package:
 String basePackage = ...
-provider.findCandidateComponents(basePackage) ....
+provider.findCandidateComponents(basePackage).stream()
+   // extract the class names.
+  .map(BeanDefinition::getBeanClassName)
+  ...
 ~~~
