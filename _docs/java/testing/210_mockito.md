@@ -43,9 +43,11 @@ class MyTest {
 
 # Argument Matching with Hamcrest Matchers
 
+See <https://github.com/LeoNiedermeier/io.github.leoniedermeier.utils/blob/master/src/test/java/io/github/leoniedermeier/utils/test/mockito/MockitoHamcrestArgumentMatcherTest.java>
+
 Use the static methods of `MockitoHamcrest` for creating mockito `ArgumentMatcher` from a hamcrest `Matcher`
 
-
+{: .code title="Mockito with hamcrest argument matcher"}
 ~~~java
 class MyService {
    public String someMethod(String string) { ... }
@@ -63,7 +65,10 @@ void hamcrestArgumentMatcher(@Mock MyService myService) {
 }
 ~~~
 
+
 # Mock with `org.mockito.stubbing.Answer<T>`
+
+See <https://github.com/LeoNiedermeier/io.github.leoniedermeier.utils/blob/master/src/test/java/io/github/leoniedermeier/utils/test/mockito/MockitoAnswerTest.java>
 
 The `org.mockito.stubbing.Answer<T>` can be implemented via:
 
