@@ -123,13 +123,18 @@ private String answerMethod(InvocationOnMock invocation) {
 ~~~
 
 
+`AdditionalAnswers` provides factory method for `Answer`s. 
+In particular the an `Answer` can be created from functional interfaces which mimic the mocked method 
+with respect to its parameters. No `InvocationOnMock` needed. Nice to combine with method references.
+
 {: .code title="AdditionalAnswers"}
 ~~~java
 @Test
 void mockWithAdditionalAnswers(@Mock MyService mock) {
     Mockito.when(mock.someMethod(ArgumentMatchers.anyString()))
-    .then(AdditionalAnswers.answer(s -> "Mock:" + s));
-
+    // or as Method reference... AdditionalAnswers.answer("Mock:"::concat)
+    .then(AdditionalAnswers.answer((String s) -> "Mock:" + s));
+    
     assertEquals("Mock:foo", mock.someMethod("foo"));
 }
 ~~~
