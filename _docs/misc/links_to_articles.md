@@ -1,9 +1,24 @@
 ---
-title: Links to Articles
+title: Web Resources
 tags: [misc]
 category: misc
 summary: ""
 ---
+
+
+
+> Refactoring.Guru makes it easy for you to discover everything you need to know about refactoring,
+ design patterns, SOLID principles, and other smart programming topics.   
+
+<https://refactoring.guru/>
+
+
+Online Regular Expression Evaluator:<https://regex101.com/>
+
+Free Online Formatters: <https://www.freeformatter.com/xml-formatter.html>
+
+
+<https://microservices.io/index.html>
 
 # Modules and Microservices
 

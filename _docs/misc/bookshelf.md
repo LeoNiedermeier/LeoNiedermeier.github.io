@@ -106,9 +106,11 @@ By Robert C. Martin
 **[Component-Oriented Development and Assembly: Paradigm, Principles, and Practice Using Java](https://www.crcpress.com/Component--Oriented-Development-and-Assembly-Paradigm-Principles-and/Manickam-Sangeetha-Subrahmanya/p/book/9781466580992)**  
 By Piram Manickam, S. Sangeetha, S. V. Subrahmanya
 
-
 **[Creating Maintainable APIs - A Practical, Case-Study Approach](http://www.apress.com/us/book/9781484221952)**  
 By Ervin Varga 
+
+**[Designing Event-Driven Systems](https://www.oreilly.com/library/view/designing-event-driven-systems/9781492038252/)**
+By Ben Stopford
 
 **[Implementation Patterns ](https://www.amazon.de/Implementation-Patterns-Kent-Beck/dp/0321413091)**  
 By Kent Beck
@@ -122,11 +124,17 @@ By Tony Bevis
 **[Microservices From Day One - Build robust and scalable software from the start](http://www.apress.com/br/book/9781484219362)**  
 By Cloves Carneiro, Tim Schmelmer 
 
+**[Microservices Patterns](https://www.manning.com/books/microservices-patterns)**  
+By Chris Richardson 
+
 **[Patterns for Fault Tolerant Software](http://eu.wiley.com/WileyCDA/WileyTitle/productCd-1118351541.html)**  
 By Robert Hanmer
 
 **[Programming in the Large With Design Patterns](http://programminglarge.com/category/design/design-patterns/)**  
 By Eddie Burris 
+
+**[Refactoring](https://martinfowler.com/articles/refactoring-2nd-ed.html)**  
+By Marting Fowler
 
 **[Refactoring To Patterns](https://industriallogic.com/xp/refactoring/)**  
 By Joshua Kerievsky
