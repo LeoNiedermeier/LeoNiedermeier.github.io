@@ -9,7 +9,7 @@ summary: "Misc about Eclipse"
 
 # Plugins
 
-## Databse
+## Database
 Universal database tool: <https://dbeaver.io/>  
 Marketplace: <https://marketplace.eclipse.org/content/dbeaver>
 
