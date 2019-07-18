@@ -5,7 +5,13 @@ category: eclipse
 summary: "Misc about Eclipse"
 ---
 
+# Test Classpath
 
+Separation of test and main classpaths according to the maven dependencies:
+
+![Test Classpath](diverses/test_classpath.png "Test Classpath")
+
+* The test classpath entries are the grayed ones.
 
 # Plugins
 

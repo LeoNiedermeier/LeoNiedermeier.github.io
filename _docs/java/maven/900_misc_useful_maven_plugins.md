@@ -15,6 +15,19 @@ summary: "Misc Useful Maven Plugins and Commands"
 Example:
 `mvn fr.jcgay.maven.plugins:buildplan-maven-plugin:list-phase` 
 
+# depgraph-maven-plugin
+
+> A Maven plugin that generates dependency graphs in various formats (DOT, GML, PlantUML, JSON and Text)
+
+* <https://github.com/ferstl/depgraph-maven-plugin>
+
+~~~
+mvn com.github.ferstl:depgraph-maven-plugin:graph
+~~~  
+
+Output is in `/target/dependency-graph.dot`
+
+Can be viewed by an arbitrary online graphviz editor like <http://graphviz.it> 
 
 # Analyzing with SonarQube Scanner for Maven
 
@@ -29,16 +42,3 @@ Configure sonar properties in `properties` area of maven `settings.xml` like:
 ...
 ~~~
 
-# depgraph-maven-plugin
-
-> A Maven plugin that generates dependency graphs in various formats (DOT, GML, PlantUML, JSON and Text)
-
-* <https://github.com/ferstl/depgraph-maven-plugin>
-
-~~~
-mvn com.github.ferstl:depgraph-maven-plugin:graph
-~~~  
-
-Output is in `/target/dependency-graph.dot`
-
-Can be viewed by an arbitrary online graphviz editor like <http://graphviz.it> 
