@@ -17,7 +17,7 @@ Format (in dieser Reihenfolge):
 * It is a compile-time error if the same keyword appears more than once as a modifier for an enum declaration.
 * It is a compile-time error if a constructor declaration in an enum declaration is public or protected (default und private ok)
 * It is a compile-time error if a constructor declaration in an enum declaration contains a superclass constructor invocation statement    
- (also kein super() Aufruf im Konstruktor möglich, aber thsi(...)) 
+ (also kein super() Aufruf im Konstruktor möglich, aber this(...)) 
 * It is a compile-time error to attempt to explicitly instantiate an enum type     
 (Konstruktor kann nicht explizit aufgerufen werden (nie new MyEnum() möglich)) 
 * Kann in switch-case verwendet werden

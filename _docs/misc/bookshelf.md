@@ -54,6 +54,9 @@ By  Andrea Maglie
 **[Building a RESTful Web Service with Spring](https://www.packtpub.com/web-development/building-restful-web-service-spring)**  
 By Ludovic Dewailly
 
+**[Mastering Spring Cloud](https://www.packtpub.com/application-development/mastering-spring-cloud)**    
+By Piotr Mińkowski
+
 **[Mastering Spring MVC 4](https://www.packtpub.com/application-development/mastering-spring-mvc-4)**  
 By Geoffroy Warin
 
@@ -63,11 +66,23 @@ By Jorge Acetozi
 **[Pro Spring Boot](http://www.apress.com/us/book/9781484214329)**  
 By Felipe Gutierrez 
 
+**[Software Architecture with Spring 5.0](https://www.packtpub.com/application-development/software-architecture-spring-50)**    
+By René Enríquez, Alberto Salazar
+
+**[Spring 5 Design Patterns](https://www.packtpub.com/application-development/spring-5-design-patterns)**    
+By Dinesh Rajput
+
+**[Spring 5.0 Microservices - Second Edition](https://www.packtpub.com/application-development/spring-50-microservices-second-edition)**    
+By Rajesh R V
+
 **[Spring Boot Messaging - Messaging APIs for Enterprise and Integration Solutions](http://www.springer.com/de/book/9781484212257)**  
 From Felipe Gutierrez
 
 **[Spring Security 3.1](https://www.packtpub.com/application-development/spring-security-31)**  
 By Robert Winch, Peter Mularien
+
+**[Spring Security - Third Edition](https://www.packtpub.com/application-development/spring-security-third-edition)**    
+By Peter Mularien, Mick Knutson, Et al
 
 # OSGi, Eclipse RCP
 
@@ -102,6 +117,9 @@ By Robert C. Martin
 
 
 **[Cloud Design Patterns: Prescriptive Architecture Guidance for Cloud Applications](https://msdn.microsoft.com/de-de/library/dn568099.aspx)**  
+
+**[Cloud Native Architectures](https://www.packtpub.com/application-development/cloud-native-architectures)**    
+By Tom Laszewski, Kamal Arora, Et al
 
 **[Component-Oriented Development and Assembly: Paradigm, Principles, and Practice Using Java](https://www.crcpress.com/Component--Oriented-Development-and-Assembly-Paradigm-Principles-and/Manickam-Sangeetha-Subrahmanya/p/book/9781466580992)**  
 By Piram Manickam, S. Sangeetha, S. V. Subrahmanya
@@ -142,10 +160,16 @@ By Joshua Kerievsky
 **[RESTful Java Patterns and Best Practices](https://www.packtpub.com/application-development/restful-java-patterns-and-best-practices)**  
 By Bhakti Mehta
 
+**[Software Architect's Handbook](https://www.packtpub.com/application-development/software-architects-handbook)**    
+By Joseph Ingeno
+
 # Angular & Typescript
 
 **[Angular](https://www.dpunkt.de/buecher/12400/9783864903571-angular.html)**    
 By Gregor Woiwode / Ferdinand Malcher / Danny Koppenhagen / Johannes Hoppe
+
+**[Architecting Angular Applications with Redux, RxJS, and NgRx](https://www.packtpub.com/web-development/architecting-angular-applications-redux-rxjs-and-ngrx)**    
+By Christoffer Noring
 
 **[Pro Angular](http://www.apress.com/us/book/9781484223062)**  
 By Adam Freeman
