@@ -41,6 +41,11 @@ enum Operation {
 }
 ~~~
 
+{: .info title="Achtung"}
+`Operation.PLUS.getClass().isEnum` liefert false zurück, da Enum mit Class-Body als innere Klasse realisiert wird. 
+Stattdessen kann man `x instanceof Enum<?>` verwenden. 
+
+
 # Referenzen
 
 * <https://docs.oracle.com/javase/specs/jls/se8/html/jls-8.html#jls-8.9>
