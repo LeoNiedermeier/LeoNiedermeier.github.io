@@ -128,6 +128,8 @@ Bei einem Rest-Aufruf wird im Falle eines Fehlers folgende Header zurückgeliefe
 Der Spring `RestControllerAdvice`  `RestExceptionHandler` verarbeitet `ContextedRuntimeException` und setzt die entsprechenden 
 Header.
 
+Hinweis: Zum Handling von Spring MVC Exceptions benutzt man eine Subklasse von `org.springframework.web.servlet.mvc.method.annotation.ResponseEntityExceptionHandler`. 
+Details dazu siehe Javadoc der Klasse. 
 
 # Referenzen
 
