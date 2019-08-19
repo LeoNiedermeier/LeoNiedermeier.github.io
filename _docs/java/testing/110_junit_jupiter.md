@@ -30,6 +30,10 @@ Grouping of test classes:
 ## JUnit Jupiter `@Nested` annotation
 See <https://junit.org/junit5/docs/current/api/org/junit/jupiter/api/Nested.html>
 
+> @Nested is used to signal that the annotated class is a nested, non-static test class (i.e., an inner class) 
+that can share setup and state with an instance of its enclosing class. 
+The enclosing class may be a top-level test class or another @Nested test class, and nesting can be arbitrarily deep.
+
 * Group test methods for feature / methods
 * Can share state and initialization with outer class
 * Grouping of test classes can be
@@ -38,6 +42,11 @@ See <https://junit.org/junit5/docs/current/api/org/junit/jupiter/api/Nested.html
 
 A nice example is <https://github.com/apache/commons-lang/blob/master/src/test/java/org/apache/commons/lang3/ValidateTest.java>
 
+# Static Nested Test Classes
+
+See discussion <https://github.com/junit-team/junit5/issues/69>
+
+* Treated like top-level class.
 
 # Assertions
 
