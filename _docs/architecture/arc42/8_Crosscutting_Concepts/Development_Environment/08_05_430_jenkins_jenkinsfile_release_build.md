@@ -105,7 +105,7 @@ weitergereicht.
 `sh 'git config --local credential.helper "! echo username=\\$GIT_USERNAME; echo password=\\$GIT_PASSWORD;"'`    
 Die Variablen `GIT_USERNAME` und `GIT_PASSWORD` werden mit    
 `withCredentials([usernamePassword(credentialsId: 'git-pass-credentials-ID', passwordVariable: 'GIT_PASSWORD', usernameVariable: 'GIT_USERNAME')]) 
-...` gefüllt.
+...` gefüllt (siehe <https://issues.jenkins-ci.org/browse/JENKINS-28335>.
   * Das gesetzte Tag muss explizit upstream gepushed werden (<https://git-scm.com/book/en/v2/Git-Basics-Tagging>, <https://git-scm.com/docs/git-tag>).
 {: .info title="Kein neuer Commit"}
 Da die Maven Version des Projektes CI-friendly ist (<https://maven.apache.org/maven-ci-friendly.html>), wird durch das setzen 
@@ -114,5 +114,7 @@ vorhandenen Commit gesetzt.
 
 
 # Referenzen
+
+* <https://issues.jenkins-ci.org/browse/JENKINS-28335>
 
 
