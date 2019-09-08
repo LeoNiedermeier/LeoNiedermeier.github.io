@@ -94,8 +94,8 @@ Schritte:
 so dass Aufrufe der Art ` sh "git ..."` nicht funktionieren
 *  Für den Aufruf werden gegebenenfalls username und user.email benötigt. Diese werden via "Additional Behaviours" in "SCM" 
 Bereich 
-konfiguriert: 
-![Custom user name](08_05_410_jenkins_jenkinsfile/jenkins_git_custom_user_name.png "Custom user name"){:height="300px" }
+konfiguriert:     
+![Custom user name](08_05_410_jenkins_jenkinsfile/jenkins_git_custom_user_name.png "Custom user name"){:width="700px" }    
 * Um einen frischen Git-Stand zu haben wird in "Additional Behaviours" in "SCM"  konfiguriert: "Wipe out repository & force clone" 
 (alternativ wäre "Clean before checkout", das ist aber schwächer - Repository wird beibehalten)
 * "git-pass-credentials-ID": wird als Credential für den Git Zugriff auf das Remote Repository benötigt und den Jenkins Credentials 
