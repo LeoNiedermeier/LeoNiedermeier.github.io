@@ -101,8 +101,10 @@ konfiguriert:
 * "git-pass-credentials-ID": wird als Credential für den Git Zugriff auf das Remote Repository benötigt und den Jenkins Credentials 
 konfiguriert. 
   * Speziell falls git Shell Kommandos Username und Password benötigen:  Username und Password werden mit Hilfe eines git credential helpers (<https://git-scm.com/docs/gitcredentials>) 
-weitergereicht. `sh 'git config --local credential.helper "! echo username=\\$GIT_USERNAME; echo password=\\$GIT_PASSWORD;"'`  Die 
-Variablen `GIT_USERNAME` und `GIT_PASSWORD` werden mit `withCredentials([usernamePassword(credentialsId: 'git-pass-credentials-ID', passwordVariable: 'GIT_PASSWORD', usernameVariable: 'GIT_USERNAME')]) 
+weitergereicht.    
+`sh 'git config --local credential.helper "! echo username=\\$GIT_USERNAME; echo password=\\$GIT_PASSWORD;"'`    
+Die Variablen `GIT_USERNAME` und `GIT_PASSWORD` werden mit    
+`withCredentials([usernamePassword(credentialsId: 'git-pass-credentials-ID', passwordVariable: 'GIT_PASSWORD', usernameVariable: 'GIT_USERNAME')]) 
 ...` gefüllt.
   * Das gesetzte Tag muss explizit upstream gepushed werden (<https://git-scm.com/book/en/v2/Git-Basics-Tagging>, <https://git-scm.com/docs/git-tag>).
 {: .info title="Kein neuer Commit"}
