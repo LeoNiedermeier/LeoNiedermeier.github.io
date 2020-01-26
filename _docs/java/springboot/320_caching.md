@@ -36,6 +36,19 @@ public class MyCacheConfiguration {
 }
 ~~~
 
+Clear cache scheduled with spring:
+* Create a public method with `Scheduled` and `CacheEvict` annotation. 
+~~~java
+
+@Scheduled(cron ="0 0 0 * * *")
+@CacheEvict(cacheNames =MY_CACHE,allEntries =true)
+public void clearMyCache() {
+// ...
+}
+ 
+
+~~~
+
 # References
 
 * <https://docs.spring.io/spring-boot/docs/2.0.x-SNAPSHOT/reference/html/boot-features-caching.html#boot-features-caching-provider-generic>

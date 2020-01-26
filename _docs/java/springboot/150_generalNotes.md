@@ -28,3 +28,8 @@ We can think of them as converters between HTTP traffic and our system.
 
 * No Business Logic in Spring Controllers
 * ???  
+
+
+* http://dolszewski.com/spring/how-to-bind-requestparam-to-object/
+
+* https://mincong-h.github.io/2019/04/07/understanding-iso-8859-1-and-utf-8/
