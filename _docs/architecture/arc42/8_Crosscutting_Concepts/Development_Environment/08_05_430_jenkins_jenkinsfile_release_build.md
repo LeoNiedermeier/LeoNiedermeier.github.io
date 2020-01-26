@@ -94,16 +94,18 @@ Schritte:
 so dass Aufrufe der Art ` sh "git ..."` nicht funktionieren
 *  Für den Aufruf werden gegebenenfalls username und user.email benötigt. Diese werden via "Additional Behaviours" in "SCM" 
 Bereich 
-konfiguriert: 
-![Custom user name](08_05_410_jenkins_jenkinsfile/jenkins_git_custom_user_name.png "Custom user name"){:height="300px" }
+konfiguriert:     
+![Custom user name](08_05_410_jenkins_jenkinsfile/jenkins_git_custom_user_name.png "Custom user name"){:width="700px" }    
 * Um einen frischen Git-Stand zu haben wird in "Additional Behaviours" in "SCM"  konfiguriert: "Wipe out repository & force clone" 
 (alternativ wäre "Clean before checkout", das ist aber schwächer - Repository wird beibehalten)
 * "git-pass-credentials-ID": wird als Credential für den Git Zugriff auf das Remote Repository benötigt und den Jenkins Credentials 
 konfiguriert. 
   * Speziell falls git Shell Kommandos Username und Password benötigen:  Username und Password werden mit Hilfe eines git credential helpers (<https://git-scm.com/docs/gitcredentials>) 
-weitergereicht. `sh 'git config --local credential.helper "! echo username=\\$GIT_USERNAME; echo password=\\$GIT_PASSWORD;"'`  Die 
-Variablen `GIT_USERNAME` und `GIT_PASSWORD` werden mit `withCredentials([usernamePassword(credentialsId: 'git-pass-credentials-ID', passwordVariable: 'GIT_PASSWORD', usernameVariable: 'GIT_USERNAME')]) 
-...` gefüllt.
+weitergereicht.    
+`sh 'git config --local credential.helper "! echo username=\\$GIT_USERNAME; echo password=\\$GIT_PASSWORD;"'`    
+Die Variablen `GIT_USERNAME` und `GIT_PASSWORD` werden mit    
+`withCredentials([usernamePassword(credentialsId: 'git-pass-credentials-ID', passwordVariable: 'GIT_PASSWORD', usernameVariable: 'GIT_USERNAME')]) 
+...` gefüllt (siehe <https://issues.jenkins-ci.org/browse/JENKINS-28335>.
   * Das gesetzte Tag muss explizit upstream gepushed werden (<https://git-scm.com/book/en/v2/Git-Basics-Tagging>, <https://git-scm.com/docs/git-tag>).
 {: .info title="Kein neuer Commit"}
 Da die Maven Version des Projektes CI-friendly ist (<https://maven.apache.org/maven-ci-friendly.html>), wird durch das setzen 
@@ -112,5 +114,7 @@ vorhandenen Commit gesetzt.
 
 
 # Referenzen
+
+* <https://issues.jenkins-ci.org/browse/JENKINS-28335>
 
 
