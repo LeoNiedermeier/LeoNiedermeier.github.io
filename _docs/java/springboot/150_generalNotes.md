@@ -1,8 +1,8 @@
 ---
-title: Gemeral Notes about Spring
+title: General Notes about Spring
 tags: [spring, spring_boot]
 category: spring
-summary: "Gemeral Notes about Spring"
+summary: "General Notes about Spring"
 ---
 
 # Constructor-based or setter-based DI
@@ -17,6 +17,22 @@ application components as immutable objects and ensures that required dependenci
 Setter injection should primarily only be used for optional dependencies that can be assigned reasonable default values within the class. 
 ...    
 (From Spring Reference Documentation <https://docs.spring.io/spring/docs/current/spring-framework-reference/core.html#beans-dependencies>
+
+
+>  	Although field injection is discouraged in production code, field injection is actually quite natural in test code.
+...    
+(From Spring Reference Documentation <https://docs.spring.io/spring/docs/current/spring-framework-reference/testing.html#testcontext-fixture-di>)
+
+
+
+>
+...    
+(From <https://twitter.com/sps/status/631894126489808896>)
+
+
+>Every time you use fieldinjection, a unit test dies    
+From Josh Long, Spring Developer Advocate
+
 
 
 
