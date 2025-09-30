@@ -1,5 +1,5 @@
 ---
-title: constructor injection vs `inject()`
+title: constructor injection vs `inject()` (a20)
 tags: [angular]
 category: angular
 summary: "Here’s a concise, team‑friendly guideline for when to use **constructor injection** vs **`inject()`** in Angular (v16+ through v20), aligned with standalone components and typed DI."
