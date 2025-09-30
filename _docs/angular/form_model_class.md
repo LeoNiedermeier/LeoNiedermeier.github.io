@@ -10,7 +10,7 @@ summary: "Use a class frü form model"
   - Singleton: use @Injectable({ providedIn: 'root' }) on the model and remove the providers array (but beware of shared form state across pages).
 
 - Type of birthday:
-  - Using native <input type="date"> → keep as string (YYYY-MM-DD).
+  - Using native `<input type="date">` → keep as string (YYYY-MM-DD).
   - Using MatDatepicker + MatNativeDateModule → change the control to FormControl<Date>.
 - Unit tests:
    - This refactor makes testing easier—instantiate PersonFormModel directly (no TestBed/DI required) for pure form logic, or use component provider for integration tests.
