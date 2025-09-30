@@ -1,5 +1,5 @@
 ---
-title: Form model class
+title: Form model class (a20)
 tags: [angular]
 category: angular
 summary: "Use a class frü form model"
