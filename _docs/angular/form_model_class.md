@@ -1,8 +1,8 @@
 ---
-title: Angular Routing
+title: Form model class
 tags: [angular]
 category: angular
-summary: "Angular Routing"
+summary: "Use a class frü form model"
 ---
 # Notes & options from AI
 - Scope control
