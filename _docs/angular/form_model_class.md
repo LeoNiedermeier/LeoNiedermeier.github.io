@@ -20,17 +20,22 @@ Here are the **practical benefits** of using the `FormGroup` / `FormControl` con
 ## Less coupling to Angular DI (simpler construction & testing)
 - **No service injection** required (`FormBuilder` is a service). You can create forms in plain TypeScript classes,  helper functions, or unit tests **without** `TestBed` or `inject(FormBuilder)`.
 - This makes **library/util code** cleaner and makes unit tests faster and more focused (no DI setup for the form model).
+
 ## More explicit & readable control definitions
 - Constructors make the **shape obvious**: the control value, validators, and options are separated and self-explanatory—no need to remember tuple positions like `[value, validators, asyncValidators]`.
 - Async validators and options are clearer
+
 ## Stronger type discipline (Typed Forms)
 - With constructors, you’re nudged to declare **generic types** explicitly, which guards you against accidental `null` or wrong shapes.
 - At the group level you can fully type the form for **end-to-end IntelliSense**:
+
 ## Fewer hidden defaults & clearer nullability
 - With `FormBuilder`, devs often rely on the tuple shorthand and unintentionally end up with `string | null` controls.
 - Constructors make **nullability an explicit choice** via `nonNullable: true` or by typing `string | null`.
+
 ## Easier reuse & composition
 - You can **compose controls** before grouping, reuse validators/configuration, and split large forms into smaller, reusable blocks without always threading a `FormBuilder` reference around. 
+
 ## Clearer migration path & consistency
 - Using constructors aligns with the underlying API that `FormBuilder` wraps. If the API evolves, you’re closest to the source of truth.
 - You avoid team-level ambiguity between tuple shorthand vs. object/constructor style—**one consistent pattern**.
